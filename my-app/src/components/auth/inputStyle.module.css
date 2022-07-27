@@ -1,0 +1,225 @@
+.inputStyle {
+  width: 85%;
+  height: 3.375rem;
+  border-radius: 7px;
+  border: 1px solid rgba(196, 202, 208, 1) !important;
+  margin: 0.5rem 0 1.5rem;
+  padding-right: 1rem;
+  font-size: 1rem !important;
+  font-family: inherit !important ;
+}
+
+.inputStyle button:hover {
+  background-color: transparent !important;
+}
+.inputStyle::placeholder,
+.inputStyle input::placeholder {
+  color: rgba(144, 149, 153, 1);
+  font-size: 1rem !important;
+  font-family: inherit !important ;
+}
+.formSignIn,
+.formSignUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  flex: 1;
+  padding: 1rem;
+  font-family: inherit;
+}
+.formSignIn label,
+.formSignUp label {
+  height: 1.57rem;
+  font-family: inherit !important;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  align-self: flex-start;
+  color: #192129;
+  width: 85%;
+  margin: 0 auto;
+}
+.inputStyle:focus {
+  background: #ffffff;
+  box-shadow: 0px 3px 17px rgba(94, 182, 112, 0.35);
+  outline: none;
+}
+
+.checkLink {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  margin: 0 0 2rem 0;
+}
+.checkbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 32%;
+  cursor: pointer;
+}
+#save_info {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 4px;
+  border: solid 2px #c4cad0;
+  background-color: #ffffff;
+}
+.checkbox label {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  align-self: center;
+}
+
+.checkbox label:hover,
+.checkbox input:hover,
+.rules input:hover {
+  cursor: pointer;
+}
+
+.linkBox {
+  text-align: center;
+  color: #5243ac;
+  font-weight: normal;
+
+  width: 50%;
+}
+
+.forgotPassLink {
+  color: rgba(82, 67, 172, 1);
+  font-size: 0.9rem;
+  text-align: end;
+  padding-left: 0.9rem;
+  cursor: pointer;
+}
+.linkBox p {
+  border-bottom: 1px solid transparent;
+  transform: translateY(0);
+  transition: all 500ms !important;
+}
+.linkBox p:hover {
+  cursor: pointer;
+  transform: translateY(2px);
+  border-bottom: 1px solid #5343ac63;
+  transition: all 500ms !important;
+}
+.and {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem 0 2rem 0;
+  flex: 1;
+  color: rgba(196, 202, 208, 1);
+  font-size: 0.9rem;
+  padding: 0 1rem;
+  width: 85%;
+}
+.line {
+  width: 40%;
+  border-bottom: 1px solid rgba(196, 202, 208, 1);
+  margin-bottom: 5px;
+}
+
+.auth:hover {
+  background: #5243ac !important;
+  box-shadow: 0px 5px 7px 1px #5343ac83 !important;
+}
+.AccountGoogle img {
+  margin-top: 0.5rem 1rem;
+}
+.AccountGoogle:hover {
+  box-shadow: 0px 5px 7px 1px #4142425e !important;
+}
+
+.AccountGoogle {
+  background: #ffffff !important;
+  box-shadow: 0px 5px 7px 1px #41424246 !important;
+  border-radius: 7px !important;
+  color: rgba(25, 33, 41, 1) !important;
+  font-weight: bold !important;
+  width: 85% !important;
+  height: 3rem !important;
+  font-family: inherit !important ;
+}
+
+.auth {
+  background: #acaeaf !important;
+  box-shadow: 0px 5px 7px 1px #41424246 !important;
+  font-family: inherit !important;
+  font-size: 1rem !important;
+  border-radius: 7px !important;
+  color: #ffffff !important;
+  width: 85% !important;
+  height: 3rem !important;
+}
+
+.AccountGoogle span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30% !important;
+}
+
+.rules {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+  width: 85%;
+  margin: 0 0 2rem 0;
+}
+
+.rules input {
+  margin-left: 0.65rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 4px;
+  border: solid 2px #c4cad0;
+  background-color: #ffffff;
+}
+.rules label {
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+.rules span {
+  margin: 0.25rem;
+}
+
+.linkSignIn {
+  margin-top: 2rem;
+  font-size: 12px;
+  text-align: center;
+}
+.linkSignIn a {
+  color: #5243ac;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.linkSignIn a:hover {
+  cursor: pointer;
+  border-bottom: 1px solid #5343ac63;
+  transition: all 500ms !important;
+}
+
+.resetPassLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resetPassLabel div {
+  font-size: 0.85rem;
+  color: rgba(219, 13, 13, 0.87);
+}
