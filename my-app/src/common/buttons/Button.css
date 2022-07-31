@@ -5,21 +5,20 @@
 }
 .button {
   width: 50%;
-  height: 2.2rem;
+  height: 4rem;
   border-style: none;
-  color: rgba(82, 67, 172, 1);
+  color: #737373;
   padding: 0 2rem;
   overflow: hidden;
-  background-color: #ffffff;
-  font-size: medium;
+  font-size: large;
   border-bottom: 3px solid #c4cad0;
   margin-top: 2rem;
   font-family: Dana;
   cursor: pointer;
 }
 .active {
-  color: rgba(82, 67, 172, 1);
-  border-bottom: 3px solid rgba(82, 67, 172, 1);
+  color: rgba(0, 120, 212, 1);
+  border-bottom: 3px solid rgba(0, 120, 212, 1);
   font-weight: bold;
 }
 

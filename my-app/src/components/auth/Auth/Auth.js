@@ -17,7 +17,7 @@ const Auth = (props) => {
   return (
     <AuthLayout>
       <Grid item xs={10} sm={10} className="authLayout-container">
-        <Paper className="loginBox">
+        <div className="loginBox">
           {isForgotPass ? (
             <ForgotPassword click={handleClick} />
           ) : (
@@ -46,7 +46,7 @@ const Auth = (props) => {
               )}
             </>
           )}
-        </Paper>
+        </div>
       </Grid>
     </AuthLayout>
   );
