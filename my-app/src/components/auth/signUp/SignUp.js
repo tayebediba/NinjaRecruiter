@@ -7,18 +7,17 @@ import {
   Switch,
 } from "@mui/material";
 import { useState } from "react";
-
+import PersonIcon from "@mui/icons-material/Person";
 import "../inputStyles.css";
-
 
 const SignUp = ({ switcher }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
-  // const changeHandler = () => {
-  //   setShowPassword((prevState) => !prevState);
-  // };
+  const changeHandler = () => {
+    setShowPassword((prevState) => !prevState);
+  };
   // const register = async (e, userName, password) => {
   //   e.preventDefault();
   //   console.log(userName, password);
@@ -35,15 +34,19 @@ const SignUp = ({ switcher }) => {
   return (
     <Grid container>
       <form className="form_signUp">
-        <label>ایمیل</label>
         <Input
           className="input_style"
-          type="mail"
+          type="text"
           // value={userName}
           // onChange={(e) => setUserName(e.target.value)}
           required
           disableUnderline={true}
-          placeholder="ایمیل یا شماره تلفن خود را وارد کنید"
+          placeholder="Name"
+          endAdornment={
+            <InputAdornment position="start">
+              <PersonIcon />
+            </InputAdornment>
+          }
         />
 
         <label>رمز عبور</label>
@@ -58,7 +61,7 @@ const SignUp = ({ switcher }) => {
           endAdornment={
             <InputAdornment position="end">
               <IconButton
-              // onClick={() => changeHandler((prevState) => !prevState)}
+                onClick={() => changeHandler((prevState) => !prevState)}
               >
                 <Switch color="secondary" />
               </IconButton>

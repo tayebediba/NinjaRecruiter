@@ -2,9 +2,9 @@
   width: 85%;
   height: 3.375rem;
   border-radius: 7px;
-  border: 1px solid rgba(196, 202, 208, 1) !important;
+  background-color: #d9d9d9 !important;
   margin: 0.5rem 0 1.5rem;
-  padding-right: 1rem;
+  padding: 0 1rem;
   font-size: 1rem !important;
   font-family: inherit !important ;
 }
@@ -220,6 +220,6 @@
 }
 
 .resetPassLabel div {
-  font-size: .85rem;
+  font-size: 0.85rem;
   color: rgba(219, 13, 13, 0.87);
 }
