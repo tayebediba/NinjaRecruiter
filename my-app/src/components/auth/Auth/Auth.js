@@ -1,15 +1,14 @@
-import React, { useState } from "react";
-
-// import AuthLayout from "../authLayout/AuthLayout";
-import Button from "../../../common/buttons/Button";
+import { useState } from "react";
+import { Grid, Paper } from "@mui/material";
 import AuthLayout from "../authLayout/AuthLayout";
-// import SignIn from "../signIn/SignIn";
-// import SignUp from "../signUp/SignUp";
-// import ForgotPassword from "../forgotPassword/ForgotPassword";
-import classes from "./auth.module.css";
+import Button from "../../../common/buttons/Button";
+import SignIn from "../signIn/SignIn";
+import SignUp from "../signUp/SignUp";
+import ForgotPassword from "../forgotPassword/ForgotPassword";
+import "./auth.css";
 
 const Auth = (props) => {
-  const [switcher, setSwitcher] = useState(props.location.data);
+  const [switcher, setSwitcher] = useState(props.location);
   const [isForgotPass, setIsForgotPass] = useState(false);
 
   const handleClick = () => {
@@ -17,24 +16,24 @@ const Auth = (props) => {
   };
   return (
     <AuthLayout>
-      <Grid item xs={10} sm={10} className={classes.authLayoutContainer}>
-        <Paper className={classes.loginBox}>
+      <Grid item xs={10} sm={10} className="authLayout-container">
+        <Paper className="loginBox">
           {isForgotPass ? (
             <ForgotPassword click={handleClick} />
           ) : (
             <>
               <div>
                 <Button
-                  btnType={switcher ? ` btnSignIn active` : ` btnSignIn`}
+                  btnType={switcher ? ` btn_signIn active` : ` btn_signIn`}
                   click={() => setSwitcher(true)}
                 >
-                  ورود
+                  Sign in
                 </Button>
                 <Button
-                  btnType={!switcher ? ` btnSignUp active` : ` btnSignUp`}
+                  btnType={!switcher ? ` btn_signUp active` : ` btn_signUp`}
                   click={() => setSwitcher(false)}
                 >
-                  ثبت نام
+                  Sign up
                 </Button>
               </div>
               {switcher ? (

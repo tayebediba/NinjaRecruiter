@@ -1,0 +1,28 @@
+.button-box {
+  width: 100%;
+  height: 2.2rem;
+  display: inline;
+}
+.button {
+  width: 50%;
+  height: 2.2rem;
+  border-style: none;
+  color: rgba(82, 67, 172, 1);
+  padding: 0 2rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  font-size: medium;
+  border-bottom: 3px solid #c4cad0;
+  margin-top: 2rem;
+  font-family: Dana;
+  cursor: pointer;
+}
+.active {
+  color: rgba(82, 67, 172, 1);
+  border-bottom: 3px solid rgba(82, 67, 172, 1);
+  font-weight: bold;
+}
+
+.button:hover {
+  font-weight: bold;
+}

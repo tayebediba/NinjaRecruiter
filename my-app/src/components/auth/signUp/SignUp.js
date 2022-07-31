@@ -1,36 +1,43 @@
-import React, { useState } from "react";
+import {
+  Button,
+  Grid,
+  IconButton,
+  Input,
+  InputAdornment,
+  Switch,
+} from "@mui/material";
+import { useState } from "react";
 
-// import http from "../../../services/httpService";
+import "../inputStyles.css";
 
-import classes from "../inputStyle.module.css";
 
 const SignUp = ({ switcher }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
-  //   const changeHandler = () => {
-  //     setShowPassword((prevState) => !prevState);
-  //   };
-  //   const register = async (e, userName, password) => {
-  //     e.preventDefault();
-  //     console.log(userName, password);
-  //     await http
-  //       .post("/Account/SignUp", {
-  //         userName,
-  //         password,
-  //       })
-  //       .then((res) => {
-  //         console.log(res);
-  //       });
-  //   };
+  // const changeHandler = () => {
+  //   setShowPassword((prevState) => !prevState);
+  // };
+  // const register = async (e, userName, password) => {
+  //   e.preventDefault();
+  //   console.log(userName, password);
+  //   await http
+  //     .post("/Account/SignUp", {
+  //       userName,
+  //       password,
+  //     })
+  //     .then((res) => {
+  //       console.log(res);
+  //     });
+  // };
 
   return (
     <Grid container>
-      <form className={classes.formSignUp}>
+      <form className="form_signUp">
         <label>ایمیل</label>
         <Input
-          className={classes.inputStyle}
+          className="input_style"
           type="mail"
           // value={userName}
           // onChange={(e) => setUserName(e.target.value)}
@@ -41,7 +48,7 @@ const SignUp = ({ switcher }) => {
 
         <label>رمز عبور</label>
         <Input
-          className={classes.inputStyle}
+          className="input_style"
           // value={password}
           // onChange={(e) => setPassword(e.target.value)}
           required
@@ -51,7 +58,7 @@ const SignUp = ({ switcher }) => {
           endAdornment={
             <InputAdornment position="end">
               <IconButton
-                onClick={() => changeHandler((prevState) => !prevState)}
+              // onClick={() => changeHandler((prevState) => !prevState)}
               >
                 <Switch color="secondary" />
               </IconButton>
@@ -59,7 +66,7 @@ const SignUp = ({ switcher }) => {
           }
         />
 
-        <div className={classes.rules}>
+        <div className="rules">
           <input type="checkbox" />
           <label>
             <span style={{ color: "#5243ac" }}>قوانین</span> پونیشارا مطالعه
@@ -67,13 +74,13 @@ const SignUp = ({ switcher }) => {
           </label>
         </div>
         <Button
-          className={classes.auth}
+          className="auth"
           type="submit"
           // onClick={(e) => register(e, userName, password)}
         >
           ثبت نام
         </Button>
-        <div className={classes.linkSignIn} style={{ margin: "1rem 0" }}>
+        <div className="link-signIn" style={{ margin: "1rem 0" }}>
           <p>
             قبلا ثبت نام کرده اید؟<span onClick={switcher}>وارد شوید</span>
           </p>
