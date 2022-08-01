@@ -66,33 +66,6 @@ export default function ResponsiveDrawer(props: Props) {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
 
-      {/* <AppBar
-        className={classes.AppBar}
-        position="fixed"
-        sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
-        }}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Toolbar className={classes.Toolbar}>
-            <ul className={classes.ul}>
-              <li>Fill out the form</li>
-              <li>Employers List</li>
-            </ul>
-          </Toolbar>
-        </Toolbar>
-      </AppBar> */}
-
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
@@ -130,7 +103,9 @@ export default function ResponsiveDrawer(props: Props) {
           {drawer}
         </Drawer>
       </Box>
-      <div className={classes.rightHederNav}>
+      <div  className={classes.showCalendar}>
+      </div>
+      {/* <div className={classes.rightHederNav}>
         <div className={classes.navHeaderDashboard}>
           <ul>
             <li>Fill out the form</li>
@@ -138,7 +113,7 @@ export default function ResponsiveDrawer(props: Props) {
           </ul>
         </div>
         <Accordin />
-      </div>
+      </div> */}
     </Box>
   );
 }
