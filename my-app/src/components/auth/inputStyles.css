@@ -109,7 +109,7 @@
 .linkBox p:hover {
   cursor: pointer;
   transform: translateY(2px);
-  border-bottom: 1px solid #5343ac63;
+  border-bottom: 1px solid #59576663;
   transition: all 500ms !important;
 }
 .and {
@@ -117,7 +117,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* margin: 1rem 0; */
   flex: 1;
   color: #8c8c8c;
   font-size: 0.9rem;
@@ -206,7 +205,7 @@
   text-align: center;
 }
 .link-signIn a {
-  color: #5243ac;
+  color: #78777a;
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
