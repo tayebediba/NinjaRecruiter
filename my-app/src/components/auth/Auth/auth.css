@@ -1,9 +1,9 @@
 .authLayout-container {
   display: flex;
-  justify-content: flex-end !important;
+  justify-content: center !important;
   align-items: center !important;
   margin: 0 !important;
-  height: 100% !important;
+  height: 100vh !important;
   width: 100% !important;
 }
 .loginBox {
@@ -12,8 +12,8 @@
   min-width: 20rem;
   display: flex;
   flex-direction: column;
-  margin: 4rem;
-  min-height: 43rem;
+  /* margin: 4rem; */
+  /* min-height: 43rem; */
   border-radius: 20px !important;
 }
 
@@ -30,7 +30,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: auto;
+    /* height: auto; */
     border-radius: 20px !important;
   }
 }

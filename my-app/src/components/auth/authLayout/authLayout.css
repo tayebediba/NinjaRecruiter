@@ -1,19 +1,21 @@
 .containerLogin {
-  /* height: 100% !important; */
   width: 100% !important;
   background-color: #f2f2f2 !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow-y: hidden !important;
 }
-.imageBox,
+/* .imageBox, */
 .card {
+  height: 100vh !important;
   width: 100% !important;
   display: flex !important;
   flex-direction: column !important;
-  align-items: flex-start !important;
+  align-items: center !important;
   padding: 3rem 4rem !important;
 }
 .imageBox img {
-  max-width: 100%;
-  margin: 8rem 0 0 4rem;
+  margin: auto 5rem !important;
 }
 
 @media only screen and (max-width: 768px) {
@@ -25,7 +27,6 @@
     flex-direction: column !important;
   }
   .card {
-    margin: 6rem auto 0 !important;
     align-items: center !important;
     padding: 0 !important;
   }
