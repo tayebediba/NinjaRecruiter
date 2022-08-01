@@ -1,3 +1,263 @@
+.header {
+  background-image: url("../../../src//assets/img/header.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 80vh;
+  font-family: Inter-regular;
+  margin: 0;
+  padding: 0;
+}
+.header .HeaderTitle {
+  background: red;
+
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+}
+.header .titleHeader {
+  color: #2e2e2e;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-shadow: 2px 2px 0 #ffd369, 2px -2px 0 #ffd369, -2px 2px 0 #ffd369,
+    -2px -2px 0 #ffd369, 2px 0px 0 #ffd369, 0px 2px 0 #ffd369,
+    -2px 0px 0 #ffd369, 0px -2px 0 #ffd369;
+  color: #2e2e2e;
+}
+.header .titleHeader h1 {
+  width: 32rem;
+  text-align: center;
+  margin-top: 15rem;
+  font-size: xxx-large;
+}
+.header .HeaderTitle h2 {
+  background: darkgoldenrod;
+  width: 40%;
+  text-align: center;
+  padding: 1rem;
+  line-height: 47px;
+}
+.nav {
+  font-family: Inter-regular;
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav ul {
+  color: #eeeeee;
+  display: flex;
+  /* width: 18%; */
+  /* flex: 1.2; */
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  padding: 0;
+  align-items: center;
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  margin-right: 3rem;
+  cursor: pointer;
+}
+.nav ul li:hover {
+  color: #ffd369;
+  transition: 0.3s;
+}
+.nav ul .navLogin:hover {
+  color: #ffd369;
+  transition: 0.3s;
+}
+.nav .logo {
+  display: flex;
+  /* flex: 9; */
+  color: #ffd369;
+  padding: 0 2rem;
+  letter-spacing: 3px;
+}
+.navLogin {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.title {
+  width: 100%;
+  text-align: center;
+  font-family: Inter-Bold;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .nav ul {
+    color: #eeeeee;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    padding: 0;
+    align-items: center;
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+  .nav .logo {
+    padding: 0 1rem;
+  }
+  .header .titleHeader h1 {
+    width: 18rem;
+    text-align: center;
+    margin-top: 10rem;
+    /* font-size: xxx-large; */
+    font-size: 2rem;
+  }
+}
+
+.navbarbox {
+  background-color: #002e6e !important;
+  display: flex !important;
+  justify-content: center !important;
+  flex-direction: row !important;
+  text-decoration: none !important;
+  padding: 1rem 2rem 1rem;
+}
+.linkMenu {
+  text-decoration: none;
+  color: black;
+  margin-top: 1rem;
+}
+
+.dropdownList {
+  background-color: #002e6e !important;
+  color: #ffffff !important;
+  font-size: medium !important;
+}
+.dropdownList svg {
+  color: #ffffff;
+}
+.logoBox {
+  max-width: 12rem;
+  max-height: 3rem;
+  flex: 0 0 10%;
+  margin-left: 2rem;
+}
+.logoBox img {
+  width: 100%;
+  height: 100%;
+}
+.navItems {
+  flex: 0 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.navItems a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.navBtn {
+  flex: 0 0 15%;
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  justify-content: space-around;
+}
+.btn {
+  border: 2px solid #ffcb05;
+  box-sizing: border-box;
+  width: 5.1rem;
+  height: 2.5rem;
+  filter: drop-shadow(0px 3px 15px rgba(94, 182, 112, 0.3));
+  border-radius: 7px;
+  font-family: Dana;
+  font-size: 13px;
+}
+
+.btnSignIn {
+  background-color: #002e6e;
+  transition: all 200ms;
+  background-color: #002e6e;
+  transition: all 200ms;
+  cursor: pointer;
+}
+.btnSignIn a {
+  color: #ffcb05;
+  text-decoration: none;
+}
+.btnSignUp {
+  background-color: #ffcb05;
+  transition: all 200ms;
+  cursor: pointer;
+}
+.btnSignUp a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.btnAccount {
+  width: max-content;
+  background-color: #ffcb05;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btnAccount a {
+  text-decoration: none;
+  color: black;
+  padding-right: 3px;
+}
+.btnAccount svg {
+  padding-top: 0.25rem;
+}
+.btnAccount:hover {
+  cursor: pointer;
+  transition: all 200ms;
+}
+.btnAccount:hover a {
+  font-weight: bold;
+}
+
+.btnSignIn:hover {
+  background-color: #ffcb05;
+  cursor: pointer;
+  transition: all 200ms;
+}
+.btnSignIn:hover a {
+  color: #ffffff;
+}
+.btnSignUp:hover {
+  background-color: #002e6e;
+  cursor: pointer;
+  transition: all 200ms;
+}
+.btnSignUp:hover a {
+  color: #ffcb05;
+}
+.navItems a:hover {
+  color: #ffcb05;
+  cursor: pointer;
+  transition: all 200ms;
+}
+.dropdownList:hover {
+  color: #ffcb05 !important;
+  cursor: pointer !important;
+  transition: all 200ms !important;
+}
+.dropdownList :hover svg {
+  color: #ffcb05 !important;
+}
+.innerToolbar {
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: row-reverse; */
+  align-items: center;
+}
+
+
+
+
 .navbarbox {
   background-color: #002e6e !important;
   display: flex !important;

@@ -1,0 +1,22 @@
+.AppBar .ul{
+   background: darkblue;
+   list-style-type: none;
+   display: flex;
+   justify-content: space-between;
+   width: 18%;
+   margin: 0;
+   padding: 0;
+   font-family: Inter-Medium;
+}
+.AppBar{
+   background-color: white !important;
+}
+.avatar{
+   width: 50% !important;
+   height: 10vh !important;
+   position: relative;
+   left: 4rem;
+   top: 0.em !important;
+   margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}

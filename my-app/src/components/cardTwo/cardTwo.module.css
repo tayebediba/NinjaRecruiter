@@ -1,0 +1,101 @@
+.personMan {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 5rem;
+}
+.personMan img {
+  width: 30rem;
+}
+.personMan .app {
+  width: 24%;
+  font-family: Inter-Medium;
+  color: #595959;
+}
+.app .btn {
+  background-color: #ffd369;
+  color: #595959;
+  font-weight: 700;
+  padding: 0.6rem 1rem;
+  font-size: 22px;
+  border: none;
+  font-size: 0.8rem;
+}
+.app p {
+  font-family: Inter-Regular;
+}
+.personWoman {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  margin: auto;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 5rem;
+}
+.personWoman img {
+  width: 30rem;
+}
+.personWoman .app {
+  width: 24%;
+  font-family: Inter-Medium;
+  color: #595959;
+}
+
+@media screen and (max-width: 768px) {
+  .personMan {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 5rem;
+  }
+  .personMan img {
+    width: 15rem;
+  }
+  .personMan .app {
+    width: 80%;
+    font-family: Inter-Medium;
+    color: #595959;
+    text-align: center;
+  }
+  .personMan .app h1 {
+    font-size: 2rem;
+  }
+  .personMan .app p {
+    line-height: 40px;
+  }
+
+  .personWoman {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 5rem;
+  }
+  .personWoman img {
+    width: 15rem;
+  }
+  .personWoman .app {
+    width: 80%;
+    font-family: Inter-Medium;
+    color: #595959;
+    text-align: center;
+  }
+  .personWoman .app h1 {
+    font-size: 2rem;
+  }
+  .personWoman .app p {
+    line-height: 40px;
+  }
+}
