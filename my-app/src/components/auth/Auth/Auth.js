@@ -16,7 +16,7 @@ const Auth = (props) => {
   };
   return (
     <AuthLayout>
-      <Grid item xs={10} sm={10} className="authLayout-container">
+      <Grid item xs={12} sm={10} className="authLayout-container">
         <div className="loginBox">
           {isForgotPass ? (
             <ForgotPassword click={handleClick} />

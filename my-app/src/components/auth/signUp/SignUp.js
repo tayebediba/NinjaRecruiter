@@ -104,16 +104,16 @@ const SignUp = ({ switcher }) => {
           <div className="line"></div>
         </span>
         <Grid container className="icon-Box">
-          <Grid item md={3}>
+          <Grid item xs={6} md={3}>
             <img src={apple} alt="apple" />
           </Grid>
-          <Grid item md={3}>
+          <Grid item xs={6} md={3}>
             <img src={linkedIn} alt="linkedIn" />
           </Grid>
-          <Grid item md={3}>
+          <Grid item xs={6} md={3}>
             <img src={Google} alt="Google" />
           </Grid>
-          <Grid item md={3}>
+          <Grid item xs={6} md={3}>
             <img src={facebook} alt="facebook" />
           </Grid>
         </Grid>

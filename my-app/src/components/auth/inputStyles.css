@@ -233,3 +233,8 @@
 .icon-Box img {
   margin: auto 2rem !important;
 }
+@media only screen and (max-width: 768px) {
+  .and h2 {
+    font-size: medium !important;
+  }
+}
