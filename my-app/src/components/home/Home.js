@@ -11,6 +11,8 @@ const Home = () => {
   return (
     <Grid container>
       <h1>Home</h1>
+
+      <h2>tayebe</h2>
       <div className={classes.navBtn}>
         {isLogin ? (
           <button className={`${classes.btnAccount} ${classes.btn}`}>
