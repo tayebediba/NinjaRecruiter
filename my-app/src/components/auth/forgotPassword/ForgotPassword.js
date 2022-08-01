@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Button, Grid, Input } from "@mui/material";
+import { Button, Grid, Input, InputAdornment } from "@mui/material";
+import ResetPassword from "../resetPassword/ResetPassword";
+import { Email } from "@mui/icons-material";
 import "./forgotPassword.css";
 import "../inputStyles.css";
-import ResetPassword from "../resetPassword/ResetPassword";
 
 const ForgotPassword = ({ click }) => {
   const [userName, setUserName] = useState("");
@@ -29,34 +30,33 @@ const ForgotPassword = ({ click }) => {
         <ResetPassword />
       ) : (
         <>
-          <h3 className="titel">فراموشی رمز عبور</h3>
           <form className="form-forgotPassword">
-            <label htmlFor="input_email">ایمیل</label>
-
+            <h3 className="titel"> Forgot password </h3>
             <Input
               className="input_style"
-              type="text"
-              required
+              type="email"
               // value={userName}
               // onChange={(e) => setUserName(e.target.value)}
+              required
               disableUnderline={true}
-              placeholder="ایمیل یا شماره تلفن خود را وارد کنید"
+              placeholder="Email"
+              startAdornment={
+                <InputAdornment position="start">
+                  <Email />
+                </InputAdornment>
+              }
             />
             <Button
               className="auth"
               type="submit"
               // onClick={(e) => forgotPasswordHandler(e, userName)}
             >
-              ارسال لینک بازیابی رمز
+              Send password recovery link
             </Button>
             <div className="link-signIn">
               <p>
-                رمز عبور را به خاطر دارید؟
-                <span
-                // onClick={() => click()}
-                >
-                  وارد شوید
-                </span>
+                Remember your password?
+                <span onClick={() => click()}>Sign in</span>
               </p>
             </div>
           </form>

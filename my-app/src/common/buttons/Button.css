@@ -4,7 +4,7 @@
   display: inline;
 }
 .button {
-  width: 50%;
+  width: 30%;
   height: 4rem;
   border-style: none;
   color: #737373;
@@ -12,13 +12,14 @@
   overflow: hidden;
   font-size: large;
   border-bottom: 3px solid #c4cad0;
-  margin-top: 2rem;
+  margin: auto 2rem;
   font-family: Dana;
   cursor: pointer;
+  background-color: #f2f2f2;
 }
 .active {
-  color: rgba(0, 120, 212, 1);
-  border-bottom: 3px solid rgba(0, 120, 212, 1);
+  color: #737373;
+  border-bottom: 3px solid#FFD369;
   font-weight: bold;
 }
 
