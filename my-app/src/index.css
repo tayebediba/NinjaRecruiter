@@ -1,3 +1,16 @@
+@font-face {
+  font-family: Inter-Bold;
+  src: url(../public/Inter-font-fb-8767654/Fonts/Inter\ Bold.otf);
+}
+@font-face {
+  font-family: Inter-Regular;
+  src: url(../public/Inter-font-fb-8767654/Fonts/Inter\ Regular.otf);
+}
+@font-face {
+  font-family: Inter-Medium;
+  src: url(../public/Inter-font-fb-8767654/Fonts/Inter\ Medium\ Italic.otf);
+}
+
 * {
   scroll-behavior: smooth !important;
 }
@@ -10,6 +23,8 @@ body {
   font-family: IRANSansX-Medium !important;
   overflow-x: hidden !important;
   overflow-y: auto !important;
+
+  margin: 0;
 }
 a {
   text-decoration: none !important;
