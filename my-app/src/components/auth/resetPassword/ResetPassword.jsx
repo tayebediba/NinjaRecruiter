@@ -24,9 +24,9 @@ const ResetPassword = () => {
   //   setErrorMessage("");
   // }, []);
 
-  // const changeHandler = () => {
-  //   setShowPassword((prevState) => !prevState);
-  // };
+  const changeHandler = () => {
+    setShowPassword((prevState) => !prevState);
+  };
   // const backwardHandler = () => {
   //   history.push("/login");
   //   window.location.reload();
