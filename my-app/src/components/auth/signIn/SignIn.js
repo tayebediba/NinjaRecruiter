@@ -7,6 +7,11 @@ import {
   InputAdornment,
   Switch,
 } from "@mui/material";
+import { Email, Lock, RemoveRedEye } from "@mui/icons-material";
+import apple from "../../../assets/img/icon/apple.svg";
+import linkedIn from "../../../assets/img/icon/linkedIn.svg";
+import Google from "../../../assets/img/icon/Google.svg";
+import facebook from "../../../assets/img/icon/facebook.svg";
 // import searchIcon from "../../../assets/img/icons8-google.svg";
 import "../inputStyles.css";
 
@@ -46,48 +51,49 @@ const SignIn = ({ setIsForgotPass, switcher }, props) => {
   return (
     <Grid container className="signIn">
       <form className="form_signIn">
-        <label>ایمیل</label>
         <Input
           className="input_style"
-          type="mail"
+          type="email"
           // value={userName}
           // onChange={(e) => setUserName(e.target.value)}
           required
           disableUnderline={true}
-          placeholder="ایمیل یا شماره تلفن خود را وارد کنید"
+          placeholder="Email"
+          startAdornment={
+            <InputAdornment position="start">
+              <Email />
+            </InputAdornment>
+          }
         />
 
-        <label>رمز عبور</label>
         <Input
           className="input_style"
+          // value={password}
           // onChange={(e) => setPassword(e.target.value)}
           required
-          // value={password}
           type={showPassword ? "text" : "password"}
           disableUnderline={true}
-          placeholder="رمز فعلی"
+          placeholder="Password"
+          startAdornment={
+            <InputAdornment position="start">
+              <Lock />
+            </InputAdornment>
+          }
           endAdornment={
             <InputAdornment position="end">
               <IconButton
               // onClick={() => changeHandler((prevState) => !prevState)}
               >
-                <Switch color="secondary" />
+                <RemoveRedEye />
               </IconButton>
             </InputAdornment>
           }
         />
 
         <div className="check_link">
-          <div className="checkbox">
-            <input type="checkbox" id="save_info" name="save_info" />
-            <label>ذخیره اطلاعات</label>
-          </div>
           <div className="linkBox">
-            <p
-              className="forgotPassLink"
-              // onClick={() => setIsForgotPass(true)}
-            >
-              رمز عبور را فراموش کرده ام
+            <p className="forgotPassLink" onClick={() => setIsForgotPass(true)}>
+              Forgot password
             </p>
           </div>
         </div>
@@ -96,23 +102,27 @@ const SignIn = ({ setIsForgotPass, switcher }, props) => {
           type="submit"
           // onClick={(e) => logIn(e, userName, password)}
         >
-          ورود
+          Sign up
         </Button>
         <span className="and">
           <div className="line"></div>
-          ورود با
+          <h2> or sign up with</h2>
           <div className="line"></div>
         </span>
-
-        <Button className="Account_google">
-          <span>{/* <img src={searchIcon} alt="google account" /> */}</span>
-          حساب گوگل
-        </Button>
-        <div className="link-signIn">
-          <p>
-            حساب کاربری ندارید؟<span onClick={switcher}>ثبت نام کنید</span>
-          </p>
-        </div>
+        <Grid container className="icon-Box">
+          <Grid item md={3}>
+            <img src={apple} alt="apple" />
+          </Grid>
+          <Grid item md={3}>
+            <img src={linkedIn} alt="linkedIn" />
+          </Grid>
+          <Grid item md={3}>
+            <img src={Google} alt="Google" />
+          </Grid>
+          <Grid item md={3}>
+            <img src={facebook} alt="facebook" />
+          </Grid>
+        </Grid>
       </form>
     </Grid>
   );

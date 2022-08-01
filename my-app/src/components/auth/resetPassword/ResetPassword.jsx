@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import "../forgotPassword/forgotPassword.css";
 import "../inputStyles.css";
+import { RemoveRedEye } from "@mui/icons-material";
 
 const ResetPassword = () => {
   const [code, setCode] = useState("");
@@ -23,9 +24,9 @@ const ResetPassword = () => {
   //   setErrorMessage("");
   // }, []);
 
-  // const changeHandler = () => {
-  //   setShowPassword((prevState) => !prevState);
-  // };
+  const changeHandler = () => {
+    setShowPassword((prevState) => !prevState);
+  };
   // const backwardHandler = () => {
   //   history.push("/login");
   //   window.location.reload();
@@ -57,9 +58,8 @@ const ResetPassword = () => {
   // };
   return (
     <>
-      <h3 className="titel">تغییر رمز عبور</h3>
+      <h3 className="titel">change Password</h3>
       <form className="form-forgotPassword">
-        <label htmlFor="input_email">کد تایید</label>
         <Input
           className="input_style"
           type="text"
@@ -67,10 +67,9 @@ const ResetPassword = () => {
           // value={code}
           // onChange={(e) => setCode(e.target.value)}
           disableUnderline={true}
-          placeholder="کد تایید را وارد کنید"
+          placeholder="Enter Auth Code"
         />
 
-        <label htmlFor="input_email">نام کاربری</label>
         <Input
           className="input_style"
           type="text"
@@ -78,11 +77,11 @@ const ResetPassword = () => {
           // value={userName}
           // onChange={(e) => setUserName(e.target.value)}
           disableUnderline={true}
-          placeholder="ایمیل یا شماره تلفن خود را وارد کنید"
+          placeholder="Enter your email or phone number"
         />
 
         <label htmlFor="input_email" className="resetPassLabel">
-          <p style={{ margin: "0" }}>رمز عبور جدید</p>
+          <p style={{ margin: "0" }}>New password</p>
           <Collapse in={errorMessage !== "" ? true : false}>
             {/* <div>{errorMessage}</div> */}
           </Collapse>
@@ -95,20 +94,20 @@ const ResetPassword = () => {
           // value={password}
           // onChange={(e) => setPassword(e.target.value)}
           disableUnderline={true}
-          placeholder=" رمز عبور جدید را وارد کنید"
+          placeholder="Enter your password"
           endAdornment={
             <InputAdornment position="end">
               <IconButton
-              // onClick={() => changeHandler((prevState) => !prevState)}
+                onClick={() => changeHandler((prevState) => !prevState)}
               >
-                <Switch color="secondary" />
+                <RemoveRedEye />
               </IconButton>
             </InputAdornment>
           }
         />
 
         <label htmlFor="input_email" className="resetPassLabel">
-          <p style={{ margin: "0" }}> تکرار رمز عبور جدید</p>
+          <p style={{ margin: "0" }}> Repeat the new password</p>
           <Collapse in={errorMessage !== "" ? true : false}>
             {/* <div>{errorMessage}</div> */}
           </Collapse>
@@ -121,13 +120,13 @@ const ResetPassword = () => {
           // value={confirmPassword}
           // onChange={(e) => setConfirmPassword(e.target.value)}
           disableUnderline={true}
-          placeholder=" تکرار رمز عبور جدید را وارد کنید "
+          placeholder="  Repeat the new password"
           endAdornment={
             <InputAdornment position="end">
               <IconButton
-              // onClick={() => changeHandler((prevState) => !prevState)}
+                onClick={() => changeHandler((prevState) => !prevState)}
               >
-                <Switch color="secondary" />
+                <RemoveRedEye />
               </IconButton>
             </InputAdornment>
           }
@@ -139,13 +138,13 @@ const ResetPassword = () => {
           //   resetPasswordHandler(e, code, userName, password, confirmPassword)
           // }
         >
-          ثبت رمز عبور جدید
+          Register a new password
         </Button>
         <div
           className="link-signIn"
           // onClick={() => backwardHandler()}
         >
-          <span style={{ fontSize: ".95rem" }}> بازگشت</span>
+          <span style={{ fontSize: ".95rem" }}> back</span>
         </div>
       </form>
     </>
