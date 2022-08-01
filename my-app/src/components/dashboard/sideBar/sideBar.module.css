@@ -1,22 +1,70 @@
-.AppBar .ul{
-   background: darkblue;
-   list-style-type: none;
+.AppBar .ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width:40%;
+  margin: 0;
+  padding: 0;
+
+  color: black;
+}
+.AppBar .ul li {
+  font-family: Inter-Regular;
+}
+.AppBar .Toolbar {
+  width: 70%;
+  background: red !important;
+  padding: 0;
+  border-bottom: 3px solid rgb(38, 0, 255);
+  margin: auto;
+}
+.AppBar {
+  width: 90% !important;
+  margin: auto;
+  background: white !important;
+  
+  z-index: 0 !important;
+  display:flex !important ;
+  flex-direction: column;
+}
+.Box{
+   width: 70%;
+   margin: auto;
+   
+}
+.rightHederNav{
+   width: 100%;
+   margin-top: 2rem;
+}
+.rightHederNav .navHeaderDashboard{
    display: flex;
-   justify-content: space-between;
-   width: 18%;
-   margin: 0;
-   padding: 0;
-   font-family: Inter-Medium;
+    width: 70%;
+    margin: auto;
+    border-bottom: 2px solid #CCCCCC;
+
 }
-.AppBar{
-   background-color: white !important;
+.rightHederNav .navHeaderDashboard ul{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    list-style-type: none;
+    font-family: Inter-Regular;
 }
-.avatar{
-   width: 50% !important;
-   height: 10vh !important;
-   position: relative;
-   left: 4rem;
-   top: 0.em !important;
-   margin-top: 1rem !important;
+.avatar {
+   
+    margin-top: 1rem !important;
     margin-bottom: 1rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.avatar p {
+  font-family: Inter-Bold;
+}
+.box {
+  background-color: pink !important;
+  width: 70% !important;
+  margin: auto !important;
 }

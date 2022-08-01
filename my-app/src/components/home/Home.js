@@ -24,7 +24,7 @@ const Home = () => {
       <div className={classes.navBtn}>
         {isLogin ? (
           <button className={`${classes.btnAccount} ${classes.btn}`}>
-            <Link to={{ path: "/dashboard" }}>حساب کاربری</Link>
+            <Link to="/dashboard">حساب کاربری</Link>
           </button>
         ) : (
           <>
