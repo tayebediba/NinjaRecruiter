@@ -19,9 +19,9 @@ const SignIn = ({ setIsForgotPass, switcher }, props) => {
   const [showPassword, setShowPassword] = useState(false);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  // const changeHandler = () => {
-  //   setShowPassword((prevState) => !prevState);
-  // };
+  const changeHandler = () => {
+    setShowPassword((prevState) => !prevState);
+  };
 
   // const history = useHistory();
   // const logIn = async (e, userName, password) => {
@@ -82,7 +82,7 @@ const SignIn = ({ setIsForgotPass, switcher }, props) => {
           endAdornment={
             <InputAdornment position="end">
               <IconButton
-              // onClick={() => changeHandler((prevState) => !prevState)}
+                onClick={() => changeHandler((prevState) => !prevState)}
               >
                 <RemoveRedEye />
               </IconButton>
