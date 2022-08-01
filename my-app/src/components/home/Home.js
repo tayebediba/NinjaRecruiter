@@ -12,37 +12,35 @@ import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { userIsLogin } from "../../helper/general";
 
-
 const Home = () => {
   let location = useLocation();
   const isLogin = userIsLogin();
   console.log("LOGIN", isLogin);
   useEffect(() => {}, [location]);
   return (
-
-      <Grid container>
-      <div className={classes.navBtn}>
-        {isLogin ? (
-          <button className={`${classes.btnAccount} ${classes.btn}`}>
-            <Link to="/dashboard">حساب کاربری</Link>
-          </button>
-        ) : (
-          <>
-            <button className={`${classes.btnSignIn} ${classes.btn}`}>
-              <Link to="/login"> ورود</Link>
-            </button>
-            <button className={`${classes.btnSignUp} ${classes.btn}`}>
-              <Link to="/signUp"> ثبت نام</Link>
-            </button>
-          </>
-        )}
-      </div>
-      <Grid item xs={12}  className={classes.header}>
+    <Grid container>
+      {/* <div className={classes.navBtn}>
+      
+      </div> */}
+      <Grid item xs={12} className={classes.header}>
         <nav className={classes.nav}>
           <ul>
             <div className={classes.navLogin}>
-              <li>Log In</li>
-              <PersonIcon />
+              {isLogin ? (
+                <li className={`${classes.btnAccount} ${classes.nav}`}>
+                  <Link to="/dashboard">حساب کاربری</Link>
+                </li>
+              ) : (
+                <>
+                  <li className={`${classes.btnSignUp} ${classes.nav}`}>
+                    <Link to="/signUp">SignUp</Link>
+                  </li>
+                  <li className={`${classes.btnSignIn} ${classes.nav}`}>
+                    <PersonIcon />
+                    <Link to="/login">SignIn</Link>
+                  </li>
+                </>
+              )}
             </div>
             <li>Job creation</li>
           </ul>
@@ -60,16 +58,8 @@ const Home = () => {
       </div>
       <CardTwo />
       <CardThree />
-      <Footer/>
-
-      
-
-
+      <Footer />
     </Grid>
-
-
-      
-
   );
 };
 export default Home;

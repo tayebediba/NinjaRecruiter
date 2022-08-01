@@ -57,7 +57,6 @@
   gap: 1rem;
   margin-right: 3rem;
   cursor: pointer;
-  
 }
 .nav ul li:hover {
   color: #ffd369;
@@ -162,30 +161,16 @@
   margin-right: auto;
   justify-content: space-around;
 }
-.btn {
-  border: 2px solid #ffcb05;
-  box-sizing: border-box;
-  width: 5.1rem;
-  height: 2.5rem;
-  filter: drop-shadow(0px 3px 15px rgba(94, 182, 112, 0.3));
-  border-radius: 7px;
-  font-family: Dana;
-  font-size: 13px;
-}
 
 .btnSignIn {
-  background-color: #002e6e;
-  transition: all 200ms;
-  background-color: #002e6e;
   transition: all 200ms;
   cursor: pointer;
 }
 .btnSignIn a {
-  color: #ffcb05;
   text-decoration: none;
+  color: #fff !important;
 }
 .btnSignUp {
-  background-color: #ffcb05;
   transition: all 200ms;
   cursor: pointer;
 }
@@ -195,14 +180,14 @@
 }
 .btnAccount {
   width: max-content;
-  background-color: #ffcb05;
+  /* background-color: #ffcb05; */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .btnAccount a {
   text-decoration: none;
-  color: black;
+  color: #fff;
   padding-right: 3px;
 }
 .btnAccount svg {
@@ -217,15 +202,15 @@
 }
 
 .btnSignIn:hover {
-  background-color: #ffcb05;
+  /* background-color: #ffcb05; */
   cursor: pointer;
   transition: all 200ms;
 }
 .btnSignIn:hover a {
-  color: #ffffff;
+  color: #ffcb05 !important;
 }
 .btnSignUp:hover {
-  background-color: #002e6e;
+  /* background-color: #002e6e; */
   cursor: pointer;
   transition: all 200ms;
 }
@@ -251,9 +236,6 @@
   /* flex-direction: row-reverse; */
   align-items: center;
 }
-
-
-
 
 .navbarbox {
   background-color: #002e6e !important;
@@ -316,9 +298,6 @@
 }
 
 .btnSignIn {
-  background-color: #002e6e;
-  transition: all 200ms;
-  background-color: #002e6e;
   transition: all 200ms;
   cursor: pointer;
 }
@@ -327,7 +306,6 @@
   text-decoration: none;
 }
 .btnSignUp {
-  background-color: #ffcb05;
   transition: all 200ms;
   cursor: pointer;
 }
@@ -359,15 +337,13 @@
 }
 
 .btnSignIn:hover {
-  background-color: #ffcb05;
   cursor: pointer;
   transition: all 200ms;
 }
 .btnSignIn:hover a {
-  color: #ffffff;
+  color: #ffcb05;
 }
 .btnSignUp:hover {
-  background-color: #002e6e;
   cursor: pointer;
   transition: all 200ms;
 }
