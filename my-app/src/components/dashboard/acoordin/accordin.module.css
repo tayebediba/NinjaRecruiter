@@ -1,3 +1,4 @@
+
 .Accordin {
   width: 70%;
   margin: 2rem auto;
@@ -7,3 +8,9 @@
   font-size: 20px !important;
   color: blue !important;
 }
+
+.Accordin{
+   width: 50%;
+   margin:2rem auto;
+}
+

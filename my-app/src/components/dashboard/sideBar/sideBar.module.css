@@ -41,6 +41,17 @@
   margin: auto;
   border-bottom: 2px solid #cccccc;
 }
+.rightHederNav {
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.rightHederNav .navHeaderDashboard {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  border-bottom: 2px solid #cccccc;
+}
 .rightHederNav .navHeaderDashboard ul {
   width: 40%;
   display: flex;
@@ -65,9 +76,14 @@
   width: 70% !important;
   margin: auto !important;
 }
+
 .itemList {
   color: #909599 !important;
 }
 .itemList.active {
   color: black !important;
+}
+
+.BoxHeader {
+  color: red !important;
 }
