@@ -190,9 +190,7 @@
   color: #fff;
   padding-right: 3px;
 }
-.btnAccount svg {
-  padding-top: 0.25rem;
-}
+
 .btnAccount:hover {
   cursor: pointer;
   transition: all 200ms;
@@ -315,14 +313,14 @@
 }
 .btnAccount {
   width: max-content;
-  background-color: #ffcb05;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .btnAccount a {
   text-decoration: none;
-  color: black;
+  color: #fff;
   padding-right: 3px;
 }
 .btnAccount svg {
@@ -334,6 +332,7 @@
 }
 .btnAccount:hover a {
   font-weight: bold;
+  color: #ffcb05;
 }
 
 .btnSignIn:hover {
@@ -342,6 +341,7 @@
 }
 .btnSignIn:hover a {
   color: #ffcb05;
+  font-weight: bold;
 }
 .btnSignUp:hover {
   cursor: pointer;
@@ -349,6 +349,7 @@
 }
 .btnSignUp:hover a {
   color: #ffcb05;
+  font-weight: bold;
 }
 .navItems a:hover {
   color: #ffcb05;

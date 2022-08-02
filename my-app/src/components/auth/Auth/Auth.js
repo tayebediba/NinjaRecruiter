@@ -24,25 +24,25 @@ const Auth = (props) => {
             <>
               <div>
                 <Button
-                  btnType={switcher ? ` btn_signIn active` : ` btn_signIn`}
-                  click={() => setSwitcher(true)}
+                  btnType={!switcher ? ` btn_signUp active` : ` btn_signUp`}
+                  click={() => setSwitcher(false)}
                 >
                   Sign in
                 </Button>
                 <Button
-                  btnType={!switcher ? ` btn_signUp active` : ` btn_signUp`}
-                  click={() => setSwitcher(false)}
+                  btnType={switcher ? ` btn_signIn active` : ` btn_signIn`}
+                  click={() => setSwitcher(true)}
                 >
                   Sign up
                 </Button>
               </div>
               {switcher ? (
+                <SignUp switcher={() => setSwitcher(true)} />
+              ) : (
                 <SignIn
                   setIsForgotPass={setIsForgotPass}
                   switcher={() => setSwitcher(false)}
                 />
-              ) : (
-                <SignUp switcher={() => setSwitcher(true)} />
               )}
             </>
           )}

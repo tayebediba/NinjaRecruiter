@@ -26,18 +26,18 @@ const Home = () => {
         <nav className={classes.nav}>
           <ul>
             <div className={classes.navLogin}>
+              <li className={`${classes.btnAccount} ${classes.nav}`}>
+                <Link to="/dashboard">Account</Link>
+              </li>
               {isLogin ? (
                 <li className={`${classes.btnAccount} ${classes.nav}`}>
-                  <Link to="/dashboard">حساب کاربری</Link>
+                  <Link to="/dashboard">Account</Link>
                 </li>
               ) : (
                 <>
                   <li className={`${classes.btnSignUp} ${classes.nav}`}>
-                    <Link to="/signUp">SignUp</Link>
-                  </li>
-                  <li className={`${classes.btnSignIn} ${classes.nav}`}>
                     <PersonIcon />
-                    <Link to="/login">SignIn</Link>
+                    <Link to="/login">LogIn</Link>
                   </li>
                 </>
               )}

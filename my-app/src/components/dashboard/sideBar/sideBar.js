@@ -1,5 +1,3 @@
-
-import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -20,17 +18,21 @@ import classes from "./sideBar.module.css";
 import SideBarList from "./SideBarList";
 import { Avatar } from "@mui/material";
 import Accordin from "../acoordin/Accordin";
+import Picker from "../acoordin/persianExample";
+import CustomDay from "../acoordin/persianExample";
+import PersianExample from "../acoordin/persianExample";
+import Calendar from "react-calendar";
+import { useState } from "react";
 const drawerWidth = 240;
 
 interface Props {
-
   window?: () => Window;
 }
 
 export default function ResponsiveDrawer(props: Props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [value, onChange] = useState(new Date());
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -130,6 +132,7 @@ export default function ResponsiveDrawer(props: Props) {
           {drawer}
         </Drawer>
       </Box>
+
       <div className={classes.rightHederNav}>
         <div className={classes.navHeaderDashboard}>
           <ul>
@@ -137,7 +140,9 @@ export default function ResponsiveDrawer(props: Props) {
             <li>Employers List</li>
           </ul>
         </div>
-        <Accordin />
+      </div>
+      <div>
+        <Calendar onChange={onChange} value={value} />
       </div>
     </Box>
   );

@@ -2,7 +2,7 @@
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-  width:40%;
+  width: 40%;
   margin: 0;
   padding: 0;
 
@@ -22,43 +22,40 @@
   width: 90% !important;
   margin: auto;
   background: white !important;
-  
+
   z-index: 0 !important;
-  display:flex !important ;
+  display: flex !important ;
   flex-direction: column;
 }
-.Box{
-   width: 70%;
-   margin: auto;
-   
+.Box {
+  width: 70%;
+  margin: auto;
 }
-.rightHederNav{
-   width: 100%;
-   margin-top: 2rem;
+.rightHederNav {
+  width: 100%;
+  margin-top: 2rem;
 }
-.rightHederNav .navHeaderDashboard{
-   display: flex;
-    width: 70%;
-    margin: auto;
-    border-bottom: 2px solid #CCCCCC;
-
+.rightHederNav .navHeaderDashboard {
+  display: flex;
+  width: 70%;
+  margin: auto;
+  border-bottom: 2px solid #cccccc;
 }
-.rightHederNav .navHeaderDashboard ul{
-    width: 40%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    list-style-type: none;
-    font-family: Inter-Regular;
+.rightHederNav .navHeaderDashboard ul {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  list-style-type: none;
+  font-family: Inter-Regular;
 }
 .avatar {
-   
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .avatar p {
   font-family: Inter-Bold;
@@ -67,4 +64,10 @@
   background-color: pink !important;
   width: 70% !important;
   margin: auto !important;
+}
+.itemList {
+  color: #909599 !important;
+}
+.itemList.active {
+  color: black !important;
 }
