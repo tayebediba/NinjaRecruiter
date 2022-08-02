@@ -1,0 +1,13 @@
+.tabOne {
+color: #595959 !important;
+
+}
+.tabOne:hover span{
+   color: #ffd369 !important
+}
+.tabTwo{
+   color: #595959 !important;
+}
+.tabTwo:hover span{
+   color: #ffd369 !important
+}

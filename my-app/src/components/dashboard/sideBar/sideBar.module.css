@@ -35,10 +35,11 @@
 .rightHederNav{
    width: 100%;
    margin-top: 2rem;
+   margin-bottom: 2rem;
 }
 .rightHederNav .navHeaderDashboard{
    display: flex;
-    width: 70%;
+    width: 50%;
     margin: auto;
     border-bottom: 2px solid #CCCCCC;
 
@@ -67,4 +68,9 @@
   background-color: pink !important;
   width: 70% !important;
   margin: auto !important;
+}
+
+
+.BoxHeader{
+  color: red !important;
 }

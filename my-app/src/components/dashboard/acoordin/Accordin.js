@@ -5,8 +5,9 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import classes from "./accordin.module.css";
-// import ShowCalendar from "../showcalendar/ShowCalendar";
+
 const Accordin = () => {
+ 
   return (
     <div className={classes.Accordin}>
       <Accordion>
@@ -14,15 +15,20 @@ const Accordin = () => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
+          style={{backgroundColor:"silver",borderRadius:"5px"}}
         >
-          <Typography style={{ color: "#595959", fontFamily: "Inter-Regular" }}>
+          <Typography style={{ color: "#595959", fontFamily: "Inter-Regular"  }}>
             Calendar
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          {/* <ShowCalendar /> */}
+       
         </AccordionDetails>
+    
       </Accordion>
+      <Typography style={{ color: "#222831",fontSize:"2rem", fontFamily: "Inter-Medium",textAlign:"center ",marginTop:"2rem" }}>
+            Employer information
+          </Typography>
     </div>
   );
 };

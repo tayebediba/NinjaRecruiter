@@ -5,21 +5,20 @@ import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
+
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
-import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+
 import classes from "./sideBar.module.css";
 import SideBarList from "./SideBarList";
 import { Avatar } from "@mui/material";
 import Accordin from "../acoordin/Accordin";
+import ShowCalendar from "../showcalendar/ShowCalendar";
+import Tab from "./tab/Tab";
+import FormInputs from "../../dashboard/formInputs/FormInputs"
 const drawerWidth = 240;
 
 interface Props {
@@ -103,17 +102,16 @@ export default function ResponsiveDrawer(props: Props) {
           {drawer}
         </Drawer>
       </Box>
-      <div  className={classes.showCalendar}>
-      </div>
-      {/* <div className={classes.rightHederNav}>
+     
+      <div className={classes.rightHederNav}>
         <div className={classes.navHeaderDashboard}>
-          <ul>
-            <li>Fill out the form</li>
-            <li>Employers List</li>
-          </ul>
+        <Tab/>
         </div>
+       
         <Accordin />
-      </div> */}
+        <FormInputs/>
+ 
+      </div>
     </Box>
   );
 }
