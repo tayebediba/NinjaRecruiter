@@ -12,14 +12,14 @@ import classes from "./sideBar.module.css";
 import SideBarList from "./SideBarList";
 import { Avatar } from "@mui/material";
 import Accordin from "../acoordin/Accordin";
-import Picker from "../acoordin/persianExample";
-import CustomDay from "../acoordin/persianExample";
-import PersianExample from "../acoordin/persianExample";
+import Picker from "../acoordin/calenderBox";
+import CustomDay from "../acoordin/calenderBox";
+import PersianExample from "../acoordin/calenderBox";
 import Calendar from "react-calendar";
 import { useState } from "react";
 import ShowCalendar from "../showcalendar/ShowCalendar";
 import Tab from "./tab/Tab";
-import FormInputs from "../../dashboard/formInputs/FormInputs"
+import FormInputs from "../../dashboard/formInputs/FormInputs";
 
 const drawerWidth = 240;
 
@@ -104,21 +104,13 @@ export default function ResponsiveDrawer(props: Props) {
         </Drawer>
       </Box>
 
-
-
       <div className={classes.rightHederNav}>
         <div className={classes.navHeaderDashboard}>
-        <Tab/>
+          <Tab />
         </div>
-      </div>
-      <div>
-        <Calendar onChange={onChange} value={value} />
-
-       
+    
         <Accordin />
-        <FormInputs/>
- 
-
+        <FormInputs />
       </div>
     </Box>
   );

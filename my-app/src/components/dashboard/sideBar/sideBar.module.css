@@ -37,7 +37,7 @@
 }
 .rightHederNav .navHeaderDashboard {
   display: flex;
-  width: 70%;
+  width: 50%;
   margin: auto;
   border-bottom: 2px solid #cccccc;
 }

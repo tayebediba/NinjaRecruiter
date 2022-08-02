@@ -5,6 +5,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import classes from "./accordin.module.css";
+import CalenderBox from "./calenderBox";
 
 const Accordin = () => {
   return (
@@ -20,7 +21,9 @@ const Accordin = () => {
             Calendar
           </Typography>
         </AccordionSummary>
-        <AccordionDetails></AccordionDetails>
+        <AccordionDetails>
+          <CalenderBox />
+        </AccordionDetails>
       </Accordion>
       <Typography
         style={{
@@ -30,9 +33,7 @@ const Accordin = () => {
           textAlign: "center ",
           marginTop: "2rem",
         }}
-      >
-        Employer information
-      </Typography>
+      ></Typography>
     </div>
   );
 };
