@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import PropTypes from "prop-types";
 import { useAutocomplete } from "@mui/base/AutocompleteUnstyled";
@@ -72,8 +71,7 @@ function Tag(props) {
   return (
     <div>
       <div className={classes.inputSearch}>
-        <span>Search Employers...</span>
-        <SearchIcon className={classes.SearchIcon} />
+        <SearchIcon  className={classes.SearchIcon} />
       </div>
     </div>
   );
@@ -260,11 +258,7 @@ const EmployerList = () => {
         </div>
       </div>
       <div className={classes.Pagination}>
-        <Pagination
-      
-          count={10}
-          className={classes.colorPagination}
-        />
+        <Pagination count={10} className={classes.colorPagination} />
       </div>
     </Root>
   );
