@@ -1,3 +1,10 @@
+.list {
+  background-color: #d9d9d9 !important;
+}
+.ListItem {
+  padding: 1rem !important;
+  color: #737373 !important;
+}
 .AppBar .ul {
   list-style-type: none;
   display: flex;
@@ -60,17 +67,7 @@
   list-style-type: none;
   font-family: Inter-Regular;
 }
-.avatar {
-  margin-top: 1rem !important;
-  margin-bottom: 1rem !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.avatar p {
-  font-family: Inter-Bold;
-}
+
 .box {
   background-color: pink !important;
   width: 70% !important;
