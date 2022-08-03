@@ -4,7 +4,7 @@ import BasicButtons from "./buttonsGroup/ButtonsGroup";
 import { Grid } from "@mui/material";
 const FormInputs = () => {
   return (
-    <Grid container>
+    <Grid  container>
       <div className={classes.formInputs}>
         <div className={classes.form}>
           <div className={classes.leftSide}>
