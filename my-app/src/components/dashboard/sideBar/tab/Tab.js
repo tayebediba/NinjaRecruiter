@@ -53,10 +53,17 @@ export default function BasicTabs() {
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
-         
         >
-          <Tab   className={classes.tabOne} label="Fill out the form" {...a11yProps(0)} />
-          <Tab className={classes.tabTwo} label="Employer List" {...a11yProps(1)} />
+          <Tab
+            className={classes.tabOne}
+            label="Fill out the form"
+            {...a11yProps(0)}
+          />
+          <Tab
+            className={classes.tabTwo}
+            label="Employer List"
+            {...a11yProps(1)}
+          />
         </Tabs>
       </Box>
     </Box>

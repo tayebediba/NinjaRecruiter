@@ -20,6 +20,7 @@ import { useState } from "react";
 import ShowCalendar from "../showcalendar/ShowCalendar";
 import Tab from "./tab/Tab";
 import FormInputs from "../../dashboard/formInputs/FormInputs";
+import EmployerList from "../employerList/EmployerList";
 
 const drawerWidth = 240;
 
@@ -104,14 +105,16 @@ export default function ResponsiveDrawer(props: Props) {
         </Drawer>
       </Box>
 
-      <div className={classes.rightHederNav}>
+      {/* <div className={classes.rightHederNav}>
         <div className={classes.navHeaderDashboard}>
           <Tab />
         </div>
     
         <Accordin />
+       
         <FormInputs />
-      </div>
+      </div> */}
+      <EmployerList/>
     </Box>
   );
 }
