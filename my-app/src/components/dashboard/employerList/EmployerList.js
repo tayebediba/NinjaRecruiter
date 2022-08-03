@@ -9,6 +9,10 @@ import { autocompleteClasses } from "@mui/material/Autocomplete";
 import SearchIcon from "@mui/icons-material/Search";
 import classes from "./employerList.module.css";
 import ButtonsSearchInput from "./buttonsInputSearch/ButtonsSearchInput";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+import Pagination from "@mui/material/Pagination";
+
 const Root = styled("div")(
   ({ theme }) => `
   color: ${
@@ -66,10 +70,10 @@ const InputWrapper = styled("div")(
 function Tag(props) {
   const { label, onDelete, ...other } = props;
   return (
-    <div >
+    <div>
       <div className={classes.inputSearch}>
         <span>Search Employers...</span>
-        <SearchIcon />
+        <SearchIcon className={classes.SearchIcon} />
       </div>
     </div>
   );
@@ -185,7 +189,7 @@ const EmployerList = () => {
 
   return (
     <Root className={classes.container}>
-      <div  {...getRootProps()}>
+      <div {...getRootProps()}>
         <Label {...getInputLabelProps()}></Label>
         <InputWrapper ref={setAnchorEl} className={focused ? "focused" : ""}>
           {value.map((option, index) => (
@@ -205,14 +209,63 @@ const EmployerList = () => {
           ))}
         </Listbox>
       ) : null}
-     {
 
-      [1,2,3,4,5,6].map((item)=>{
-       return(
-         <ButtonsSearchInput key={item}/>
-       )
-      })
-     }
+      <ButtonsSearchInput />
+      <div className={classes.editAccount}>
+        <div className={classes.card}>
+          <div className={classes.person}>
+            <h1>amir vosoughi</h1>
+            <p>front-end developer </p>
+          </div>
+          <div className={classes.icons}>
+            <DeleteIcon className={classes.icon} />
+            <EditIcon className={classes.icon} />
+          </div>
+        </div>
+      </div>
+      <div className={classes.editAccount}>
+        <div className={classes.card}>
+          <div className={classes.person}>
+            <h1>tayebeh dibazar</h1>
+            <p>front-end developer </p>
+          </div>
+          <div className={classes.icons}>
+            <DeleteIcon className={classes.icon} />
+            <EditIcon className={classes.icon} />
+          </div>
+        </div>
+      </div>
+      <div className={classes.editAccount}>
+        <div className={classes.card}>
+          <div className={classes.person}>
+            <h1>mina pour erfan</h1>
+            <p>Ui/Ux designer</p>
+          </div>
+          <div className={classes.icons}>
+            <DeleteIcon className={classes.icon} />
+            <EditIcon className={classes.icon} />
+          </div>
+        </div>
+      </div>
+      <div className={classes.editAccount}>
+        <div className={classes.card}>
+          <div className={classes.person}>
+            <h1>amir mehrabi</h1>
+            <p>front-end developer </p>
+          </div>
+          <div className={classes.icons}>
+            <DeleteIcon className={classes.icon} />
+            <EditIcon className={classes.icon} />
+          </div>
+        </div>
+      </div>
+      <div className={classes.Pagination}>
+        <Pagination
+      
+          count={10}
+          className={classes.colorPagination}
+        />
+      </div>
     </Root>
   );
 };
