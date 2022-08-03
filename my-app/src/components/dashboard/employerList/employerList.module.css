@@ -1,16 +1,52 @@
-.inputSearch{
-   display: flex;
-   align-items: center;
-   flex-direction: row-reverse;
-   gap: 0.2rem;
-   width: 100%;
-   padding: 7px 1rem;
-   margin: auto;
-   color: #737373;
-   font-family: Inter-Reqular;
+.inputSearch {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 0.2rem;
+  width: 100%;
+  padding: 7px 1rem;
+  margin: auto;
+  color: #737373;
+  font-family: Inter-Reqular;
 }
-.container{
-   background: red;
-   width: 60%;
-   margin: 4rem auto;
+.container {
+  width: 60%;
+  margin: 4rem auto;
+}
+.editAccount {
+  border: 2px solid #737373;
+  width: 70%;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+.editAccount .card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  font-family: Inter-Regular;
+}
+.card .person h1 {
+  color: #393e46;
+  font-size: 1.2rem;
+}
+.card .person {
+  line-height: 1;
+}
+.card .person p {
+  color: #8c8c8c;
+}
+.card .icon {
+  color: #8c8c8c !important;
+}
+.card .icons {
+  display: flex;
+  gap: 3px;
+}
+.Pagination {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+
 }

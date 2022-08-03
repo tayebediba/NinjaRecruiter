@@ -7,7 +7,11 @@ const ButtonsSearchInput = () => {
   return (
     <Box  sx={{ "& > :not(style)": { m: 1 } }}>
       <div className={classes.buttonsGroup} >
-      <Fab  variant="extended">Text</Fab>
+      <Fab className={classes.fab}  variant="extended">Text</Fab>
+      <Fab className={classes.fab}  variant="extended">Text</Fab>
+      <Fab className={classes.fab}  variant="extended">Text</Fab>
+      <Fab className={classes.fab}  variant="extended">Text</Fab>
+      <Fab className={classes.fab} variant="extended">Text</Fab>
       
       </div>
     </Box>
