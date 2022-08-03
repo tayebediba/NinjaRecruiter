@@ -1,11 +1,3 @@
-// import classes from "./employerList.module.css"
-
-// const EmployerList=()=>{
-//    return (
-//       <h1>salam</h1>
-//    )
-// }
-// export default EmployerList
 
 import * as React from "react";
 import PropTypes from "prop-types";

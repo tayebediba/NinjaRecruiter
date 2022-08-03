@@ -8,6 +8,7 @@ import { Avatar, Grid } from "@mui/material";
 
 import SideBar from "./sideBar/sideBar";
 import Calendar from "./calender/Calender";
+import EmployerList from "./employerList/EmployerList";
 
 const drawerWidth = 240;
 
@@ -28,7 +29,7 @@ export default function Dashboard(props) {
         setRenderComponent(<Calendar />);
         break;
       case 1:
-        setRenderComponent();
+        setRenderComponent(<EmployerList />);
         break;
       case 2:
         setRenderComponent();
