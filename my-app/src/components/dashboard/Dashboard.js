@@ -10,6 +10,7 @@ import SideBar from "./sideBar/sideBar";
 import Calendar from "./calender/Calender";
 import EmployerList from "./employer/employerList/EmployerList";
 import Employer from "./employer/Employer";
+import Job from "./job/Job";
 
 const drawerWidth = 240;
 
@@ -33,7 +34,7 @@ export default function Dashboard(props) {
         setRenderComponent(<Employer />);
         break;
       case 2:
-        setRenderComponent();
+        setRenderComponent(<Job />);
         break;
       case 3:
         setRenderComponent();

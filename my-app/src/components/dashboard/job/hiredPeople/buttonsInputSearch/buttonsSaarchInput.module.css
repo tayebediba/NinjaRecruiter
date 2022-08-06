@@ -1,0 +1,20 @@
+.buttonsGroup {
+  display: flex;
+  width: 100%;
+  justify-content: left !important;
+}
+.buttonsGroup .fab {
+  margin: 0.5rem !important;
+  border: #595959 1px solid !important;
+  box-shadow: none;
+  color: #595959;
+  font-family: Inter-Regular;
+  background-color: #d9d9d9;
+}
+.fab:hover {
+  background-color: #ffba1a !important;
+  color: #595959;
+}
+.active {
+  background-color: #ffba1a;
+}

@@ -4,10 +4,10 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import FormInputs from "./formInputs/FormInputs";
-import EmployerList from "./employerList/EmployerList";
 import { Grid } from "@mui/material";
 import Accordin from "../acoordin/Accordin";
+import JobDefinition from "./jobDefinition/JobDefinition";
+import HiredPeople from "./hiredPeople/HiredPeople";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -42,7 +42,7 @@ function a11yProps(index) {
   };
 }
 
-export default function Employer() {
+export default function Job() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -50,26 +50,27 @@ export default function Employer() {
   };
 
   return (
-    <Grid container style={{ width: "55rem" }}>
+    <Grid container style={{ width: "65rem" }}>
       <Box style={{ width: "100%", margin: "0" }}>
         <Box sx={{ borderBottom: 3, borderColor: "divider" }} xs={12}>
           <Tabs
             value={value}
             onChange={handleChange}
             aria-label="secondary tabs example"
-            textColor="inherit"
           >
             <Tab label="Fill out the form" {...a11yProps(0)} />
-            <Tab label="Employers List" {...a11yProps(1)} />
+            <Tab label="Job List" {...a11yProps(1)} />
+            <Tab label="Hired people" {...a11yProps(2)} />
           </Tabs>
         </Box>
         <Accordin />
 
         <TabPanel value={value} index={0}>
-          <FormInputs />
+          <JobDefinition />
         </TabPanel>
-        <TabPanel value={value} index={1}>
-          <EmployerList />
+        <TabPanel value={value} index={1}></TabPanel>
+        <TabPanel value={value} index={2}>
+          <HiredPeople />
         </TabPanel>
       </Box>
     </Grid>

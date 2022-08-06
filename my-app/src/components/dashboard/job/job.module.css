@@ -1,0 +1,7 @@
+.inputBox {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.input {
+  background-color: #d9d9d9;
+}
