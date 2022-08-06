@@ -8,7 +8,7 @@ import { Grid } from "@mui/material";
 import Accordin from "../acoordin/Accordin";
 import JobDefinition from "./jobDefinition/JobDefinition";
 import HiredPeople from "./hiredPeople/HiredPeople";
-
+import JobList from "./jobList/JobList";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -68,7 +68,9 @@ export default function Job() {
         <TabPanel value={value} index={0}>
           <JobDefinition />
         </TabPanel>
-        <TabPanel value={value} index={1}></TabPanel>
+        <TabPanel value={value} index={1}>
+          <JobList />
+        </TabPanel>
         <TabPanel value={value} index={2}>
           <HiredPeople />
         </TabPanel>

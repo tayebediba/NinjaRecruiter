@@ -6,7 +6,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { styled } from "@mui/material/styles";
 import { autocompleteClasses } from "@mui/material/Autocomplete";
 import SearchIcon from "@mui/icons-material/Search";
-import classes from "./hiredPeople.module.css";
+import classes from "./jobList.module.css";
 import ButtonsSearchInput from "./buttonsInputSearch/ButtonsSearchInput";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -169,7 +169,7 @@ const Listbox = styled("ul")(
 `
 );
 
-const JobList = () => {
+const HiredPeople = () => {
   const {
     getRootProps,
     getInputLabelProps,
@@ -217,6 +217,8 @@ const JobList = () => {
         <div className={classes.card}>
           <div className={classes.person}>
             <h1>amir vosoughi</h1>
+            <p>massage</p>
+            <p>massage</p>
           </div>
           <div className={classes.icons}>
             <DeleteIcon className={classes.icon} />
@@ -228,6 +230,8 @@ const JobList = () => {
         <div className={classes.card}>
           <div className={classes.person}>
             <h1>tayebeh dibazar</h1>
+            <p>massage</p>
+            <p>massage</p>
           </div>
           <div className={classes.icons}>
             <DeleteIcon className={classes.icon} />
@@ -239,6 +243,8 @@ const JobList = () => {
         <div className={classes.card}>
           <div className={classes.person}>
             <h1>mina pour erfan</h1>
+            <p>massage</p>
+            <p>massage</p>
           </div>
           <div className={classes.icons}>
             <DeleteIcon className={classes.icon} />
@@ -250,6 +256,8 @@ const JobList = () => {
         <div className={classes.card}>
           <div className={classes.person}>
             <h1>amir mehrabi</h1>
+            <p>massage</p>
+            <p>massage</p>
           </div>
           <div className={classes.icons}>
             <DeleteIcon className={classes.icon} />
@@ -263,7 +271,7 @@ const JobList = () => {
     </Root>
   );
 };
-export default JobList;
+export default HiredPeople;
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
   { title: "The Shawshank Redemption", year: 1994 },
