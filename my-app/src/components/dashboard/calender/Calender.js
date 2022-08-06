@@ -9,12 +9,12 @@ const Calendar = () => {
   return (
     <Grid container style={{ width: "90%", margin: "1rem auto " }}>
       <Grid item xs={12} className={classes.calenderBox}>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} className={classes.boxCenter}>
           <div className={classes.backgroundCalender}>
             <CalenderBox />
           </div>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} className={classes.boxCenter}>
           <div className={classes.meetingBox}>
             <div>
               <h2>My meetings</h2>
