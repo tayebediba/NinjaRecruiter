@@ -4,7 +4,10 @@ import BasicButtons from "./buttonsGroup/ButtonsGroup";
 import { Grid } from "@mui/material";
 const FormInputs = () => {
   return (
-    <Grid  container>
+    <Grid container>
+      <h1 style={{ textAlign: "center", margin: " 1rem auto" }}>
+        Employer Information
+      </h1>
       <div className={classes.formInputs}>
         <div className={classes.form}>
           <div className={classes.leftSide}>

@@ -18,6 +18,7 @@ const Root = styled("div")(
     theme.palette.mode === "dark" ? "rgba(255,255,255,0.65)" : "rgba(0,0,0,.85)"
   };
   font-size: 14px;
+margin:1rem;
 `
 );
 
@@ -45,8 +46,11 @@ const InputWrapper = styled("div")(
     border-color: ${theme.palette.mode === "dark" ? "#177ddc" : "#40a9ff"};
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
   }
+  width:100%;
 
   & input {
+  width:100%;
+  background-color:#D9D9D9;
     background-color: ${theme.palette.mode === "dark" ? "#141414" : "#fff"};
     color: ${
       theme.palette.mode === "dark"
@@ -71,7 +75,7 @@ function Tag(props) {
   return (
     <div>
       <div className={classes.inputSearch}>
-        <SearchIcon  className={classes.SearchIcon} />
+        <SearchIcon className={classes.SearchIcon} />
       </div>
     </div>
   );
@@ -123,7 +127,7 @@ const Listbox = styled("ul")(
   width: 300px;
   margin: 2px 0 0;
   padding: 0;
-  position: absolute;
+  // position: absolute;
   list-style: none;
   background-color: ${theme.palette.mode === "dark" ? "#141414" : "#fff"};
   overflow: auto;

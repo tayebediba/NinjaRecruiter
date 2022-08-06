@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import FormInputs from "./formInputs/FormInputs";
 import EmployerList from "./employerList/EmployerList";
 import { Grid } from "@mui/material";
+import Accordin from "../acoordin/Accordin";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -20,7 +21,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 10 }}>
+        <Box>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -50,17 +51,20 @@ export default function Employer() {
 
   return (
     <Grid container style={{ width: "55rem" }}>
-      <Box style={{ width: "100%" }}>
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }} xs={12}>
+      <Box style={{ width: "100%", margin: "0" }}>
+        <Box sx={{ borderBottom: 3, borderColor: "divider" }} xs={12}>
           <Tabs
             value={value}
             onChange={handleChange}
-            aria-label="basic tabs example"
+            aria-label="secondary tabs example"
+            textColor="inherit"
           >
             <Tab label="Fill out the form" {...a11yProps(0)} />
             <Tab label="Employers List" {...a11yProps(1)} />
           </Tabs>
         </Box>
+        <Accordin />
+
         <TabPanel value={value} index={0}>
           <FormInputs />
         </TabPanel>

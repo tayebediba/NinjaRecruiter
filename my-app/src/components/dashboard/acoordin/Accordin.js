@@ -5,24 +5,24 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import classes from "./accordin.module.css";
-import CalenderBox from "./calenderBox";
+import CalenderCard from "./calenderCard";
 
 const Accordin = () => {
   return (
-    <div className={classes.Accordin}>
-      <Accordion>
+    <div>
+      <Accordion className={classes.Accordin}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
-          style={{ backgroundColor: "silver", borderRadius: "5px" }}
+          style={{ backgroundColor: "#D9D9D9", borderRadius: "10px" }}
         >
           <Typography style={{ color: "#595959", fontFamily: "Inter-Regular" }}>
             Calendar
           </Typography>
         </AccordionSummary>
-        <AccordionDetails>
-          <CalenderBox />
+        <AccordionDetails style={{ margin: "0" }}>
+          <CalenderCard />
         </AccordionDetails>
       </Accordion>
       <Typography

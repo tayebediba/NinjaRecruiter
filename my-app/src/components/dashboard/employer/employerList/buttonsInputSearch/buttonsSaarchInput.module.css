@@ -1,12 +1,11 @@
 .buttonsGroup {
   display: flex;
-  width: 70%;
-  justify-content: space-between;
- 
-
+  width: 100%;
+  justify-content: left !important;
 }
 .buttonsGroup .fab {
-  margin-top: 1rem;
+  margin: 0.5rem !important;
+  border: #595959 1px solid !important;
   box-shadow: none;
   color: #595959;
   font-family: Inter-Regular;

@@ -12,13 +12,13 @@
 .container {
   /* width: 60%;
   margin: 4rem auto; */
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .editAccount {
   border: 2px solid #737373;
-  width: 70%;
+  width: 100% !important;
   border-radius: 5px;
   margin-top: 2rem;
 }
@@ -26,7 +26,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 2rem;
+  padding: 10px 2rem;
   font-family: Inter-Regular;
 }
 .card .person h1 {
@@ -51,5 +51,4 @@
   display: flex;
   justify-content: center;
   margin-top: 2rem;
-
 }
