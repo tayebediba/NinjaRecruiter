@@ -39,7 +39,6 @@ function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
     "aria-controls": `simple-tabpanel-${index}`,
-    className: "active",
   };
 }
 
@@ -51,7 +50,7 @@ export default function Employer() {
   };
 
   return (
-    <Grid container style={{ width: "65rem" }}>
+    <Grid container style={{ width: "55rem" }}>
       <Box style={{ width: "100%", margin: "0" }}>
         <Box sx={{ borderBottom: 3, borderColor: "divider" }} xs={12}>
           <Tabs

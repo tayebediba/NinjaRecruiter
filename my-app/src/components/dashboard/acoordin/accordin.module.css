@@ -29,12 +29,12 @@
   border-radius: 1rem !important;
   text-align: center !important;
   color: #f2f2f2 !important;
-  width: 100% !important;
+  width: 90% !important;
   margin: 1rem auto !important;
   height: 100% !important;
 }
 .meetingBox {
-  padding: 2rem !important;
+  padding: 1rem !important;
   background-color: #393e46;
   border-radius: 1rem !important;
   text-align: center !important;
@@ -43,7 +43,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
   margin: 1rem auto !important;
 }
 .boxCenter {

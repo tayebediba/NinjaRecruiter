@@ -65,7 +65,7 @@ export default function Dashboard(props) {
           );
         })}
       </List> */}
-      <SideBar setCount={setCount} />
+      <SideBar setCount={setCount} count={count} />
     </div>
   );
 

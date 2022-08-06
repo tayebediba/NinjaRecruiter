@@ -1,116 +1,3 @@
-// import AppBar from "@mui/material/AppBar";
-// import Box from "@mui/material/Box";
-// import CssBaseline from "@mui/material/CssBaseline";
-// import Divider from "@mui/material/Divider";
-// import Drawer from "@mui/material/Drawer";
-// import List from "@mui/material/List";
-// import ListItem from "@mui/material/ListItem";
-// import ListItemButton from "@mui/material/ListItemButton";
-// import ListItemIcon from "@mui/material/ListItemIcon";
-// import ListItemText from "@mui/material/ListItemText";
-// import classes from "./sideBar.module.css";
-// import SideBarList from "./SideBarList";
-// import { Avatar } from "@mui/material";
-// import Accordin from "../acoordin/Accordin";
-// import Picker from "../acoordin/calenderBox";
-// import CustomDay from "../acoordin/calenderBox";
-// import PersianExample from "../acoordin/calenderBox";
-// import Calendar from "react-calendar";
-// import { useState } from "react";
-// import ShowCalendar from "../showcalendar/ShowCalendar";
-// import Tab from "./tab/Tab";
-// import FormInputs from "../../dashboard/formInputs/FormInputs";
-
-// const drawerWidth = 240;
-
-// export default function ResponsiveDrawer(props) {
-//   const { window } = props;
-//   const [mobileOpen, setMobileOpen] = useState(false);
-//   const [value, onChange] = useState(new Date());
-//   const handleDrawerToggle = () => {
-//     setMobileOpen(!mobileOpen);
-//   };
-
-//   const drawer = (
-//     <div>
-//       <div className={classes.avatar}>
-//         <Avatar />
-//         <p>amir vosouqi</p>
-//       </div>
-//       {/* <Toolbar /> */}
-//       <Divider />
-//       <List className={classes.list}>
-//         {SideBarList.map(({ name, icon }) => {
-//           return (
-//             <ListItem key={name} disablePadding>
-//               <ListItemButton>
-//                 <ListItemIcon>{icon}</ListItemIcon>
-//                 <ListItemText primary={name} />
-//               </ListItemButton>
-//             </ListItem>
-//           );
-//         })}
-//       </List>
-//       <Divider />
-//     </div>
-//   );
-
-//   const container =
-//     window !== undefined ? () => window().document.body : undefined;
-
-//   return (
-//     <Box sx={{ display: "flex" }}>
-//       <CssBaseline />
-
-//       <Box
-//         component="nav"
-//         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-//         aria-label="mailbox folders"
-//       >
-//         <Drawer
-//           container={container}
-//           variant="temporary"
-//           open={mobileOpen}
-//           onClose={handleDrawerToggle}
-//           ModalProps={{
-//             keepMounted: true, // Better open performance on mobile.
-//           }}
-//           sx={{
-//             display: { xs: "block", sm: "none" },
-//             "& .MuiDrawer-paper": {
-//               boxSizing: "border-box",
-//               width: drawerWidth,
-//             },
-//           }}
-//         >
-//           {drawer}
-//         </Drawer>
-//         <Drawer
-//           variant="permanent"
-//           sx={{
-//             display: { xs: "none", sm: "block" },
-//             "& .MuiDrawer-paper": {
-//               boxSizing: "border-box",
-//               width: drawerWidth,
-//             },
-//           }}
-//           open
-//         >
-//           {drawer}
-//         </Drawer>
-//       </Box>
-
-//       <div className={classes.rightHederNav}>
-//         <div className={classes.navHeaderDashboard}>
-//           <Tab />
-//         </div>
-
-//         <Accordin />
-//         <FormInputs />
-//       </div>
-//     </Box>
-//   );
-// }
 import * as React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -128,13 +15,14 @@ const style = {
   bgcolor: "background.paper",
 };
 
-export default function SideBar({ setCount }) {
+export default function SideBar({ setCount, count }) {
   // const navigate = useNavigate();
 
   // const handleLogOut = () => {
   //   localStorage.setItem("isLogin", false);
   //   navigate("/", { replace: true });
   // };
+  console.log(count);
   return (
     <List
       sx={style}
@@ -142,29 +30,70 @@ export default function SideBar({ setCount }) {
       component="nav"
       aria-label="mailbox folders"
     >
-      <ListItem className={classes.ListItem} button>
+      <ListItem
+        className={
+          count === 0
+            ? `${classes.ListItem} ${classes.activeSidebar}`
+            : `${classes.ListItem}`
+        }
+        button
+        onClick={() => setCount(0)}
+      >
         <CalendarMonth />
-        <ListItemText primary="Calendar" onClick={() => setCount(0)} />
+        <ListItemText primary="Calendar" />
       </ListItem>
       <Divider />
-      <ListItem className={classes.ListItem} button divider>
+      <ListItem
+        className={
+          count === 1
+            ? `${classes.ListItem} ${classes.activeSidebar}`
+            : `${classes.ListItem}`
+        }
+        button
+        divider
+        onClick={() => setCount(1)}
+      >
         <Person />
 
-        <ListItemText primary="Employer" onClick={() => setCount(1)} />
+        <ListItemText primary="Employer" />
       </ListItem>
-      <ListItem className={classes.ListItem} button>
+      <ListItem
+        className={
+          count === 2
+            ? `${classes.ListItem} ${classes.activeSidebar}`
+            : `${classes.ListItem}`
+        }
+        button
+        onClick={() => setCount(2)}
+      >
         <BusinessCenter />
-        <ListItemText primary="Job" onClick={() => setCount(2)} />
+        <ListItemText primary="Job" />
       </ListItem>
       <Divider />
-      <ListItem className={classes.ListItem} button>
+      <ListItem
+        className={
+          count === 3
+            ? `${classes.ListItem} ${classes.activeSidebar}`
+            : `${classes.ListItem}`
+        }
+        button
+        onClick={() => setCount(3)}
+      >
         <ScreenSearchDesktop />
-        <ListItemText primary="Job seeker" onClick={() => setCount(3)} />
+        <ListItemText primary="Job seeker" />
       </ListItem>
       <Divider light />
-      <ListItem className={classes.ListItem} button>
+      <ListItem
+        className={
+          count === 4
+            ? `${classes.ListItem} ${classes.activeSidebar}`
+            : `${classes.ListItem}`
+        }
+        button
+        onClick={() => setCount(4)}
+      >
         <Mail />
-        <ListItemText primary="messages" onClick={() => setCount(4)} />
+        <ListItemText primary="messages" />
       </ListItem>
     </List>
   );

@@ -15,9 +15,19 @@ const Accordin = () => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
-          style={{ backgroundColor: "#D9D9D9", borderRadius: "10px" }}
+          style={{
+            backgroundColor: "#D9D9D9",
+            borderRadius: "10px",
+            margin: "0",
+          }}
         >
-          <Typography style={{ color: "#595959", fontFamily: "Inter-Regular" }}>
+          <Typography
+            style={{
+              color: "#595959",
+              fontFamily: "Inter-Regular",
+              margin: "0",
+            }}
+          >
             Calendar
           </Typography>
         </AccordionSummary>
@@ -25,15 +35,15 @@ const Accordin = () => {
           <CalenderCard />
         </AccordionDetails>
       </Accordion>
-      <Typography
+      {/* <Typography
         style={{
           color: "#222831",
           fontSize: "2rem",
           fontFamily: "Inter-Medium",
           textAlign: "center ",
-          marginTop: "2rem",
+          // marginTop: "2rem",
         }}
-      ></Typography>
+      ></Typography> */}
     </div>
   );
 };

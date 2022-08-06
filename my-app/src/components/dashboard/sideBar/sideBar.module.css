@@ -77,10 +77,13 @@
 .itemList {
   color: #909599 !important;
 }
+.activeSidebar {
+  border-left: 10px solid #737373 !important;
+}
 .itemList.active {
   color: black !important;
 }
 
 .BoxHeader {
-  color: red !important;
+  color: #ffba1a !important;
 }

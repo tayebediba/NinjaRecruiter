@@ -22,7 +22,13 @@ const CalenderCard = () => {
               <h3>Intervew with Rafie at 14</h3>
               <h3>Call with mina at 10</h3>
             </div>
-            <h3>
+            <h3
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
               <AccessAlarmIcon />
               Remind me
             </h3>

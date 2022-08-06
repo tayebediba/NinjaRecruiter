@@ -33,3 +33,31 @@ a {
 #root {
   overflow-x: hidden;
 }
+.react-calendar__tile--active {
+  /* background-color: #ffd369 !important; */
+  color: #ffd369 !important;
+  border: 2px solid #ffd369 !important;
+}
+.css-cjctlb-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: #ffba1a !important;
+}
+.css-1aquho2-MuiTabs-indicator {
+  background-color: #ffba1a !important;
+}
+.react-calendar__navigation__arrow {
+  color: #f2f2f2 !important;
+  background-color: #393e46 !important;
+  border: none !important;
+  font-size: 2rem !important;
+}
+.react-calendar__navigation__label {
+  color: #f2f2f2 !important;
+  background-color: #393e46 !important;
+  border: none !important;
+  font-size: 2rem !important;
+}
+.react-calendar__month-view__weekdays {
+  margin: auto 0.5rem !important;
+  text-align: center !important;
+  font-size: large !important;
+}
