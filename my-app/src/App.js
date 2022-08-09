@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Route, Routes, Switch } from "react-router";
+import { Route, Routes } from "react-router";
 import mainRoutes from "./Routes/MainRoutes";
 
 import "./App.css";

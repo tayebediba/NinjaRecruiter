@@ -3,14 +3,14 @@ import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
-import classes from "./dashboard.module.css";
 import { Avatar, Grid } from "@mui/material";
-
 import SideBar from "./sideBar/sideBar";
 import Calendar from "./calender/Calender";
-import EmployerList from "./employer/employerList/EmployerList";
 import Employer from "./employer/Employer";
 import Job from "./job/Job";
+import Messages from "./messages/Messages";
+
+import classes from "./dashboard.module.css";
 
 const drawerWidth = 240;
 
@@ -40,17 +40,17 @@ export default function Dashboard(props) {
         setRenderComponent();
         break;
       case 4:
-        setRenderComponent();
+        setRenderComponent(<Messages />);
         break;
       default:
-        setRenderComponent();
+        setRenderComponent(<Calendar />);
     }
   }, [count]);
   const drawer = (
     <div className={classes.drawerBox}>
       <div className={classes.avatar}>
         <Avatar />
-        <p>amir vosouqhi</p>
+        <p>User Name</p>
       </div>
       {/* <Toolbar /> */}
       <Divider />
@@ -121,12 +121,6 @@ export default function Dashboard(props) {
       >
         {renderComponent}
       </Grid>
-      <div className={classes.rightHederNav}>
-        <div className={classes.navHeaderDashboard}>{/* <Tab /> */}</div>
-
-        {/* <Accordin /> */}
-        {/* <FormInputs /> */}
-      </div>
     </Box>
   );
 }
