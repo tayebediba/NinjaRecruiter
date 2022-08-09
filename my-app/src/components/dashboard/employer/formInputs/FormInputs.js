@@ -4,12 +4,13 @@ import BasicButtons from "./buttonsGroup/ButtonsGroup";
 import { Grid } from "@mui/material";
 const FormInputs = () => {
   return (
-    <Grid container>
+    <Grid container className={classes.container}>
+     
+      <Grid sx={12} md={6} className={classes.formInputs}>
       <h1 style={{ textAlign: "center", margin: " 1rem auto" }}>
         Employer Information
       </h1>
-      <div className={classes.formInputs}>
-        <div className={classes.form}>
+        <Grid  className={classes.form}>
           <div className={classes.leftSide}>
             <div className={classes.firstNAme}>
               <label>First name</label>
@@ -60,11 +61,11 @@ const FormInputs = () => {
               <input className={classes.input} type="text" />
             </div>
           </div>
-        </div>
+        </Grid>
         <div className={classes.buttons}>
           <BasicButtons />
         </div>
-      </div>
+      </Grid>
     </Grid>
   );
 };

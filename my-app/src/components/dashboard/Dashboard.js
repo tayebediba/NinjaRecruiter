@@ -11,6 +11,8 @@ import Calendar from "./calender/Calender";
 import EmployerList from "./employer/employerList/EmployerList";
 import Employer from "./employer/Employer";
 import Job from "./job/Job";
+import JobSeeker from "./jobSeeker/JobSeeker";
+import EducationalBackground from "./employer/EducationalBackground/EducationalBackground";
 
 const drawerWidth = 240;
 
@@ -37,7 +39,7 @@ export default function Dashboard(props) {
         setRenderComponent(<Job />);
         break;
       case 3:
-        setRenderComponent();
+        setRenderComponent(<JobSeeker/>);
         break;
       case 4:
         setRenderComponent();
