@@ -5,12 +5,10 @@ import BasicButtons from "../employer/formInputs/buttonsGroup/ButtonsGroup";
 import classes from "./jobSeeker.module.css";
 import CloudUploadOutlinedIcon from "@mui/icons-material/CloudUploadOutlined";
 import SelectSmall from "../employer/formInputs/Select";
-const PersonalInformation = () => {
+const PersonalInformation = ({ setPage }) => {
   return (
     <Grid container style={{ width: "100%", margin: "2rem 0" }}>
       <Grid sx={6} md={12}>
-       
-
         <Grid sx={12} md={6} className={classes.formInputs}>
           <h1 style={{ textAlign: "center", margin: " 1rem auto" }}>
             Employer Information
@@ -43,12 +41,12 @@ const PersonalInformation = () => {
                 <div className={classes.upload}>
                   <p>Upload resume</p>
                   <CloudUploadOutlinedIcon />
-                
                 </div>
               </div>
             </div>
           </Grid>
           <div className={classes.buttons}>
+            <button onClick={() => setPage(1)}>Next</button>
             <BasicButtons />
           </div>
         </Grid>

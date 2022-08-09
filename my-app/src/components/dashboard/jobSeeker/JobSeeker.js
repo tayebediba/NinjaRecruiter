@@ -44,10 +44,25 @@ function a11yProps(index) {
 
 export default function JobSeeker() {
   const [value, setValue] = React.useState(0);
+  const [page, setPage] = React.useState(0);
+  const [renderPage, setRenderPage] = React.useState("");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  React.useEffect(() => {
+    switch (page) {
+      case 0:
+        setRenderPage(<PersonalInformation setPage={setPage} />);
+        break;
+      case 1:
+        setRenderPage(<p>Page 1</p>);
+        break;
+      default:
+        setRenderPage(<PersonalInformation setPage={setPage} />);
+    }
+  }, [page]);
 
   return (
     <Grid container style={{ width: "65rem" }}>
@@ -65,13 +80,10 @@ export default function JobSeeker() {
         <Accordin />
 
         <TabPanel value={value} index={0}>
-          <PersonalInformation />
+          {renderPage}
         </TabPanel>
         <TabPanel value={value} index={1}>
           <JobList />
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          {/* <HiredPeople /> */}
         </TabPanel>
       </Box>
     </Grid>

@@ -1,7 +1,23 @@
 import { Avatar, Button, Grid, Pagination } from "@mui/material";
 import { useState } from "react";
 import Accordin from "../acoordin/Accordin";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
 import classes from "./messages.module.css";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 500,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+  textAlign: "center",
+};
 const Messages = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -12,6 +28,24 @@ const Messages = () => {
       <Grid item xs={12} className={classes.header}>
         <h1>Messages</h1>
         <Button onClick={handleOpen}>Send Messages</Button>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              What platform are you going to send the message from?
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              Email
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              Linkedin
+            </Typography>
+          </Box>
+        </Modal>
       </Grid>
       <Accordin />
       <Grid item xs={12} className={classes.MessageBox}>
