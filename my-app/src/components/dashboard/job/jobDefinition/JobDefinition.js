@@ -7,8 +7,8 @@ const JobDefinition = () => {
       <h1 style={{ textAlign: "center", margin: " 1rem auto" }}>
         Job definition
       </h1>
-      <Grid container>
         <form className={classes.form}>
+      <Grid container>
           <Grid item xs={12} md={6}>
             <Grid className={classes.inputBox}>
               <label>Title</label>
@@ -102,8 +102,8 @@ const JobDefinition = () => {
               <JobButtons />
             </Grid>
           </Grid>
-        </form>
       </Grid>
+        </form>
     </Grid>
   );
 };

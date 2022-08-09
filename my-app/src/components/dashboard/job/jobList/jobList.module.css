@@ -47,8 +47,11 @@
   gap: 3px;
 }
 .Pagination {
-  width: 70%;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: center !important;
   margin-top: 2rem;
+}
+.icons {
+  align-items: center !important;
 }
