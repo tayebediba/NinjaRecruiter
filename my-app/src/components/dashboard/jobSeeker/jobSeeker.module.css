@@ -1,4 +1,4 @@
-.container{
+.container {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -8,7 +8,7 @@
   width: 100% !important;
   /* margin: auto; */
   font-family: Inter-Medium;
- flex-basis: 100% !important;
+  flex-basis: 100% !important;
 
   max-width: 100% !important;
 }
@@ -27,8 +27,8 @@
   width: 45%;
 }
 .form .leftSide .firstNAme,
-.Address,
-.email,
+.Country,
+.linkdinPAge,
 .website,
 .EmploymentCommission,
 .FeildOfActivity {
@@ -57,13 +57,35 @@
 }
 .form .rightSide .lastName,
 .email,
-.SubjectOfActivity,
-.email,
-.ExactAmountReceived {
+.resumeUpload {
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 100%;
+}
+.resumeUpload {
+  border: 2px dashed #8C8C8C;
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+
+}
+.upload {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #8C8C8C;
+}
+.resumeUploadBox {
+  padding: 0.5rem;
+  border: 2px dashed #737373;
+  text-align: center;
+  width: 100%;
+  margin-top: 2.5rem;
 }
 .form .rightSide .input {
   padding: 0.5rem;
@@ -78,7 +100,5 @@
 .buttons {
   display: flex;
   justify-content: end;
-}
-.TextField {
-  background-color: #d9d9d9 !important;
+  margin-top: 3rem;
 }

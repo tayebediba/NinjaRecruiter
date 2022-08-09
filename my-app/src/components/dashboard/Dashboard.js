@@ -8,9 +8,14 @@ import SideBar from "./sideBar/sideBar";
 import Calendar from "./calender/Calender";
 import Employer from "./employer/Employer";
 import Job from "./job/Job";
+
 import Messages from "./messages/Messages";
 
 import classes from "./dashboard.module.css";
+
+import JobSeeker from "./jobSeeker/JobSeeker";
+import EducationalBackground from "./employer/EducationalBackground/EducationalBackground";
+
 
 const drawerWidth = 240;
 
@@ -37,7 +42,7 @@ export default function Dashboard(props) {
         setRenderComponent(<Job />);
         break;
       case 3:
-        setRenderComponent();
+        setRenderComponent(<JobSeeker/>);
         break;
       case 4:
         setRenderComponent(<Messages />);
