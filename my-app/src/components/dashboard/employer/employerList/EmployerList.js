@@ -11,6 +11,7 @@ import ButtonsSearchInput from "./buttonsInputSearch/ButtonsSearchInput";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Pagination from "@mui/material/Pagination";
+import { FormControl, OutlinedInput } from "@mui/material";
 
 const Root = styled("div")(
   ({ theme }) => `
@@ -172,6 +173,14 @@ const Listbox = styled("ul")(
 const EmployerList = () => {
   return (
     <Root className={classes.container}>
+      <FormControl fullWidth sx={{ m: 1 }}>
+        <OutlinedInput
+          className={classes.textFild}
+          placeholder="Search Employers..."
+          id="outlined-adornment-amount"
+          startAdornment={<SearchIcon position="start" />}
+        />
+      </FormControl>
       <ButtonsSearchInput />
       <div className={classes.editAccount}>
         <div className={classes.card}>

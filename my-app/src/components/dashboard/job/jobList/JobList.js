@@ -11,7 +11,14 @@ import ButtonsSearchInput from "./buttonsInputSearch/ButtonsSearchInput";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Pagination from "@mui/material/Pagination";
-import { Badge, Box, Stack, Switch } from "@mui/material";
+import {
+  Badge,
+  Box,
+  FormControl,
+  OutlinedInput,
+  Stack,
+  Switch,
+} from "@mui/material";
 
 const Root = styled("div")(
   ({ theme }) => `
@@ -214,69 +221,34 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
 }));
 
 const HiredPeople = () => {
-  const {
-    getRootProps,
-    getInputLabelProps,
-    getInputProps,
-    getTagProps,
-    getListboxProps,
-    getOptionProps,
-    groupedOptions,
-    value,
-    focused,
-    setAnchorEl,
-  } = useAutocomplete({
-    id: "customized-hook-demo",
-    defaultValue: [top100Films[1]],
-    multiple: true,
-    options: top100Films,
-    getOptionLabel: (option) => option.title,
-  });
-  const [checked, setChecked] = React.useState(true);
-
-  const handleChange = (event) => {
-    setChecked(event.target.checked);
-  };
-
   return (
     <Root className={classes.container}>
-      <div {...getRootProps()}>
-        <Label {...getInputLabelProps()}></Label>
-        <InputWrapper ref={setAnchorEl} className={focused ? "focused" : ""}>
-          {value.map((option, index) => (
-            <StyledTag label={option.title} {...getTagProps({ index })} />
-          ))}
-
-          <input {...getInputProps()} />
-        </InputWrapper>
-      </div>
-      {groupedOptions.length > 0 ? (
-        <Listbox {...getListboxProps()}>
-          {groupedOptions.map((option, index) => (
-            <li {...getOptionProps({ option, index })}>
-              <span>{option.title}</span>
-              <CheckIcon fontSize="small" />
-            </li>
-          ))}
-        </Listbox>
-      ) : null}
+      <FormControl fullWidth sx={{ m: 1 }}>
+        <OutlinedInput
+          className={classes.textFild}
+          placeholder="Search Job..."
+          id="outlined-adornment-amount"
+          startAdornment={<SearchIcon position="start" />}
+        />
+      </FormControl>
 
       <ButtonsSearchInput />
       <div className={classes.editAccount}>
         <div className={classes.card}>
           <div className={classes.person}>
-            <div style={{ display: "flex", alignItems: "center" }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <h1>HSBC</h1>
+
               <Badge
                 badgeContent={4}
                 color="warning"
-                // anchorOrigin={{
-                //   vertical: "top",
-                //   horizontal: "right",
-                // }}
-                style={{}}
-              >
-                <h1>HSBC</h1>
-              </Badge>
+                style={{ marginLeft: "1rem" }}
+              ></Badge>
             </div>
             <p>Job income rate:2500$</p>
             <p>For a job seeker:20% of annual income</p>

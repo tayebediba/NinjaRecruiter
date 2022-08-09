@@ -63,9 +63,9 @@ export default function Job() {
             <Tab label="Hired people" {...a11yProps(2)} />
           </Tabs>
         </Box>
-        <Accordin />
 
         <TabPanel value={value} index={0}>
+          <Accordin />
           <JobDefinition />
         </TabPanel>
         <TabPanel value={value} index={1}>
