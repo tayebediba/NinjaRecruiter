@@ -11,6 +11,7 @@ import ButtonsSearchInput from "./buttonsInputSearch/ButtonsSearchInput";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Pagination from "@mui/material/Pagination";
+import { FormControl, OutlinedInput } from "@mui/material";
 
 const Root = styled("div")(
   ({ theme }) => `
@@ -170,47 +171,16 @@ const Listbox = styled("ul")(
 );
 
 const JobList = () => {
-  const {
-    getRootProps,
-    getInputLabelProps,
-    getInputProps,
-    getTagProps,
-    getListboxProps,
-    getOptionProps,
-    groupedOptions,
-    value,
-    focused,
-    setAnchorEl,
-  } = useAutocomplete({
-    id: "customized-hook-demo",
-    defaultValue: [top100Films[1]],
-    multiple: true,
-    options: top100Films,
-    getOptionLabel: (option) => option.title,
-  });
-
   return (
     <Root className={classes.container}>
-      <div {...getRootProps()}>
-        <Label {...getInputLabelProps()}></Label>
-        <InputWrapper ref={setAnchorEl} className={focused ? "focused" : ""}>
-          {value.map((option, index) => (
-            <StyledTag label={option.title} {...getTagProps({ index })} />
-          ))}
-
-          <input {...getInputProps()} />
-        </InputWrapper>
-      </div>
-      {groupedOptions.length > 0 ? (
-        <Listbox {...getListboxProps()}>
-          {groupedOptions.map((option, index) => (
-            <li {...getOptionProps({ option, index })}>
-              <span>{option.title}</span>
-              <CheckIcon fontSize="small" />
-            </li>
-          ))}
-        </Listbox>
-      ) : null}
+      <FormControl fullWidth sx={{ m: 1 }}>
+        <OutlinedInput
+          className={classes.textFild}
+          placeholder="Search Hired people ..."
+          id="outlined-adornment-amount"
+          startAdornment={<SearchIcon position="start" />}
+        />
+      </FormControl>
 
       <ButtonsSearchInput />
       <div className={classes.editAccount}>

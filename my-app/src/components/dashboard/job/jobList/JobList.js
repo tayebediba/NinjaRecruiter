@@ -11,6 +11,14 @@ import ButtonsSearchInput from "./buttonsInputSearch/ButtonsSearchInput";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Pagination from "@mui/material/Pagination";
+import {
+  Badge,
+  Box,
+  FormControl,
+  OutlinedInput,
+  Stack,
+  Switch,
+} from "@mui/material";
 
 const Root = styled("div")(
   ({ theme }) => `
@@ -168,103 +176,93 @@ const Listbox = styled("ul")(
   }
 `
 );
+const AntSwitch = styled(Switch)(({ theme }) => ({
+  width: 28,
+  height: 16,
+  padding: 0,
+  display: "flex",
+  "&:active": {
+    "& .MuiSwitch-thumb": {
+      width: 15,
+    },
+    "& .MuiSwitch-switchBase.Mui-checked": {
+      transform: "translateX(9px)",
+    },
+  },
+  "& .MuiSwitch-switchBase": {
+    padding: 2,
+    "&.Mui-checked": {
+      transform: "translateX(12px)",
+      color: "#fff",
+      "& + .MuiSwitch-track": {
+        opacity: 1,
+        backgroundColor: theme.palette.mode === "dark" ? "#177ddc" : "#FFBA1A",
+      },
+    },
+  },
+  "& .MuiSwitch-thumb": {
+    boxShadow: "0 2px 4px 0 rgb(0 35 11 / 20%)",
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    transition: theme.transitions.create(["width"], {
+      duration: 200,
+    }),
+  },
+  "& .MuiSwitch-track": {
+    borderRadius: 16 / 2,
+    opacity: 1,
+    backgroundColor:
+      theme.palette.mode === "dark"
+        ? "rgba(255,255,255,.35)"
+        : "rgba(0,0,0,.25)",
+    boxSizing: "border-box",
+  },
+}));
 
 const HiredPeople = () => {
-  const {
-    getRootProps,
-    getInputLabelProps,
-    getInputProps,
-    getTagProps,
-    getListboxProps,
-    getOptionProps,
-    groupedOptions,
-    value,
-    focused,
-    setAnchorEl,
-  } = useAutocomplete({
-    id: "customized-hook-demo",
-    defaultValue: [top100Films[1]],
-    multiple: true,
-    options: top100Films,
-    getOptionLabel: (option) => option.title,
-  });
-
   return (
     <Root className={classes.container}>
-      <div {...getRootProps()}>
-        <Label {...getInputLabelProps()}></Label>
-        <InputWrapper ref={setAnchorEl} className={focused ? "focused" : ""}>
-          {value.map((option, index) => (
-            <StyledTag label={option.title} {...getTagProps({ index })} />
-          ))}
-
-          <input {...getInputProps()} />
-        </InputWrapper>
-      </div>
-      {groupedOptions.length > 0 ? (
-        <Listbox {...getListboxProps()}>
-          {groupedOptions.map((option, index) => (
-            <li {...getOptionProps({ option, index })}>
-              <span>{option.title}</span>
-              <CheckIcon fontSize="small" />
-            </li>
-          ))}
-        </Listbox>
-      ) : null}
+      <FormControl fullWidth sx={{ m: 1 }}>
+        <OutlinedInput
+          className={classes.textFild}
+          placeholder="Search Job..."
+          id="outlined-adornment-amount"
+          startAdornment={<SearchIcon position="start" />}
+        />
+      </FormControl>
 
       <ButtonsSearchInput />
       <div className={classes.editAccount}>
         <div className={classes.card}>
           <div className={classes.person}>
-            <h1>amir vosoughi</h1>
-            <p>massage</p>
-            <p>massage</p>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <h1>HSBC</h1>
+
+              <Badge
+                badgeContent={4}
+                color="warning"
+                style={{ marginLeft: "1rem" }}
+              ></Badge>
+            </div>
+            <p>Job income rate:2500$</p>
+            <p>For a job seeker:20% of annual income</p>
           </div>
           <div className={classes.icons}>
-            <DeleteIcon className={classes.icon} />
             <EditIcon className={classes.icon} />
+
+            <Stack direction="row" spacing={1} alignItems="center">
+              <AntSwitch inputProps={{ "aria-label": "ant design" }} />
+            </Stack>
           </div>
         </div>
       </div>
-      <div className={classes.editAccount}>
-        <div className={classes.card}>
-          <div className={classes.person}>
-            <h1>tayebeh dibazar</h1>
-            <p>massage</p>
-            <p>massage</p>
-          </div>
-          <div className={classes.icons}>
-            <DeleteIcon className={classes.icon} />
-            <EditIcon className={classes.icon} />
-          </div>
-        </div>
-      </div>
-      <div className={classes.editAccount}>
-        <div className={classes.card}>
-          <div className={classes.person}>
-            <h1>mina pour erfan</h1>
-            <p>massage</p>
-            <p>massage</p>
-          </div>
-          <div className={classes.icons}>
-            <DeleteIcon className={classes.icon} />
-            <EditIcon className={classes.icon} />
-          </div>
-        </div>
-      </div>
-      <div className={classes.editAccount}>
-        <div className={classes.card}>
-          <div className={classes.person}>
-            <h1>amir mehrabi</h1>
-            <p>massage</p>
-            <p>massage</p>
-          </div>
-          <div className={classes.icons}>
-            <DeleteIcon className={classes.icon} />
-            <EditIcon className={classes.icon} />
-          </div>
-        </div>
-      </div>
+
       <div className={classes.Pagination}>
         <Pagination count={10} className={classes.colorPagination} />
       </div>

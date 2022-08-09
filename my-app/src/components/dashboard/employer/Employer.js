@@ -64,9 +64,9 @@ export default function Employer() {
             <Tab label="Employers List" {...a11yProps(1)} />
           </Tabs>
         </Box>
-        <Accordin />
 
         <TabPanel value={value} index={0}>
+          <Accordin />
           <FormInputs />
         </TabPanel>
         <TabPanel value={value} index={1}>

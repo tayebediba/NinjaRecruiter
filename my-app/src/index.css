@@ -62,6 +62,26 @@ a {
   font-size: large !important;
 }
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
-  color: #ffba1a  !important;
+  color: #ffba1a !important;
+}
+
+.MuiPaper-root {
+  border-radius: 0.5rem !important;
+}
+.MuiSelect-select {
+  padding: 0.25rem !important;
+}
+.MuiOutlinedInput-root {
+  padding: 0.25rem !important;
+}
+.MuiOutlinedInput-input {
+  padding: 0 !important;
+}
+.MuiChip-filled {
+  background-color: #ffd369 !important;
+  color: #595959 !important;
+}
+.MuiAutocomplete-endAdornment {
+  background-color: #d9d9d9 !important;
 }
 

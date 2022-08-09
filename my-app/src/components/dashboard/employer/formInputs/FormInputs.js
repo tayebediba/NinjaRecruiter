@@ -1,7 +1,7 @@
 import classes from "./form.module.css";
 import SelectSmall from "./Select";
 import BasicButtons from "./buttonsGroup/ButtonsGroup";
-import { Grid } from "@mui/material";
+import { Grid, MenuItem, TextField } from "@mui/material";
 const FormInputs = () => {
   return (
     <Grid container className={classes.container}>
@@ -31,7 +31,16 @@ const FormInputs = () => {
                 <label style={{ fontSize: "1rem" }}>
                   Employment commission (Percent/Fixed)
                 </label>
-                <SelectSmall />
+                <TextField
+                  className={classes.TextField}
+                  id="outlined-select-currency"
+                  select
+                  // value={currency}
+                  // onChange={handleChange}
+                  placeholder="Percent"
+                >
+                  <MenuItem>{/* {option.label} */}</MenuItem>
+                </TextField>
               </div>
               <div className={classes.FeildOfActivity}>
                 <label>Feild of activity</label>
