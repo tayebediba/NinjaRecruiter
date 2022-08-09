@@ -1,7 +1,27 @@
 .inputBox {
   display: flex !important;
   flex-direction: column !important;
+  margin: 1rem !important;
+}
+.inputBox label {
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 .input {
   background-color: #d9d9d9;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.TextField {
+  background-color: #d9d9d9 !important;
+}
+.btn {
+  margin-left: 45% !important;
+  margin-top:3rem !important;
 }

@@ -22,7 +22,6 @@ export default function SideBar({ setCount, count }) {
   //   localStorage.setItem("isLogin", false);
   //   navigate("/", { replace: true });
   // };
-  console.log(count);
   return (
     <List
       sx={style}
