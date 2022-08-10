@@ -3,14 +3,22 @@ import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
-import { Avatar, Grid, ListItem, ListItemText } from "@mui/material";
+import {
+  AppBar,
+  Avatar,
+  Grid,
+  IconButton,
+  ListItem,
+  ListItemText,
+  Toolbar,
+} from "@mui/material";
 import SideBar from "./sideBar/sideBar";
 import Calendar from "./calender/Calender";
 import Employer from "./employer/Employer";
 import Job from "./job/Job";
 import LogoutIcon from "@mui/icons-material/Logout";
 import Messages from "./messages/Messages";
-
+import MenuIcon from "@mui/icons-material/Menu";
 import classes from "./dashboard.module.css";
 
 import JobSeeker from "./jobSeeker/JobSeeker";
@@ -29,10 +37,7 @@ export default function Dashboard(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  const handleLogOut = () => {
-    localStorage.setItem("isLogin", false);
-    navigate("/", { replace: true });
-  };
+
   useEffect(() => {
     switch (count) {
       case 0:
@@ -64,7 +69,6 @@ export default function Dashboard(props) {
       <Divider />
 
       <SideBar setCount={setCount} count={count} />
-     
     </div>
   );
 
@@ -73,7 +77,37 @@ export default function Dashboard(props) {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <CssBaseline />
+      {/* <CssBaseline /> */}
+      <AppBar className={classes.navBarApp} component="nav">
+        <Toolbar className={classes.toolbar}>
+          <IconButton
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          {/* <div className={classes.logo}>
+            <img className={classes.logo} src={logo} alt="logo" />
+          </div> */}
+          <Box
+            className={classes.box}
+            sx={{ display: { xs: "none", sm: "block" } }}
+          >
+            <div className={classes.drawerBox}>
+              <div className={classes.avatar}>
+                <Avatar />
+                <p>User Name</p>
+              </div>
+
+              <Divider />
+
+              <SideBar setCount={setCount} count={count} />
+            </div>
+          </Box>
+        </Toolbar>
+      </AppBar>
 
       <Box
         component="nav"
@@ -115,7 +149,7 @@ export default function Dashboard(props) {
       <Grid
         item
         xs={10}
-        style={{ justifyContent: "center", margin: "1rem auto" }}
+        style={{ justifyContent: "center", margin: "3rem auto" }}
       >
         {renderComponent}
       </Grid>
