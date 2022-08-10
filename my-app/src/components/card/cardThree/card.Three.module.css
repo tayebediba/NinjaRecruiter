@@ -31,7 +31,10 @@
   /* padding: 0.6rem 1rem; */
   font-size: 1rem;
 }
-
+.app .btn:hover {
+  background-color: #595959 !important;
+  color: #ffd369 !important;
+}
 @media screen and (max-width: 768px) {
   .DownloadApplication {
     width: 100%;
@@ -55,7 +58,7 @@
     color: #595959;
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     font-family: Inter-Regular;
 
     text-align: center;

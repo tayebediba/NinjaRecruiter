@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-around;
   overflow: 3rem;
-  padding: 4rem 15rem;
+  padding: 4rem 21rem;
   justify-content: space-around;
   text-align: left;
   gap: 20px;
@@ -38,7 +38,7 @@
   padding: auto 4rem;
 }
 .footerBotton .logoFooter {
-  width: 62%;
+  width: 54%;
   margin: auto;
   display: flex;
   flex-direction: row;

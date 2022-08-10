@@ -24,6 +24,11 @@
   border: none;
   font-size: 0.8rem;
 }
+.app .btn:hover {
+  background-color: #595959 !important;
+  color: #ffd369 !important;
+  border: none;
+}
 .app p {
   font-family: Inter-Regular;
 }
