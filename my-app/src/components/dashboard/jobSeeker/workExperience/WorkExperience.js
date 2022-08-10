@@ -1,48 +1,41 @@
 import {
   Autocomplete,
   Button,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
   Grid,
   MenuItem,
+  Radio,
+  RadioGroup,
   Stack,
   TextField,
 } from "@mui/material";
-import classes from "../job.module.css";
-const JobDefinition = () => {
+import classes from "./workExperience.module.css";
+const WorkExperience = ({ setPage }) => {
   return (
     <Grid container>
       <h1 style={{ textAlign: "center", margin: " 1rem auto" }}>
-        Job definition
+        work experience
       </h1>
       <form className={classes.form}>
         <Grid container>
           <Grid item xs={12} md={6}>
             <Grid className={classes.inputBox}>
-              <label>Title</label>
+              <label>Job title</label>
               <input className={classes.input} type="text" />
             </Grid>
             <Grid className={classes.inputBox}>
-              <label>Salary paid(min)</label>
+              <label>Start date </label>
               <input className={classes.input} type="text" />
             </Grid>
             <Grid className={classes.inputBox}>
-              <label>Annual leave</label>
+              <label>Type of cooperation</label>
               <input className={classes.input} type="text" />
             </Grid>
+
             <Grid className={classes.inputBox}>
-              <label>job seeker Salary</label>
-              <TextField
-                className={classes.TextField}
-                id="outlined-select-currency"
-                select
-                // value={currency}
-                // onChange={handleChange}
-                placeholder="Percent"
-              >
-                <MenuItem>{/* {option.label} */}</MenuItem>
-              </TextField>
-            </Grid>
-            <Grid className={classes.inputBox}>
-              <label>Essential skills</label>
+              <label>skills</label>
               <Autocomplete
                 className={classes.TextField}
                 multiple
@@ -54,10 +47,6 @@ const JobDefinition = () => {
                   <TextField style={{ position: "revert" }} {...params} />
                 )}
               />
-            </Grid>
-            <Grid className={classes.inputBox}>
-              <label>Email</label>
-              <input className={classes.input} type="text" />
             </Grid>
           </Grid>
           <Grid item xs={12} md={6}>
@@ -71,42 +60,38 @@ const JobDefinition = () => {
             </Grid>
             <Grid className={classes.inputBox}>
               <label>Hire companies</label>
-              <TextField
-                className={classes.TextField}
-                id="outlined-select-currency"
-                select
-                // value={currency}
-                // onChange={handleChange}
-                placeholder="Percent"
-              >
-                <MenuItem>{/* {option.label} */}</MenuItem>
-              </TextField>
-            </Grid>
-            <Grid className={classes.inputBox}>
-              <label>Exact amount received</label>
               <input className={classes.input} type="text" />
             </Grid>
             <Grid className={classes.inputBox}>
-              <label>Unnecessary skills</label>
-              <Autocomplete
-                className={classes.TextField}
-                multiple
-                id="tags-outlined"
-                options={top100Films}
-                getOptionLabel={(option) => option.title}
-                filterSelectedOptions
-                renderInput={(params) => (
-                  <TextField style={{ position: "revert" }} {...params} />
-                )}
-              />
+              <FormControl>
+                <FormLabel
+                  style={{ color: "#222831", fontFamily: "Inter-Medium" }}
+                  id="demo-row-radio-buttons-group-label"
+                >
+                  Do you want to add job records?
+                </FormLabel>
+                <RadioGroup
+                  row
+                  aria-labelledby="demo-row-radio-buttons-group-label"
+                  name="row-radio-buttons-group"
+                >
+                  <FormControlLabel
+                    value="Yes"
+                    control={<Radio />}
+                    label="Yes"
+                  />
+                  <FormControlLabel value="No" control={<Radio />} label="No" />
+                </RadioGroup>
+              </FormControl>
             </Grid>
-            <Grid className={classes.inputBox}>
-              <label>Description</label>
-              <input className={classes.input} type="text" />
-            </Grid>
+
             <Grid className={classes.btn}>
               <Stack spacing={2} direction="row">
-                <Button className={classes.styleBack} variant="outlined">
+                <Button
+                  onClick={() => setPage(2 - 1)}
+                  className={classes.styleBack}
+                  variant="outlined"
+                >
                   Back
                 </Button>
                 <Button className={classes.styleNext} variant="contained">
@@ -120,7 +105,7 @@ const JobDefinition = () => {
     </Grid>
   );
 };
-export default JobDefinition;
+export default WorkExperience;
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [

@@ -1,13 +1,10 @@
-import { Grid } from "@mui/material";
-import Tab from "../sideBar/tab/Tab";
-import Accordin from "../acoordin/Accordin";
-import BasicButtons from "../employer/formInputs/buttonsGroup/ButtonsGroup";
-import classes from "./jobSeeker.module.css";
+import { Button, Grid, MenuItem, TextField } from "@mui/material";
 import CloudUploadOutlinedIcon from "@mui/icons-material/CloudUploadOutlined";
-import SelectSmall from "../employer/formInputs/Select";
+import classes from "../jobSeeker.module.css";
+
 const PersonalInformation = ({ setPage }) => {
   return (
-    <Grid container style={{ width: "100%", margin: "2rem 0" }}>
+    <Grid container style={{ width: "100%", margin: "rem auto" }}>
       <Grid sx={6} md={12}>
         <Grid sx={12} md={6} className={classes.formInputs}>
           <h1 style={{ textAlign: "center", margin: " 1rem auto" }}>
@@ -18,13 +15,23 @@ const PersonalInformation = ({ setPage }) => {
               <div className={classes.firstNAme}>
                 <label>First name</label>
                 <input className={classes.input} type="text" />
+
+                <div className={classes.Country}>
+                  <label>Country</label>
+                  <TextField
+                    className={classes.TextField}
+                    id="outlined-select-currency"
+                    select
+                    // value={currency}
+                    // onChange={handleChange}
+                    placeholder="Percent"
+                  >
+                    <MenuItem>{/* {option.label} */}</MenuItem>
+                  </TextField>
+                </div>
                 <div className={classes.linkdinPAge}>
                   <label>Linkdin page Address </label>
                   <input className={classes.input} type="text" />
-                </div>
-                <div className={classes.Country}>
-                  <label>Country</label>
-                  <SelectSmall />
                 </div>
               </div>
             </div>
@@ -46,8 +53,13 @@ const PersonalInformation = ({ setPage }) => {
             </div>
           </Grid>
           <div className={classes.buttons}>
-            <button onClick={() => setPage(1)}>Next</button>
-            <BasicButtons />
+            <Button
+              onClick={() => setPage(1)}
+              className={classes.styleNext}
+              variant="contained"
+            >
+              Next
+            </Button>
           </div>
         </Grid>
       </Grid>

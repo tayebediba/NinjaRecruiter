@@ -1,9 +1,9 @@
 .navFooter {
   width: 100%;
   margin-top: 3rem;
-  color: white;
+  color: #eeeeee;
 }
-.navFooter .nav {
+.navFooter .footerList {
   background: #393e46;
   display: flex;
   justify-content: space-around;
@@ -13,24 +13,35 @@
   text-align: left;
   gap: 20px;
 }
-.nav ul li {
+.footerList ul li {
   list-style-type: none;
 }
-.nav ul {
+.footerList ul {
   gap: 20px;
   display: flex;
   flex-direction: column;
 }
-.nav .socialMedia {
+.footerList .socialMedia {
   display: flex;
   flex-direction: row;
 }
 .socialMedia .color {
-  color: white;
+  color: #eeeeee;
 }
-
+.footerBotton {
+  background-color: #393e46 !important;
+  text-align: center;
+  color: #eeeeee;
+  display: flex;
+  justify-content: left;
+  gap: 1rem;
+  padding: auto 4rem;
+}
+.footerBotton img {
+  width: 2rem !important;
+}
 @media screen and (max-width: 768px) {
-  .navFooter .nav {
+  .navFooter .footerList {
     background: #393e46;
     display: flex;
     justify-content: space-around;
@@ -40,9 +51,8 @@
     text-align: left;
     gap: 0px;
     flex-direction: column;
-  
   }
-  .nav ul {
+  .footerList ul {
     margin-top: 2rem;
     gap: 10px;
     display: flex;

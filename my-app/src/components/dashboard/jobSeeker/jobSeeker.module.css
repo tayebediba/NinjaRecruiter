@@ -64,11 +64,10 @@
   width: 100%;
 }
 .resumeUpload {
-  border: 2px dashed #8C8C8C;
+  border: 2px dashed #8c8c8c;
   display: flex;
   align-items: center;
   margin-top: 2rem;
-
 }
 .upload {
   width: 100%;
@@ -78,7 +77,7 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  color: #8C8C8C;
+  color: #8c8c8c;
 }
 .resumeUploadBox {
   padding: 0.5rem;
@@ -101,4 +100,21 @@
   display: flex;
   justify-content: end;
   margin-top: 3rem;
+}
+.styleNext {
+  padding: 8px 2.2rem !important;
+  background: #ffd369 !important;
+  border-color: #ffd369;
+  color: #595959 !important;
+  font-weight: 700 !important;
+}
+.styleBack {
+  padding: 8px 2.2rem !important;
+  border-color: #ffd369 !important;
+  color: #595959 !important;
+  font-weight: 700 !important;
+  border: 3px solid #ffd369 !important;
+}
+.TextField {
+  background-color: #d9d9d9 !important;
 }

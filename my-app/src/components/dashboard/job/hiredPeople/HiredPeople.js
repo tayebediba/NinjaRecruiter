@@ -1,17 +1,13 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import { useAutocomplete } from "@mui/base/AutocompleteUnstyled";
-import CheckIcon from "@mui/icons-material/Check";
-import CloseIcon from "@mui/icons-material/Close";
 import { styled } from "@mui/material/styles";
 import { autocompleteClasses } from "@mui/material/Autocomplete";
 import SearchIcon from "@mui/icons-material/Search";
 import classes from "./hiredPeople.module.css";
-import ButtonsSearchInput from "./buttonsInputSearch/ButtonsSearchInput";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Pagination from "@mui/material/Pagination";
-import { FormControl, OutlinedInput } from "@mui/material";
+import { Box, Fab, FormControl, OutlinedInput } from "@mui/material";
 
 const Root = styled("div")(
   ({ theme }) => `
@@ -181,8 +177,26 @@ const JobList = () => {
           startAdornment={<SearchIcon position="start" />}
         />
       </FormControl>
+      <Box sx={{ "& > :not(style)": { m: 1 } }}>
+        <div className={classes.buttonsGroup}>
+          <Fab className={classes.fab} variant="extended">
+            Text
+          </Fab>
+          <Fab className={classes.fab} variant="extended">
+            Text
+          </Fab>
+          <Fab className={classes.fab} variant="extended">
+            Text
+          </Fab>
+          <Fab className={classes.fab} variant="extended">
+            Text
+          </Fab>
+          <Fab className={classes.fab} variant="extended">
+            Text
+          </Fab>
+        </div>
+      </Box>
 
-      <ButtonsSearchInput />
       <div className={classes.editAccount}>
         <div className={classes.card}>
           <div className={classes.person}>

@@ -3,18 +3,11 @@ import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
 import { autocompleteClasses } from "@mui/material/Autocomplete";
 import SearchIcon from "@mui/icons-material/Search";
-import classes from "./jobList.module.css";
+import classes from "./jobSeekerList.module.css";
 import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 import Pagination from "@mui/material/Pagination";
-import {
-  Badge,
-  Box,
-  Fab,
-  FormControl,
-  OutlinedInput,
-  Stack,
-  Switch,
-} from "@mui/material";
+import { Box, Fab, FormControl, OutlinedInput } from "@mui/material";
 
 const Root = styled("div")(
   ({ theme }) => `
@@ -172,57 +165,14 @@ const Listbox = styled("ul")(
   }
 `
 );
-const AntSwitch = styled(Switch)(({ theme }) => ({
-  width: 28,
-  height: 16,
-  padding: 0,
-  display: "flex",
-  "&:active": {
-    "& .MuiSwitch-thumb": {
-      width: 15,
-    },
-    "& .MuiSwitch-switchBase.Mui-checked": {
-      transform: "translateX(9px)",
-    },
-  },
-  "& .MuiSwitch-switchBase": {
-    padding: 2,
-    "&.Mui-checked": {
-      transform: "translateX(12px)",
-      color: "#fff",
-      "& + .MuiSwitch-track": {
-        opacity: 1,
-        backgroundColor: theme.palette.mode === "dark" ? "#177ddc" : "#FFBA1A",
-      },
-    },
-  },
-  "& .MuiSwitch-thumb": {
-    boxShadow: "0 2px 4px 0 rgb(0 35 11 / 20%)",
-    width: 12,
-    height: 12,
-    borderRadius: 6,
-    transition: theme.transitions.create(["width"], {
-      duration: 200,
-    }),
-  },
-  "& .MuiSwitch-track": {
-    borderRadius: 16 / 2,
-    opacity: 1,
-    backgroundColor:
-      theme.palette.mode === "dark"
-        ? "rgba(255,255,255,.35)"
-        : "rgba(0,0,0,.25)",
-    boxSizing: "border-box",
-  },
-}));
 
-const HiredPeople = () => {
+const JobSeekerList = () => {
   return (
     <Root className={classes.container}>
       <FormControl fullWidth sx={{ m: 1 }}>
         <OutlinedInput
           className={classes.textFild}
-          placeholder="Search Job..."
+          placeholder="Search Hired people ..."
           id="outlined-adornment-amount"
           startAdornment={<SearchIcon position="start" />}
         />
@@ -246,43 +196,58 @@ const HiredPeople = () => {
           </Fab>
         </div>
       </Box>
+
       <div className={classes.editAccount}>
         <div className={classes.card}>
           <div className={classes.person}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <h1>HSBC</h1>
-
-              <Badge
-                badgeContent={4}
-                color="warning"
-                style={{ marginLeft: "1rem" }}
-              ></Badge>
-            </div>
-            <p>Job income rate:2500$</p>
-            <p>For a job seeker:20% of annual income</p>
+            <h1>amir vosoughi</h1>
           </div>
           <div className={classes.icons}>
+            <DeleteIcon className={classes.icon} />
             <EditIcon className={classes.icon} />
-
-            <Stack direction="row" spacing={1} alignItems="center">
-              <AntSwitch inputProps={{ "aria-label": "ant design" }} />
-            </Stack>
           </div>
         </div>
       </div>
-
+      <div className={classes.editAccount}>
+        <div className={classes.card}>
+          <div className={classes.person}>
+            <h1>tayebeh dibazar</h1>
+          </div>
+          <div className={classes.icons}>
+            <DeleteIcon className={classes.icon} />
+            <EditIcon className={classes.icon} />
+          </div>
+        </div>
+      </div>
+      <div className={classes.editAccount}>
+        <div className={classes.card}>
+          <div className={classes.person}>
+            <h1>mina pour erfan</h1>
+          </div>
+          <div className={classes.icons}>
+            <DeleteIcon className={classes.icon} />
+            <EditIcon className={classes.icon} />
+          </div>
+        </div>
+      </div>
+      <div className={classes.editAccount}>
+        <div className={classes.card}>
+          <div className={classes.person}>
+            <h1>amir mehrabi</h1>
+          </div>
+          <div className={classes.icons}>
+            <DeleteIcon className={classes.icon} />
+            <EditIcon className={classes.icon} />
+          </div>
+        </div>
+      </div>
       <div className={classes.Pagination}>
         <Pagination count={10} className={classes.colorPagination} />
       </div>
     </Root>
   );
 };
-export default HiredPeople;
+export default JobSeekerList;
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
   { title: "The Shawshank Redemption", year: 1994 },

@@ -28,13 +28,13 @@
 .styleNext {
   padding: 8px 2.2rem !important;
   background: #ffd369 !important;
-  border-color: #ffd369;
+  border-color: #ffd369 !important;
   color: #595959 !important;
   font-weight: 700 !important;
 }
 .styleBack {
   padding: 8px 2.2rem !important;
-  border-color: #ffd369 !important;
   color: #595959 !important;
   font-weight: 700 !important;
+  border: #ffd369 solid 3px !important;
 }

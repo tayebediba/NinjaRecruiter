@@ -6,7 +6,12 @@ import Divider from "@mui/material/Divider";
 import classes from "./sideBar.module.css";
 
 import { useNavigate } from "react-router";
-import { CalendarMonth, Mail, ScreenSearchDesktop } from "@mui/icons-material";
+import {
+  CalendarMonth,
+  Logout,
+  Mail,
+  ScreenSearchDesktop,
+} from "@mui/icons-material";
 import Person from "@mui/icons-material/Person";
 import BusinessCenter from "@mui/icons-material/BusinessCenter";
 const style = {
@@ -16,12 +21,12 @@ const style = {
 };
 
 export default function SideBar({ setCount, count }) {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // const handleLogOut = () => {
-  //   localStorage.setItem("isLogin", false);
-  //   navigate("/", { replace: true });
-  // };
+  const handleLogOut = () => {
+    localStorage.setItem("isLogin", false);
+    navigate("/", { replace: true });
+  };
   return (
     <List
       sx={style}
@@ -93,6 +98,11 @@ export default function SideBar({ setCount, count }) {
       >
         <Mail />
         <ListItemText primary="messages" />
+      </ListItem>
+      <Divider light />
+      <ListItem className={classes.ListItem} button>
+        <Logout />
+        <ListItemText primary="Logout" onClick={handleLogOut} />
       </ListItem>
     </List>
   );
