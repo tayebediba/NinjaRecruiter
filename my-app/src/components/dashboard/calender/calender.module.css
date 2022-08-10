@@ -111,3 +111,14 @@
     margin: 1rem 0 !important;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .cardText {
+    background-color: #393e46 !important;
+    width: 33% !important ;
+    height: 7rem !important;
+    border-radius: 1rem;
+    color: #f2f2f2;
+    /* margin: 1rem auto !important; */
+  }
+}

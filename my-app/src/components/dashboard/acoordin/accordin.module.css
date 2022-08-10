@@ -3,7 +3,11 @@
   margin: 1rem auto !important;
   padding: 0 !important;
 }
-
+.labelAccordion {
+  color: #595959;
+  font-family: Inter-Regular;
+  margin: 0;
+}
 .calenderBox {
   padding: 0 2rem !important;
   border-radius: 1rem !important;
@@ -34,7 +38,7 @@
   height: 100% !important;
 }
 .meetingBox {
-  padding: 1rem !important;
+  padding: 2rem !important;
   background-color: #393e46;
   border-radius: 1rem !important;
   text-align: center !important;
@@ -51,7 +55,6 @@
   margin: auto 1rem !important;
 }
 
-
 @media screen and (max-width: 768px) {
   .calenderBox {
     /* padding: 0 2rem !important; */
@@ -64,11 +67,23 @@
     /* margin: auto 1rem !important; */
     gap: 10px !important;
   }
-.meetingBox{
-  height: 80% !important;
-}
-.meetingBox h2 ,h3 ,h4{
-  font-size: 0.9rem;
-  line-height: 10px;
-}
+  .meetingBox {
+    height: 55% !important;
+    width: 67%;
+  }
+  .meetingBox h2,
+  h3,
+  h4 {
+    font-size: 0.9rem;
+    line-height: 10px;
+  }
+  .backgroundCalender {
+    height: 90% !important;
+  }
+  .accordionDetails {
+    width: 30% !important;
+    margin: 0;
+  }
+
+ 
 }

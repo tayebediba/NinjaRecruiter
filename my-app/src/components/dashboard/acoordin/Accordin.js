@@ -22,16 +22,15 @@ const Accordin = () => {
           }}
         >
           <Typography
+          className={classes.labelAccordion}
             style={{
-              color: "#595959",
-              fontFamily: "Inter-Regular",
-              margin: "0",
+              
             }}
           >
             Calendar
           </Typography>
         </AccordionSummary>
-        <AccordionDetails style={{ margin: "0" }}>
+        <AccordionDetails className={classes.accordionDetails} style={{ margin: "0" }}>
           <CalenderCard />
         </AccordionDetails>
       </Accordion>

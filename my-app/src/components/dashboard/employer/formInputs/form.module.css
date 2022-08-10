@@ -56,7 +56,11 @@
   gap: 10px;
 }
 
-.form .rightSide .lastName,.phoneNumber ,.SubjectOfActivity , .necessaryExplanation , .ExactAmountReceived{
+.form .rightSide .lastName,
+.phoneNumber,
+.SubjectOfActivity,
+.necessaryExplanation,
+.ExactAmountReceived {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -92,4 +96,24 @@
   color: #595959 !important;
   font-weight: 700 !important;
   border: 3px solid #ffd369 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .form {
+    width: 33%;
+  }
+  .buttons {
+    justify-content: start;
+
+    margin-top: 20px;
+    width: 32%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .form .leftSide label{
+    font-size: 0.8rem;
+  }
+  .form .rightSide label{
+    font-size: 0.8rem;
+  }
 }
