@@ -88,3 +88,41 @@ a {
 .css-hyxlzm{
   color: #ffd369 !important;
 }
+abbr{
+  text-decoration: none;
+}
+
+
+
+
+
+@media screen and (max-width: 768px){
+  .react-calendar__tile abbr {
+    color: #ffd369 !important;
+    font-size: 12px !important;
+    text-align: center;
+    font-weight: 700;
+  }
+  .react-calendar__navigation__arrow {
+    color: #f2f2f2 !important;
+    background-color: #393e46 !important;
+    border: none !important;
+    font-size: 0.8rem !important;
+  }
+  .react-calendar__navigation__label {
+    color: #f2f2f2 !important;
+    background-color: #393e46 !important;
+   
+    border: none !important;
+    font-size: 0.8rem !important;
+  }
+  .react-calendar__month-view__weekdays {
+    margin: auto 0.5rem !important;
+    text-align: center !important;
+    font-size: 12px !important;
+  }
+.react-calendar__month-view__days{
+display: flex;
+gap: 9px;
+}
+}

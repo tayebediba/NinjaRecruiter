@@ -70,3 +70,44 @@
   text-align: right !important;
   color: #8c8c8c !important;
 }
+
+@media screen and (max-width: 768px) {
+  .content {
+    font-size: 10px !important;
+    background-color: #393e46;
+    color: #f2f2f2;
+    border: 2px solid #f2f2f2;
+    border-radius: 0.5rem !important;
+    margin: 2px !important;
+    padding: 0.25rem !important;
+    width: 1rem !important;
+    flex: 0 0 13% !important;
+    gap: 9px !important;
+  }
+  .calenderBox{
+    display: flex;
+    gap: 5px !important;
+  }
+  .MessageBox {
+   flex-direction: column-reverse !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+  .cardText {
+    background-color: #393e46 !important;
+    width: 100% !important;
+    height: 7rem !important;
+    border-radius: 1rem;
+    color: #f2f2f2;
+    margin: 1rem auto !important;
+  }
+  .cardMessage {
+    border: 1px solid #393e46 !important ;
+    border-radius: 1rem !important;
+    padding: 0.15rem !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important ;
+    margin: 1rem 0 !important;
+  }
+}

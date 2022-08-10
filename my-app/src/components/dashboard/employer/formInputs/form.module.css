@@ -55,11 +55,8 @@
   align-items: baseline;
   gap: 10px;
 }
-.form .rightSide .lastName,
-.email,
-.SubjectOfActivity,
-.email,
-.ExactAmountReceived {
+
+.form .rightSide .lastName,.phoneNumber ,.SubjectOfActivity , .necessaryExplanation , .ExactAmountReceived{
   display: flex;
   flex-direction: column;
   gap: 10px;
