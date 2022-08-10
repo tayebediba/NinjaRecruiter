@@ -37,6 +37,14 @@
   gap: 1rem;
   padding: auto 4rem;
 }
+.footerBotton .logoFooter {
+  width: 62%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
 .footerBotton img {
   width: 2rem !important;
 }

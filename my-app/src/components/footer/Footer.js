@@ -52,11 +52,13 @@ const Footer = () => {
         </ul>
       </footer>
       <div className={classes.footerBotton}>
-        <img src={logoFooter} alt="logoFooter" />
-        <p>
-          Let the jobs find you Let the jobs find you Let the jobs find you Let
-          the jobs find you Let{" "}
-        </p>
+        <div className={classes.logoFooter}>
+          <img src={logoFooter} alt="logoFooter" />
+          <p>
+            Let the jobs find you Let the jobs find you Let the jobs find you
+            Let the jobs find you Let{" "}
+          </p>
+        </div>
       </div>
     </div>
   );

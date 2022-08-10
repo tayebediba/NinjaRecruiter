@@ -31,6 +31,10 @@
    font-size: 1.2rem;
    margin-top: 1rem;
  }
+ .app .btn:hover{
+  background-color: #595959 !important;
+  color: #ffd369 !important;
+ }
  .app h1 {
    font-size: 3rem;
    font-weight: 600;
