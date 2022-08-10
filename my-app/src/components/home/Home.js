@@ -1,13 +1,12 @@
 import React from "react";
 import classes from "./home.module.css";
 import { Grid } from "@mui/material";
-
 import PersonIcon from "@mui/icons-material/Person";
 import Card from "../card/Card";
 import CardTwo from "../cardTwo/CardTwo";
 import CardThree from "../card/cardThree/CardThree";
 import Footer from "../footer/Footer";
-
+import logo from "../../assets/img/icon/logo.svg";
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { userIsLogin } from "../../helper/general";
@@ -45,7 +44,7 @@ const Home = () => {
             <li>Job creation</li>
           </ul>
           <div className={classes.logo}>
-            <h1>Logo</h1>
+            <img src={logo} alt="logo"  className={classes.imgLogo}/>
           </div>
         </nav>
         <div className={classes.titleHeader}>

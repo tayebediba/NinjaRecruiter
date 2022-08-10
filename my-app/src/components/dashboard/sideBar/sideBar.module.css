@@ -4,6 +4,7 @@
 .ListItem {
   padding: 1rem !important;
   color: #737373 !important;
+  gap: 1rem !important;
 }
 .AppBar .ul {
   list-style-type: none;
@@ -78,7 +79,8 @@
   color: #909599 !important;
 }
 .activeSidebar {
-  border-left: 10px solid #737373 !important;
+  border-left: 6px solid #737373 !important;
+  margin: 0 !important;
 }
 .itemList.active {
   color: black !important;

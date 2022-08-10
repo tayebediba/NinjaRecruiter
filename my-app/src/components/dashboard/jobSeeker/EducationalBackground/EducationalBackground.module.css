@@ -1,14 +1,17 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
+  margin: auto;
 }
 
 .formInputs {
-  width: 100% !important;
+  /* width: 100% !important; */
   /* margin: auto; */
   font-family: Inter-Medium;
   flex-basis: 100% !important;
+  width: 80% !important;
+  margin: auto;
 
   max-width: 100% !important;
 }
@@ -26,10 +29,8 @@
   align-items: initial;
   width: 45%;
 }
-.form .leftSide .firstNAme,
-.Country,
-.linkdinPAge,
-.website,
+.form .leftSide .jobTitle,
+.company,
 .EmploymentCommission,
 .FeildOfActivity {
   display: flex;
@@ -55,9 +56,8 @@
   align-items: baseline;
   gap: 10px;
 }
-.form .rightSide .lastName,
-.email,
-.resumeUpload {
+.form .rightSide .Industry,
+.Company {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -104,17 +104,13 @@
 .styleNext {
   padding: 8px 2.2rem !important;
   background: #ffd369 !important;
-  border-color: #ffd369;
+  border-color: #ffd369 !important;
   color: #595959 !important;
   font-weight: 700 !important;
 }
 .styleBack {
   padding: 8px 2.2rem !important;
-  border-color: #ffd369 !important;
   color: #595959 !important;
   font-weight: 700 !important;
   border: 3px solid #ffd369 !important;
-}
-.TextField {
-  background-color: #d9d9d9 !important;
 }

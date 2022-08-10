@@ -6,9 +6,10 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { Grid } from "@mui/material";
 import Accordin from "../acoordin/Accordin";
-
-import PersonalInformation from "./PersonalInformation";
-import JobList from "../job/hiredPeople/HiredPeople";
+import EducationalBackground from "./EducationalBackground/EducationalBackground";
+import WorkExperience from "./workExperience/WorkExperience";
+import PersonalInformation from "./personalInformation/PersonalInformation";
+import JobSeekerList from "./jobSeekerList/JobSeekerList";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -44,14 +45,32 @@ function a11yProps(index) {
 
 export default function JobSeeker() {
   const [value, setValue] = React.useState(0);
+  const [page, setPage] = React.useState(0);
+  const [renderPage, setRenderPage] = React.useState("");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
+  React.useEffect(() => {
+    switch (page) {
+      case 0:
+        setRenderPage(<PersonalInformation setPage={setPage} />);
+        break;
+      case 1:
+        setRenderPage(<EducationalBackground setPage={setPage} />);
+        break;
+      case 2:
+        setRenderPage(<WorkExperience setPage={setPage} />);
+        break;
+      default:
+        setRenderPage(<PersonalInformation setPage={setPage} />);
+    }
+  }, [page]);
+
   return (
     <Grid container style={{ width: "65rem" }}>
-      <Box style={{ width: "80%", margin: "auto" }}>
+      <Box style={{ width: "100%", margin: "auto" }}>
         <Box sx={{ borderBottom: 3, borderColor: "divider" }} xs={12}>
           <Tabs
             value={value}
@@ -59,19 +78,16 @@ export default function JobSeeker() {
             aria-label="secondary tabs example"
           >
             <Tab label="Fill out the form" {...a11yProps(0)} />
-            <Tab label="Job List" {...a11yProps(1)} />
+            <Tab label="Job seeker List" {...a11yProps(1)} />
           </Tabs>
         </Box>
-        <Accordin />
 
         <TabPanel value={value} index={0}>
-          <PersonalInformation />
+          <Accordin />
+          {renderPage}
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <JobList />
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          {/* <HiredPeople /> */}
+          <JobSeekerList />
         </TabPanel>
       </Box>
     </Grid>

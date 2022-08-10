@@ -1,0 +1,29 @@
+.header {
+  display: flex !important;
+  width: 100% !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  border-bottom: 3px solid #cccccc !important;
+}
+.header a {
+  color: #ffba1a !important;
+}
+.cardMessage {
+  border: 1px solid #393e46 !important ;
+  border-radius: 1rem !important;
+  padding: 0.15rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important ;
+  margin: 1rem !important;
+}
+.MessageBox {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+.Pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center !important;
+  margin-top: 2rem;
+}

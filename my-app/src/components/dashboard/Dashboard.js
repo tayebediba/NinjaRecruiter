@@ -3,30 +3,36 @@ import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
-import classes from "./dashboard.module.css";
-import { Avatar, Grid } from "@mui/material";
-
+import { Avatar, Grid, ListItem, ListItemText } from "@mui/material";
 import SideBar from "./sideBar/sideBar";
 import Calendar from "./calender/Calender";
-import EmployerList from "./employer/employerList/EmployerList";
 import Employer from "./employer/Employer";
 import Job from "./job/Job";
+import LogoutIcon from "@mui/icons-material/Logout";
+import Messages from "./messages/Messages";
+
+import classes from "./dashboard.module.css";
+
 import JobSeeker from "./jobSeeker/JobSeeker";
-import EducationalBackground from "./employer/EducationalBackground/EducationalBackground";
+import { useNavigate } from "react-router";
 
 const drawerWidth = 240;
 
 export default function Dashboard(props) {
+  const navigate = useNavigate();
+
   const [count, setCount] = useState(0);
   const [renderComponent, setRenderComponent] = useState("");
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [value, onChange] = useState(new Date());
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+  const handleLogOut = () => {
+    localStorage.setItem("isLogin", false);
+    navigate("/", { replace: true });
+  };
   useEffect(() => {
     switch (count) {
       case 0:
@@ -39,36 +45,26 @@ export default function Dashboard(props) {
         setRenderComponent(<Job />);
         break;
       case 3:
-        setRenderComponent(<JobSeeker/>);
+        setRenderComponent(<JobSeeker />);
         break;
       case 4:
-        setRenderComponent();
+        setRenderComponent(<Messages />);
         break;
       default:
-        setRenderComponent();
+        setRenderComponent(<Calendar />);
     }
   }, [count]);
   const drawer = (
     <div className={classes.drawerBox}>
       <div className={classes.avatar}>
         <Avatar />
-        <p>amir vosouqhi</p>
+        <p>User Name</p>
       </div>
-      {/* <Toolbar /> */}
+
       <Divider />
-      {/* <List className={classes.list}>
-        {SideBarList.map(({ name, icon }) => {
-          return (
-            <ListItem key={name} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>{icon}</ListItemIcon>
-                <ListItemText primary={name} />
-              </ListItemButton>
-            </ListItem>
-          );
-        })}
-      </List> */}
+
       <SideBar setCount={setCount} count={count} />
+     
     </div>
   );
 
@@ -123,12 +119,6 @@ export default function Dashboard(props) {
       >
         {renderComponent}
       </Grid>
-      <div className={classes.rightHederNav}>
-        <div className={classes.navHeaderDashboard}>{/* <Tab /> */}</div>
-
-        {/* <Accordin /> */}
-        {/* <FormInputs /> */}
-      </div>
     </Box>
   );
 }

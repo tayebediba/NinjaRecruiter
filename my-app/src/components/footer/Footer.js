@@ -4,10 +4,11 @@ import AppleIcon from "@mui/icons-material/Apple";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import logoFooter from "../../assets/img/icon/logoFooter.svg";
 const Footer = () => {
   return (
     <div className={classes.navFooter}>
-      <nav className={classes.nav}>
+      <footer className={classes.footerList}>
         <ul>
           <li>sample</li>
           <li>sample</li>
@@ -49,7 +50,14 @@ const Footer = () => {
             </li>
           </div>
         </ul>
-      </nav>
+      </footer>
+      <div className={classes.footerBotton}>
+        <img src={logoFooter} alt="logoFooter" />
+        <p>
+          Let the jobs find you Let the jobs find you Let the jobs find you Let
+          the jobs find you Let{" "}
+        </p>
+      </div>
     </div>
   );
 };

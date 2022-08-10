@@ -12,16 +12,16 @@ const Calendar = () => {
         <hr />
       </Grid>
       <Grid item xs={12} className={classes.MessageBox}>
-        <Grid xs={12} md={6}>
+        <Grid item xs={12} md={6}>
           {[1, 2, 3, 4].map((i) => {
             return (
               <div key={i} className={classes.cardMessage}>
                 <Avatar alt="Remy Sharp" />
-                <div style={{ textAlign: "left" }}>
+                <div style={{ textAlign: "left", paddingRight: "1rem" }}>
                   <h2>title</h2>
                   <p>text</p>
                 </div>
-                <h2>date</h2>
+                <h2 style={{ padding: "1rem" }}>date</h2>
               </div>
             );
           })}

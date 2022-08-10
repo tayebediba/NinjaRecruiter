@@ -85,7 +85,9 @@
   font-weight: 700;
   margin-top: 1rem;
 }
-
+.imgLogo {
+  margin: 1rem !important;
+}
 @media screen and (max-width: 768px) {
   .nav ul {
     color: #eeeeee;
@@ -101,8 +103,9 @@
     cursor: pointer;
   }
   .nav .logo {
-    padding: 0 1rem;
+    padding: 0 2rem;
   }
+
   .header .titleHeader h1 {
     width: 18rem;
     text-align: center;

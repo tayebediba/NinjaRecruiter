@@ -1,6 +1,8 @@
 .drawerBox {
   background-color: #d9d9d9 !important;
   height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 .avatar {
   background: url(../../assets/img/dashboard/background.png);

@@ -1,16 +1,13 @@
 import classes from "./form.module.css";
-import SelectSmall from "./Select";
-import BasicButtons from "./buttonsGroup/ButtonsGroup";
-import { Grid, MenuItem, TextField } from "@mui/material";
+import { Button, Grid, MenuItem, Stack, TextField } from "@mui/material";
 const FormInputs = () => {
   return (
     <Grid container className={classes.container}>
-     
       <Grid sx={12} md={6} className={classes.formInputs}>
-      <h1 style={{ textAlign: "center", margin: " 1rem auto" }}>
-        Employer Information
-      </h1>
-        <Grid  className={classes.form}>
+        <h1 style={{ textAlign: "center", margin: " 1rem auto" }}>
+          Employer Information
+        </h1>
+        <Grid className={classes.form}>
           <div className={classes.leftSide}>
             <div className={classes.firstNAme}>
               <label>First name</label>
@@ -72,7 +69,15 @@ const FormInputs = () => {
           </div>
         </Grid>
         <div className={classes.buttons}>
-          <BasicButtons />
+          <Stack spacing={2} direction="row">
+            <Button className={classes.styleBack} variant="outlined">
+              Back
+            </Button>
+
+            <Button className={classes.styleNext} variant="contained">
+              Next
+            </Button>
+          </Stack>
         </div>
       </Grid>
     </Grid>
