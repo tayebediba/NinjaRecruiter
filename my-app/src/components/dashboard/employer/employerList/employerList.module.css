@@ -76,3 +76,16 @@
 .active {
   background-color: #ffba1a;
 }
+
+
+@media screen and (max-width: 768px) {
+  .textFild{
+    width: 31% !important;
+  }
+  .buttonsGroup{
+    width: 31% ;
+  }
+  .editAccount{
+    width: 32% !important;
+  }
+}

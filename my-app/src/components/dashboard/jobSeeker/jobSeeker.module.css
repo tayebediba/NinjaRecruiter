@@ -12,6 +12,10 @@
 
   max-width: 100% !important;
 }
+.formInputs .h1{
+  text-align: center;
+   margin:  1rem auto ;
+}
 .formInputs .form {
   display: flex;
   align-items: flex-start;
@@ -117,4 +121,14 @@
 }
 .TextField {
   background-color: #d9d9d9 !important;
+}
+
+
+
+@media screen and (max-width: 768px) {
+.formInputs .h1{
+  text-align:start !important;
+  margin: 0;
+  width: 100% !important;
+}
 }

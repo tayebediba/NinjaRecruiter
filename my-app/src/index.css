@@ -118,7 +118,7 @@ abbr{
     font-size: 0.8rem !important;
   }
   .react-calendar__month-view__weekdays {
-    margin: auto 0.5rem !important;
+    margin: 20px 0.5rem !important;
     text-align: center !important;
     font-size: 12px !important;
   }
