@@ -21,3 +21,18 @@
   font-family: Inter-Bold;
   color: #737373 !important;
 }
+.toolbar {
+  display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .toolbar {
+    display: flex !important;
+    justify-content: space-between !important;
+
+    width: 100% !important;
+
+    background-color: #d9d9d9 !important;
+    height: min-content !important ;
+  }
+}
