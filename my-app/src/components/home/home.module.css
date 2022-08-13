@@ -100,12 +100,17 @@
     display: flex;
     gap: 1rem;
     margin-right: 1rem;
+    font-size: 0.7rem;
     cursor: pointer;
   }
   .nav .logo {
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
+    margin: 0;
+    padding: 0;
   }
-
+.imgLogo{
+  margin:1rem 0 ;
+}
   .header .titleHeader h1 {
     width: 18rem;
     text-align: center;
