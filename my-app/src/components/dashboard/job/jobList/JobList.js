@@ -15,6 +15,7 @@ import {
   Stack,
   Switch,
 } from "@mui/material";
+import SearchBox from "../../../searchBox/SearchBox";
 
 const Root = styled("div")(
   ({ theme }) => `
@@ -219,33 +220,7 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
 const HiredPeople = () => {
   return (
     <Root className={classes.container}>
-      <FormControl fullWidth sx={{ m: 1 }}>
-        <OutlinedInput
-          className={classes.textFild}
-          placeholder="Search Job..."
-          id="outlined-adornment-amount"
-          startAdornment={<SearchIcon position="start" />}
-        />
-      </FormControl>
-      <Box sx={{ "& > :not(style)": { m: 1 } }}>
-        <div className={classes.buttonsGroup}>
-          <Fab className={classes.fab} variant="extended">
-            Text
-          </Fab>
-          <Fab className={classes.fab} variant="extended">
-            Text
-          </Fab>
-          <Fab className={classes.fab} variant="extended">
-            Text
-          </Fab>
-          <Fab className={classes.fab} variant="extended">
-            Text
-          </Fab>
-          <Fab className={classes.fab} variant="extended">
-            Text
-          </Fab>
-        </div>
-      </Box>
+      <SearchBox />
       <div className={classes.editAccount}>
         <div className={classes.card}>
           <div className={classes.person}>
