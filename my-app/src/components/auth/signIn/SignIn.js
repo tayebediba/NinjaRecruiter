@@ -71,7 +71,7 @@ const SignIn = ({ setIsForgotPass, switcher }, props) => {
           // value={password}
           // onChange={(e) => setPassword(e.target.value)}
           required
-          type={showPassword ? "text" : "password"}
+          type={showPassword ? "text" : "password"} 
           disableUnderline={true}
           placeholder="Password"
           startAdornment={
