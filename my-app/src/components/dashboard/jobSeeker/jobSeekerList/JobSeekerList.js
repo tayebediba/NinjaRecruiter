@@ -7,7 +7,7 @@ import classes from "./jobSeekerList.module.css";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Pagination from "@mui/material/Pagination";
-import { Box, Fab, FormControl, OutlinedInput } from "@mui/material";
+import { Box, Fab, FormControl, Grid, OutlinedInput } from "@mui/material";
 import SearchBox from "../../../searchBox/SearchBox";
 
 const Root = styled("div")(
@@ -169,7 +169,7 @@ const Listbox = styled("ul")(
 
 const JobSeekerList = () => {
   return (
-    <Root className={classes.container}>
+    <Grid container className={classes.container}>
       <SearchBox />
 
       <div className={classes.editAccount}>
@@ -219,7 +219,7 @@ const JobSeekerList = () => {
       <div className={classes.Pagination}>
         <Pagination count={10} className={classes.colorPagination} />
       </div>
-    </Root>
+    </Grid>
   );
 };
 export default JobSeekerList;

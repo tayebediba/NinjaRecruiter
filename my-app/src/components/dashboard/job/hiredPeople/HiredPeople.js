@@ -167,7 +167,7 @@ const Listbox = styled("ul")(
 `
 );
 
-const JobList = () => {
+const HiredPeople = () => {
   return (
     <Grid container className={classes.container}>
       <SearchBox />
@@ -190,7 +190,7 @@ const JobList = () => {
     </Grid>
   );
 };
-export default JobList;
+export default HiredPeople;
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
   { title: "The Shawshank Redemption", year: 1994 },
