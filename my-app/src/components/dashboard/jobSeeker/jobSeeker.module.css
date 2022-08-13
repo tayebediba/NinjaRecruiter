@@ -128,7 +128,37 @@
 @media screen and (max-width: 768px) {
 .formInputs .h1{
   text-align:start !important;
-  margin: 0;
+  margin-left: 0.5rem;
   width: 100% !important;
+  font-size: 1.5rem;
 }
+.formInputs{
+  width: 98% !important;
+}
+.formInputs .form {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: Inter-Medium;
+}
+.form .leftSide{
+  width: 100%;
+    margin-left: 0.5rem;
+}
+.form .rightSide{
+  width: 100%;
+    margin-left: 0.5rem;
+}
+.Grid{
+  width: 98%;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+
 }

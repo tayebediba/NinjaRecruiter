@@ -5,7 +5,7 @@ import classes from "../jobSeeker.module.css";
 const PersonalInformation = ({ setPage }) => {
   return (
     <Grid container style={{ width: "100%", margin: "rem auto" }}>
-      <Grid sx={6} md={12}>
+      <Grid className={classes.Grid} sx={6} md={12}>
         <Grid sx={12} md={6} className={classes.formInputs}>
           <h1 className={classes.h1} >
             Personal Information
