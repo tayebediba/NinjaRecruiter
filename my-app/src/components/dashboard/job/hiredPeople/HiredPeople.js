@@ -8,6 +8,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Pagination from "@mui/material/Pagination";
 import { Box, Fab, FormControl, OutlinedInput } from "@mui/material";
+import SearchBox from "../../../searchBox/SearchBox";
 
 const Root = styled("div")(
   ({ theme }) => `
@@ -169,34 +170,7 @@ const Listbox = styled("ul")(
 const JobList = () => {
   return (
     <Root className={classes.container}>
-      <FormControl fullWidth sx={{ m: 1 }}>
-        <OutlinedInput
-          className={classes.textFild}
-          placeholder="Search Hired people ..."
-          id="outlined-adornment-amount"
-          startAdornment={<SearchIcon position="start" />}
-        />
-      </FormControl>
-      <Box sx={{ "& > :not(style)": { m: 1 } }}>
-        <div className={classes.buttonsGroup}>
-          <Fab className={classes.fab} variant="extended">
-            Text
-          </Fab>
-          <Fab className={classes.fab} variant="extended">
-            Text
-          </Fab>
-          <Fab className={classes.fab} variant="extended">
-            Text
-          </Fab>
-          <Fab className={classes.fab} variant="extended">
-            Text
-          </Fab>
-          <Fab className={classes.fab} variant="extended">
-            Text
-          </Fab>
-        </div>
-      </Box>
-
+      <SearchBox />
       <div className={classes.editAccount}>
         <div className={classes.card}>
           <div className={classes.person}>

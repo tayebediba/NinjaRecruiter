@@ -9,13 +9,7 @@
   color: #737373;
   font-family: Inter-Reqular;
 }
-.container {
-  /* width: 60%;
-  margin: 4rem auto; */
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
+
 .editAccount {
   border: 2px solid #737373;
   width: 100% !important;
