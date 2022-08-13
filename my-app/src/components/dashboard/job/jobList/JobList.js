@@ -11,6 +11,7 @@ import {
   Box,
   Fab,
   FormControl,
+  Grid,
   OutlinedInput,
   Stack,
   Switch,
@@ -219,9 +220,9 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
 
 const HiredPeople = () => {
   return (
-    <Root className={classes.container}>
+    <Grid container className={classes.container}>
       <SearchBox />
-      <div className={classes.editAccount}>
+      <Grid item xs={10} className={classes.editAccount}>
         <div className={classes.card}>
           <div className={classes.person}>
             <div
@@ -249,12 +250,12 @@ const HiredPeople = () => {
             </Stack>
           </div>
         </div>
-      </div>
+      </Grid>
 
       <div className={classes.Pagination}>
         <Pagination count={10} className={classes.colorPagination} />
       </div>
-    </Root>
+    </Grid>
   );
 };
 export default HiredPeople;
