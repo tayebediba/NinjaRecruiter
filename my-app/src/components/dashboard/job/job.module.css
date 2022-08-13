@@ -48,7 +48,7 @@
 @media screen and (max-width: 768px) {
   .input,
   .TextField {
-    width: 50%;
+    width: 100%;
   }
   .titleHeader {
     text-align: left !important;
