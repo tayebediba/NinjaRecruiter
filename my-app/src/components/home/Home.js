@@ -39,7 +39,7 @@ const Home = () => {
                     <Link to="/login">LogIn</Link>
                   </li>
                 </>
-              )}
+              )} 
             </div>
             <li>Job creation</li>
           </ul>
@@ -53,7 +53,7 @@ const Home = () => {
       </Grid>
       <Card />;
       <div className={classes.title}>
-        <h1>Tittle</h1>
+        <h1>Tittle</h1> 
       </div>
       <CardTwo />
       <CardThree />

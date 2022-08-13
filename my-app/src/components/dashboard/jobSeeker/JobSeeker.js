@@ -55,7 +55,7 @@ export default function JobSeeker() {
   React.useEffect(() => {
     switch (page) {
       case 0:
-        setRenderPage(<PersonalInformation setPage={setPage} />);
+        setRenderPage(<PersonalInformation setPage={setPage} />); 
         break;
       case 1:
         setRenderPage(<EducationalBackground setPage={setPage} />);
@@ -69,7 +69,7 @@ export default function JobSeeker() {
   }, [page]);
 
   return (
-    <Grid container style={{ width: "65rem" }}>
+    <Grid container style={{ width: "100%" }}>
       <Box style={{ width: "100%", margin: "auto" }}>
         <Box sx={{ borderBottom: 3, borderColor: "divider" }} xs={12}>
           <Tabs
@@ -78,7 +78,7 @@ export default function JobSeeker() {
             aria-label="secondary tabs example"
           >
             <Tab label="Fill out the form" {...a11yProps(0)} />
-            <Tab label="Job seeker List" {...a11yProps(1)} />
+            <Tab label="Job seeker List" {...a11yProps(1)} /> 
           </Tabs>
         </Box>
 

@@ -38,3 +38,20 @@
   color: #595959 !important;
   font-weight: 700 !important;
 }
+.titleHeader {
+  text-align: center;
+  margin: 1rem auto;
+}
+.containerInput {
+  width: 100% !important;
+}
+@media screen and (max-width: 768px) {
+  .input,
+  .TextField {
+    width: 100%;
+  }
+  .titleHeader {
+    text-align: left !important;
+    margin: 1rem !important;
+  }
+}
