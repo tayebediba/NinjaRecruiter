@@ -54,4 +54,8 @@
     text-align: left !important;
     margin: 1rem !important;
   } */
+  .btn {
+    margin-left: 15% !important;
+    margin-top: 3rem !important;
+  }
 }
