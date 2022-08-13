@@ -57,14 +57,12 @@
 
 @media screen and (max-width: 768px) {
   .calenderBox {
-    /* padding: 0 2rem !important; */
     border-radius: 1rem !important;
     background-color: #ffd369 !important;
     display: flex !important;
     justify-content: center !important;
     width: 100% !important;
     flex-direction: column !important;
-    /* margin: auto 1rem !important; */
     gap: 10px !important;
   }
   .meetingBox {
@@ -81,7 +79,7 @@
     height: 90% !important;
   }
   .accordionDetails {
-    width: 30% !important;
+    width: 100% !important;
     margin: 0;
   }
 

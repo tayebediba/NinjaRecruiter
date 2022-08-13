@@ -76,3 +76,18 @@
 .active {
   background-color: #ffba1a;
 }
+
+@media screen and (max-width: 768px) {
+  .editAccount {
+    border: 2px solid #737373;
+    width: 73% !important;
+    margin-left: 0.5rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+  }
+  .Pagination {
+    width: 77%;
+    margin: 2rem 0;
+  }
+  
+}

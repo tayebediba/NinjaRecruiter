@@ -76,3 +76,11 @@
 .active {
   background-color: #ffba1a;
 }
+
+
+@media screen and (max-width: 768px) {
+  .Pagination{
+    width: 80%;
+  }
+
+}

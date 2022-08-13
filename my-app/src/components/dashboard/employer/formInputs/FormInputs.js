@@ -4,7 +4,7 @@ const FormInputs = () => {
   return (
     <Grid container className={classes.container}>
       <Grid sx={12} md={6} className={classes.formInputs}>
-        <h1 style={{ textAlign: "center", margin: " 1rem auto" }}>
+        <h1 className={classes.title} >
           Employer Information
         </h1>
         <Grid className={classes.form}>
