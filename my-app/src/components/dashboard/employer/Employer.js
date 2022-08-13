@@ -57,7 +57,6 @@ export default function Employer() {
           sx={{ borderBottom: 3, borderColor: "divider" }}
           style={{
             width: "100%",
-
             margin: "auto",
           }}
           xs={10}
