@@ -7,8 +7,8 @@ const PersonalInformation = ({ setPage }) => {
     <Grid container style={{ width: "100%", margin: "rem auto" }}>
       <Grid sx={6} md={12}>
         <Grid sx={12} md={6} className={classes.formInputs}>
-          <h1 style={{ textAlign: "center", margin: " 1rem auto" }}>
-            Employer Information
+          <h1 className={classes.h1} >
+            Personal Information
           </h1>
           <Grid className={classes.form}>
             <div className={classes.leftSide}>
