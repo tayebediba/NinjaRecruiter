@@ -54,20 +54,15 @@
 }
 
 @media screen and (max-width: 768px) {
-  .buttonsGroup{
-    width: 31% ;
+  .buttonsGroup {
+    width: 31%;
   }
-  .editAccount{
+  .editAccount {
     width: 74% !important;
     margin-left: 0.5rem;
   }
-  .Pagination{
+  .Pagination {
     width: 77%;
-    display: flex;
-    justify-content: center !important;
-    margin-top: 2rem;
-
+    margin: 2rem auto !important;
   }
- 
 }
-

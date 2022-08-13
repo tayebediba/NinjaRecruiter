@@ -6,16 +6,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import classes from "./jobList.module.css";
 import EditIcon from "@mui/icons-material/Edit";
 import Pagination from "@mui/material/Pagination";
-import {
-  Badge,
-  Box,
-  Fab,
-  FormControl,
-  Grid,
-  OutlinedInput,
-  Stack,
-  Switch,
-} from "@mui/material";
+import { Badge, Grid, Stack, Switch } from "@mui/material";
 import SearchBox from "../../../searchBox/SearchBox";
 
 const Root = styled("div")(
@@ -222,7 +213,7 @@ const JobList = () => {
   return (
     <Grid container className={classes.container}>
       <SearchBox />
-      <Grid item xs={10} className={classes.editAccount}>
+      <Grid item xs={12} className={classes.editAccount}>
         <div className={classes.card}>
           <div className={classes.person}>
             <div
@@ -259,6 +250,9 @@ const JobList = () => {
   );
 };
 export default JobList;
+
+
+
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
   { title: "The Shawshank Redemption", year: 1994 },

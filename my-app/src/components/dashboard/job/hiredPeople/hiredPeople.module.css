@@ -10,11 +10,8 @@
   font-family: Inter-Reqular;
 }
 .container {
-  /* width: 60%;
-  margin: 4rem auto; */
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 3rem auto !important;
+  width: 90% !important;
 }
 .editAccount {
   border: 2px solid #737373;
@@ -47,7 +44,7 @@
   gap: 3px;
 }
 .Pagination {
-  width: 70%;
+  width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 2rem;
@@ -79,15 +76,10 @@
 
 @media screen and (max-width: 768px) {
   .editAccount {
-    border: 2px solid #737373;
-    width: 73% !important;
-    margin-left: 0.5rem;
-    border-radius: 5px;
-    margin-top: 2rem;
+    width: 100% !important;
   }
   .Pagination {
     width: 77%;
     margin: 2rem 0;
   }
-  
 }
