@@ -50,4 +50,8 @@
   .TextField {
     width: 50%;
   }
+  .titleHeader {
+    text-align: left !important;
+    margin: 1rem !important;
+  }
 }
