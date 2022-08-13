@@ -86,6 +86,15 @@
     width: 31% ;
   }
   .editAccount{
-    width: 32% !important;
+    width: 74% !important;
+    margin-left: 0.5rem;
   }
+  .Pagination{
+    width: 77%;
+    display: flex;
+    justify-content: center !important;
+    margin-top: 2rem;
+
+  }
+ 
 }
