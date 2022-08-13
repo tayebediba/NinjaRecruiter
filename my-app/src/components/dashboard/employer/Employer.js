@@ -21,7 +21,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box>
+        <Box xs={12}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -52,8 +52,16 @@ export default function Employer() {
 
   return (
     <Grid container style={{ width: "100%" }}>
-      <Box style={{ width: "100%", margin: "0" }}>
-        <Box sx={{ borderBottom: 3, borderColor: "divider" }} xs={12}>
+      <Box>
+        <Box
+          sx={{ borderBottom: 3, borderColor: "divider" }}
+          style={{
+            width: "100%",
+
+            margin: "auto",
+          }}
+          xs={10}
+        >
           <Tabs
             value={value}
             onChange={handleChange}

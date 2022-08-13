@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100% !important;
 }
 
 .formInputs {
@@ -116,10 +116,10 @@
     display: flex;
     justify-content: space-around;
   }
-  .form .leftSide label{
+  .form .leftSide label {
     font-size: 0.8rem;
   }
-  .form .rightSide label{
+  .form .rightSide label {
     font-size: 0.8rem;
   }
 }
