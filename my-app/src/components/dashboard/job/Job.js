@@ -50,9 +50,16 @@ export default function Job() {
   };
 
   return (
-    <Grid container style={{width: "100%" }}>
-      <Box style={{ width: "100%", margin: "0" }}>
-        <Box sx={{ borderBottom: 3, borderColor: "divider" }} xs={12}>
+    <Grid container>
+      <Box>
+        <Box
+          sx={{ borderBottom: 3, borderColor: "divider" }}
+          xs={10}
+          style={{
+            width: "90%",
+            margin: "auto",
+          }}
+        >
           <Tabs
             value={value}
             onChange={handleChange}

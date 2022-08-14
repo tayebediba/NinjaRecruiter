@@ -6,10 +6,12 @@
   display: flex;
   width: 100%;
   justify-content: left !important;
+  flex-wrap: wrap !important;
 }
 .buttonsGroup .fab {
   margin: 0.5rem !important;
   border: #595959 1px solid !important;
+  flex-wrap: wrap !important;
   box-shadow: none;
   color: #595959;
   font-family: Inter-Regular;
@@ -25,6 +27,6 @@
 
 @media screen and (max-width: 768px) {
   .textFild {
-    width: 75% !important;
+    width: 100% !important;
   }
 }

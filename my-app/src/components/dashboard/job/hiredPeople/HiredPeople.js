@@ -7,7 +7,7 @@ import classes from "./hiredPeople.module.css";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Pagination from "@mui/material/Pagination";
-import { Box, Fab, FormControl, OutlinedInput } from "@mui/material";
+import { Box, Fab, FormControl, Grid, OutlinedInput } from "@mui/material";
 import SearchBox from "../../../searchBox/SearchBox";
 
 const Root = styled("div")(
@@ -167,21 +167,11 @@ const Listbox = styled("ul")(
 `
 );
 
-const JobList = () => {
+const HiredPeople = () => {
   return (
-    <Root className={classes.container}>
+    <Grid container className={classes.container}>
       <SearchBox />
-      <div className={classes.editAccount}>
-        <div className={classes.card}>
-          <div className={classes.person}>
-            <h1>amir vosoughi</h1>
-          </div>
-          <div className={classes.icons}>
-            <DeleteIcon className={classes.icon} />
-            <EditIcon className={classes.icon} />
-          </div>
-        </div>
-      </div>
+
       <div className={classes.editAccount}>
         <div className={classes.card}>
           <div className={classes.person}>
@@ -193,35 +183,14 @@ const JobList = () => {
           </div>
         </div>
       </div>
-      <div className={classes.editAccount}>
-        <div className={classes.card}>
-          <div className={classes.person}>
-            <h1>mina pour erfan</h1>
-          </div>
-          <div className={classes.icons}>
-            <DeleteIcon className={classes.icon} />
-            <EditIcon className={classes.icon} />
-          </div>
-        </div>
-      </div>
-      <div className={classes.editAccount}>
-        <div className={classes.card}>
-          <div className={classes.person}>
-            <h1>amir mehrabi</h1>
-          </div>
-          <div className={classes.icons}>
-            <DeleteIcon className={classes.icon} />
-            <EditIcon className={classes.icon} />
-          </div>
-        </div>
-      </div>
+
       <div className={classes.Pagination}>
         <Pagination count={10} className={classes.colorPagination} />
       </div>
-    </Root>
+    </Grid>
   );
 };
-export default JobList;
+export default HiredPeople;
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
   { title: "The Shawshank Redemption", year: 1994 },

@@ -9,7 +9,11 @@
   color: #737373;
   font-family: Inter-Reqular;
 }
-
+.container {
+  margin: 3rem auto !important;
+  align-items: center !important;
+  width: 90% !important;
+}
 .editAccount {
   border: 2px solid #737373;
   width: 100% !important;
@@ -74,10 +78,13 @@
   background-color: #ffba1a;
 }
 
-
 @media screen and (max-width: 768px) {
-  .Pagination{
+  .Pagination {
     width: 80%;
+    
   }
-
+  .editAccount {
+    width: 100% !important;
+    margin-left: 0.5rem;
+  }
 }

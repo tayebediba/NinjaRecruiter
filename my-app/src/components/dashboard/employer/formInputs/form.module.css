@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100% !important;
 }
 .title{
   text-align: center;
@@ -119,6 +119,12 @@ margin: 1rem auto;
     display: flex;
     justify-content: space-around;
   }
+
+  .form .leftSide label {
+    font-size: 0.8rem;
+  }
+  
+
   .form .leftSide{
     display: flex;
     flex-direction: column;
@@ -139,6 +145,7 @@ margin: 1rem auto;
     margin-left: 0.5rem;
   }
   .form .rightSide label{
+
     font-size: 0.8rem;
   }
   .title{

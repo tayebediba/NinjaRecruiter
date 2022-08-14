@@ -10,17 +10,14 @@
   font-family: Inter-Reqular;
 }
 .container {
-  /* width: 60%;
-  margin: 4rem auto; */
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 3rem auto !important;
+  align-items: center !important;
 }
 .editAccount {
   border: 2px solid #737373;
   width: 100% !important;
   border-radius: 5px;
-  margin-top: 2rem;
+  margin-top: 2rem !important;
 }
 .editAccount .card {
   display: flex;
@@ -52,49 +49,20 @@
   justify-content: center !important;
   margin-top: 2rem;
 }
-.textFild {
-  color: #737373 !important;
-  background-color: #d9d9d9 !important;
-}
-.buttonsGroup {
-  display: flex;
-  width: 100%;
-  justify-content: left !important;
-}
-.buttonsGroup .fab {
-  margin: 0.5rem !important;
-  border: #595959 1px solid !important;
-  box-shadow: none;
-  color: #595959;
-  font-family: Inter-Regular;
-  background-color: #d9d9d9;
-}
-.fab:hover {
-  background-color: #ffba1a !important;
-  color: #595959;
-}
 .active {
   background-color: #ffba1a;
 }
 
-
 @media screen and (max-width: 768px) {
-  .textFild{
-    width: 31% !important;
+  .buttonsGroup {
+    width: 31%;
   }
-  .buttonsGroup{
-    width: 31% ;
-  }
-  .editAccount{
+  .editAccount {
     width: 74% !important;
     margin-left: 0.5rem;
   }
-  .Pagination{
+  .Pagination {
     width: 77%;
-    display: flex;
-    justify-content: center !important;
-    margin-top: 2rem;
-
+    margin: 2rem auto !important;
   }
- 
 }

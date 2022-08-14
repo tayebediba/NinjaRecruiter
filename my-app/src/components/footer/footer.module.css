@@ -38,16 +38,20 @@
   padding: auto 4rem;
 }
 .footerBotton .logoFooter {
-  width: 54%;
+  width: 49%;
   margin: auto;
   display: flex;
   flex-direction: row;
   gap: 20px;
   align-items: center;
+  
 }
 .footerBotton img {
   width: 2rem !important;
 }
+
+
+
 @media screen and (max-width: 768px) {
   .navFooter .footerList {
     background: #393e46;
@@ -75,12 +79,16 @@
     justify-content: space-around;
     align-items: center;
   }
+
+  @media screen and (max-width: 768px){
   .footerBotton .logoFooter {
     width: 77%;
     gap: 15px;
+
   }
   .logoFooter p {
     width: 64%;
     font-size: 0.4rem;
   
 }
+  }
