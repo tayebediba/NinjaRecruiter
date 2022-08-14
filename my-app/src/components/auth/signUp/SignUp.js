@@ -13,27 +13,28 @@ import linkedIn from "../../../assets/img/icon/linkedIn.svg";
 import Google from "../../../assets/img/icon/Google.svg";
 import facebook from "../../../assets/img/icon/facebook.svg";
 import "../inputStyles.css";
+import { senOtpService } from "../../../services/authService";
 
 const SignUp = ({ switcher }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
 
   const changeHandler = () => {
     setShowPassword((prevState) => !prevState);
   };
-  // const register = async (e, userName, password) => {
-  //   e.preventDefault();
-  //   console.log(userName, password);
-  //   await http
-  //     .post("/Account/SignUp", {
-  //       userName,
-  //       password,
-  //     })
-  //     .then((res) => {
-  //       console.log(res);
-  //     });
-  // };
+
+  const sendOTPHandler = () => {
+    senOtpService(userName, password, email).then((res) => {
+      if (res.status === 200) {
+        setUserName("");
+        setPassword("");
+        setEmail("");
+        console.log(res, "data");
+      }
+    });
+  };
 
   return (
     <Grid container>
@@ -41,8 +42,8 @@ const SignUp = ({ switcher }) => {
         <Input
           className="input_style"
           type="text"
-          // value={userName}
-          // onChange={(e) => setUserName(e.target.value)}
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
           required
           disableUnderline={true}
           placeholder="Name"
@@ -55,8 +56,8 @@ const SignUp = ({ switcher }) => {
         <Input
           className="input_style"
           type="email"
-          // value={userName}
-          // onChange={(e) => setUserName(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
           disableUnderline={true}
           placeholder="Email"
@@ -69,8 +70,8 @@ const SignUp = ({ switcher }) => {
 
         <Input
           className="input_style"
-          // value={password}
-          // onChange={(e) => setPassword(e.target.value)}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           required
           type={showPassword ? "text" : "password"}
           disableUnderline={true}
@@ -91,11 +92,7 @@ const SignUp = ({ switcher }) => {
           }
         />
 
-        <Button
-          className="auth"
-          type="submit"
-          // onClick={(e) => register(e, userName, password)}
-        >
+        <Button className="auth" type="submit" onClick={sendOTPHandler}>
           Sign up
         </Button>
         <span className="and">

@@ -39,12 +39,12 @@ const Home = () => {
                     <Link to="/login">LogIn</Link>
                   </li>
                 </>
-              )} 
+              )}
             </div>
             <li>Job creation</li>
           </ul>
           <div className={classes.logo}>
-            <img src={logo} alt="logo"  className={classes.imgLogo}/>
+            <img src={logo} alt="logo" className={classes.imgLogo} />
           </div>
         </nav>
         <div className={classes.titleHeader}>
@@ -53,7 +53,7 @@ const Home = () => {
       </Grid>
       <Card />;
       <div className={classes.title}>
-        <h1>Tittle</h1> 
+        <h1>Tittle</h1>
       </div>
       <CardTwo />
       <CardThree />
