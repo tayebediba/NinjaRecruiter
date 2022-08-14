@@ -2,7 +2,7 @@ import axios from "axios";
 // import Cookies from "js-cookie";
 
 const mainAxios = axios.create({
-  baseURL: "http://sarzaminman.ir:8000",
+  baseURL: "http://192.168.1.151:443/api/v1",
 });
 
 // Request Config ---------------------------------
@@ -11,7 +11,8 @@ mainAxios.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
     if (token) {
-      config.headers["Authorization"] = `${token}`;
+      config.headers["Authorization"] = `Bearer ${token}`;
+      config.headers["Access-Control-Allow-Origin"] = "*";
       config.headers["Cache-Control"] = `no-store`;
       config.headers["Cache-Control"] = `no-cache`;
       config.headers["Pragma"] = `no-cache`;

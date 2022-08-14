@@ -14,48 +14,39 @@ import Google from "../../../assets/img/icon/Google.svg";
 import facebook from "../../../assets/img/icon/facebook.svg";
 // import searchIcon from "../../../assets/img/icons8-google.svg";
 import "../inputStyles.css";
+import { useNavigate } from "react-router";
+import { LoginService } from "../../../services/authService";
 
 const SignIn = ({ setIsForgotPass, switcher }, props) => {
   const [showPassword, setShowPassword] = useState(false);
-  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
   const changeHandler = () => {
     setShowPassword((prevState) => !prevState);
   };
 
-  // const history = useHistory();
-  // const logIn = async (e, userName, password) => {
-  //   e.preventDefault();
-
-  //   await http
-  //     .post("/Account/SignIn", {
-  //       userName: userName.toString(),
-  //       password: password.toString(),
-  //     })
-  //     .then((res) => {
-  //       console.log(res);
-  //       const Data = {
-  //         token: res.data.accessToken,
-  //         tokenExp: res.data.accessTokenExpirationTime,
-  //         refreshToken: res.data.refreshToken,
-  //         refreshTokenExp: res.data.refreshTokenExpirationTime,
-  //       };
-  //       setTokenCookies(Data);
-  //       history.push("/dashboard");
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
+  const navigate = useNavigate();
+  const loginHandler = () => {
+    console.log(userEmail);
+    console.log(password);
+    LoginService(userEmail, password).then((res) => {
+      if (res.status === 200) {
+        localStorage.setItem("isLogin", true);
+        localStorage.setItem("token", res.data.access);
+        navigate("/", { replace: true });
+        setUserEmail("");
+        setPassword("");
+      }
+    });
+  };
   return (
     <Grid container className="signIn">
       <form className="form_signIn">
         <Input
           className="input_style"
           type="email"
-          // value={userName}
-          // onChange={(e) => setUserName(e.target.value)}
+          value={userEmail}
+          onChange={(e) => setUserEmail(e.target.value)}
           required
           disableUnderline={true}
           placeholder="Email"
@@ -68,10 +59,10 @@ const SignIn = ({ setIsForgotPass, switcher }, props) => {
 
         <Input
           className="input_style"
-          // value={password}
-          // onChange={(e) => setPassword(e.target.value)}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           required
-          type={showPassword ? "text" : "password"} 
+          type={showPassword ? "text" : "password"}
           disableUnderline={true}
           placeholder="Password"
           startAdornment={
@@ -97,12 +88,8 @@ const SignIn = ({ setIsForgotPass, switcher }, props) => {
             </p>
           </div>
         </div>
-        <Button
-          className="auth"
-          type="submit"
-          // onClick={(e) => logIn(e, userName, password)}
-        >
-          Sign up
+        <Button className="auth" type="submit" onClick={loginHandler}>
+          Sign in
         </Button>
         <span className="and">
           <div className="line"></div>
