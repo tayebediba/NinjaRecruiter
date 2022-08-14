@@ -15,7 +15,7 @@ const EducationalBackground = ({ setPage }) => {
     <Grid container style={{ width: "100%", margin: "1rem auto" }}>
       <Grid sx={6} md={12}>
         <Grid sx={12} md={6} className={classes.formInputs}>
-          <h1 style={{ textAlign: "center", margin: " 1rem auto" }}>
+          <h1 className={classes.h1Eductional} style={{ textAlign: "center", margin: " 1rem auto" }}>
             Educational Background{" "}
           </h1>
           <Grid className={classes.form}>

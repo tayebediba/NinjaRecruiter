@@ -114,3 +114,30 @@
   font-weight: 700 !important;
   border: 3px solid #ffd369 !important;
 }
+
+
+@media screen and (max-width: 768px){
+  .formInputs .form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    font-family: Inter-Medium;
+  }
+  .form .leftSide {
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+    width: 100%;
+  }
+  .form .rightSide {
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+    width: 100%;
+  }
+  .h1Eductional{
+    font-size: 1.3rem;
+  }
+}
