@@ -4,7 +4,6 @@ import {
   IconButton,
   Input,
   InputAdornment,
-  Switch,
 } from "@mui/material";
 import { useState } from "react";
 import { Person, Email, Lock, RemoveRedEye } from "@mui/icons-material";
@@ -12,8 +11,10 @@ import apple from "../../../assets/img/icon/apple.svg";
 import linkedIn from "../../../assets/img/icon/linkedIn.svg";
 import Google from "../../../assets/img/icon/Google.svg";
 import facebook from "../../../assets/img/icon/facebook.svg";
+import { RegisterService } from "../../../services/authService";
+import { useNavigate } from "react-router";
+
 import "../inputStyles.css";
-import { senOtpService } from "../../../services/authService";
 
 const SignUp = ({ switcher }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -24,10 +25,15 @@ const SignUp = ({ switcher }) => {
   const changeHandler = () => {
     setShowPassword((prevState) => !prevState);
   };
+  const navigate = useNavigate();
 
-  const sendOTPHandler = () => {
-    senOtpService(userName, password, email).then((res) => {
+  const sendOTPHandler = (e) => {
+    e.preventDefault();
+    RegisterService(userName, email, password).then((res) => {
       if (res.status === 200) {
+        localStorage.setItem("isLogin", true);
+        localStorage.setItem("token", res.data.data.access_token);
+        navigate("/", { replace: true });
         setUserName("");
         setPassword("");
         setEmail("");

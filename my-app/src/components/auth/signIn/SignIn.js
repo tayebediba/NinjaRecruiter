@@ -26,13 +26,15 @@ const SignIn = ({ setIsForgotPass, switcher }, props) => {
   };
 
   const navigate = useNavigate();
-  const loginHandler = () => {
+  const loginHandler = (e) => {
+    e.preventDefault();
     console.log(userEmail);
     console.log(password);
     LoginService(userEmail, password).then((res) => {
       if (res.status === 200) {
+        console.log(res);
         localStorage.setItem("isLogin", true);
-        localStorage.setItem("token", res.data.access);
+        localStorage.setItem("token", res.data.data.access_token);
         navigate("/", { replace: true });
         setUserEmail("");
         setPassword("");

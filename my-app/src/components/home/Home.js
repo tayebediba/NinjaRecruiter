@@ -25,9 +25,6 @@ const Home = () => {
         <nav className={classes.nav}>
           <ul>
             <div className={classes.navLogin}>
-              <li className={`${classes.btnAccount} ${classes.nav}`}>
-                <Link to="/dashboard">Account</Link>
-              </li>
               {isLogin ? (
                 <li className={`${classes.btnAccount} ${classes.nav}`}>
                   <Link to="/dashboard">Account</Link>

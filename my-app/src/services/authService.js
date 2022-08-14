@@ -1,12 +1,12 @@
 import httpService from "./httpService";
 
-
 // ==========Register============
-export const senOtpService = async (userName, email, password) => {
+export const RegisterService = async (userName, email, password) => {
   const data = await httpService.post("/Account/Register", {
     name: userName,
     email: email,
     password: password,
+    rematchPassword: password,
   });
   return data;
 };

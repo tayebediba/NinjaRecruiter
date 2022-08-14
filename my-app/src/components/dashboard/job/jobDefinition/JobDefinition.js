@@ -10,11 +10,9 @@ import classes from "../job.module.css";
 const JobDefinition = () => {
   return (
     <Grid container>
-      <h1 className={classes.titleHeader}>
-        Job definition
-      </h1>
+      <h1 className={classes.titleHeader}>Job definition</h1>
       <form className={classes.form}>
-        <Grid container  className={classes.containerInput}>
+        <Grid container className={classes.containerInput}>
           <Grid item xs={12} md={6}>
             <Grid item xs={12} className={classes.inputBox}>
               <label>Title</label>
@@ -105,7 +103,11 @@ const JobDefinition = () => {
               <input className={classes.input} type="text" />
             </Grid>
             <Grid item xs={12} className={classes.btn}>
-              <Stack spacing={2} direction="row">
+              <Stack
+                spacing={2}
+                direction="row"
+                style={{ justifyContent: "right", marginRight: "1rem" }}
+              >
                 <Button className={classes.styleBack} variant="outlined">
                   Back
                 </Button>
