@@ -3,9 +3,9 @@
   flex-direction: column;
   width: 100% !important;
 }
-.title{
+.title {
   text-align: center;
-margin: 1rem auto;
+  margin: 1rem auto;
 }
 .formInputs {
   width: 100% !important;
@@ -82,6 +82,7 @@ margin: 1rem auto;
 .buttons {
   display: flex;
   justify-content: end;
+  margin-top: 2rem !important;
 }
 .TextField {
   background-color: #d9d9d9 !important;
@@ -100,7 +101,18 @@ margin: 1rem auto;
   font-weight: 700 !important;
   border: 3px solid #ffd369 !important;
 }
-
+.inputBox {
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 1rem !important;
+}
+.inputBox label {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.TextField {
+  background-color: #d9d9d9 !important;
+}
 @media screen and (max-width: 768px) {
   .form {
     display: flex;
@@ -123,35 +135,32 @@ margin: 1rem auto;
   .form .leftSide label {
     font-size: 0.8rem;
   }
-  
 
-  .form .leftSide{
+  .form .leftSide {
     display: flex;
     flex-direction: column;
     align-items: initial;
     width: 97%;
-  
+
     margin-left: 0.5rem;
   }
-  .form .leftSide label{
+  .form .leftSide label {
     font-size: 0.8rem;
   }
-  .form .rightSide{
+  .form .rightSide {
     display: flex;
     flex-direction: column;
     align-items: initial;
     width: 97%;
-  
+
     margin-left: 0.5rem;
   }
-  .form .rightSide label{
-
+  .form .rightSide label {
     font-size: 0.8rem;
   }
-  .title{
+  .title {
     text-align: left;
     font-size: 1.5rem;
     margin-left: 0.5rem;
-
   }
 }

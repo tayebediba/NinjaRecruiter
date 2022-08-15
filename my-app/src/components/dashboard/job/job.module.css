@@ -45,6 +45,10 @@
 .containerInput {
   width: 100% !important;
 }
+.input,
+.TextField {
+  width: 100%;
+}
 @media screen and (max-width: 768px) {
   .input,
   .TextField {

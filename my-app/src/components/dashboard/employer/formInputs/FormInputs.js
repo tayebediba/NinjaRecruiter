@@ -1,12 +1,17 @@
 import classes from "./form.module.css";
-import { Button, Grid, MenuItem, Stack, TextField } from "@mui/material";
+import {
+  Autocomplete,
+  Button,
+  Grid,
+  MenuItem,
+  Stack,
+  TextField,
+} from "@mui/material";
 const FormInputs = () => {
   return (
     <Grid container className={classes.container}>
       <Grid sx={12} md={6} className={classes.formInputs}>
-        <h1 className={classes.title} >
-          Employer Information
-        </h1>
+        <h1 className={classes.title}>Employer Information</h1>
         <Grid className={classes.form}>
           <div className={classes.leftSide}>
             <div className={classes.firstNAme}>
@@ -28,20 +33,17 @@ const FormInputs = () => {
                 <label style={{ fontSize: "1rem" }}>
                   Employment commission (Percent/Fixed)
                 </label>
-                <TextField
+                <Autocomplete
                   className={classes.TextField}
-                  id="outlined-select-currency"
-                  select
-                  // value={currency}
-                  // onChange={handleChange}
-                  placeholder="Percent"
-                >
-                  <MenuItem>{/* {option.label} */}</MenuItem>
-                </TextField>
-              </div>
-              <div className={classes.FeildOfActivity}>
-                <label>Feild of activity</label>
-                <input className={classes.input} type="text" />
+                  disablePortal
+                  id="combo-box-demo"
+                  options={[{ title: "Percent" }, { title: "Fixed" }]}
+                  getOptionLabel={(option) => option.title}
+                  filterSelectedOptions
+                  renderInput={(params) => (
+                    <TextField style={{ position: "revert" }} {...params} />
+                  )}
+                />
               </div>
             </div>
           </div>
@@ -56,8 +58,19 @@ const FormInputs = () => {
             </div>
             <div className={classes.SubjectOfActivity}>
               <label>Subject of activity</label>
-              <input className={classes.input} type="text" />
+              <Autocomplete
+                className={classes.TextField}
+                disablePortal
+                id="combo-box-demo"
+                options={top100Films}
+                getOptionLabel={(option) => option.title}
+                filterSelectedOptions
+                renderInput={(params) => (
+                  <TextField style={{ position: "revert" }} {...params} />
+                )}
+              />
             </div>
+
             <div className={classes.necessaryExplanation}>
               <label>Necessary explanation</label>
               <input className={classes.input} type="text" />
@@ -84,3 +97,17 @@ const FormInputs = () => {
   );
 };
 export default FormInputs;
+
+const top100Films = [
+  { title: "The Shawshank Redemption", year: 1994 },
+  { title: "The Godfather", year: 1972 },
+  { title: "The Godfather: Part II", year: 1974 },
+  { title: "The Dark Knight", year: 2008 },
+  { title: "12 Angry Men", year: 1957 },
+  { title: "Schindler's List", year: 1993 },
+  { title: "Pulp Fiction", year: 1994 },
+  {
+    title: "The Lord of the Rings: The Return of the King",
+    year: 2003,
+  },
+];

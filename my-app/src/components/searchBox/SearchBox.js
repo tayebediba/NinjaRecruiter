@@ -8,7 +8,7 @@ const SearchBox = () => {
       <FormControl fullWidth sx={{ m: 1 }}>
         <OutlinedInput
           className={classes.textFild}
-          placeholder="Search Employers..."
+          placeholder="Search..."
           id="outlined-adornment-amount"
           startAdornment={<Search position="start" />}
         />
