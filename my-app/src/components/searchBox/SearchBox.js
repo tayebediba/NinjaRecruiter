@@ -13,7 +13,7 @@ const SearchBox = () => {
           startAdornment={<Search position="start" />}
         />
       </FormControl>
-      <Box sx={{ "& > :not(style)": { m: 1 } }}>
+      <Box sx={{ "& > :not(style)": { m: 1 } }} className={classes.boxFeb}>
         <div className={classes.buttonsGroup}>
           <Fab className={classes.fab} variant="extended">
             Text

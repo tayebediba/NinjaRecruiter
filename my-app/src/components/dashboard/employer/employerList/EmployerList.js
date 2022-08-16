@@ -9,6 +9,8 @@ import SearchBox from "../../../searchBox/SearchBox";
 
 import classes from "./employerList.module.css";
 import { Grid } from "@mui/material";
+import { useEffect, useState } from "react";
+import { GetEmployerList } from "../../../../services/employerApi";
 
 const Root = styled("div")(
   ({ theme }) => `
@@ -168,21 +170,40 @@ const Listbox = styled("ul")(
 );
 
 const EmployerList = () => {
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    GetEmployerList().then((res) => {
+      console.log("getEmployerList", res);
+      setData(res);
+    });
+  }, []);
+
   return (
     <Grid container className={classes.container}>
       <SearchBox />
-      <Grid item xs={12} className={classes.editAccount}>
-        <div className={classes.card}>
-          <div className={classes.person}>
-            <h1>amir vosoughi</h1>
-            <p>front-end developer </p>
-          </div>
-          <div className={classes.icons}>
-            <DeleteIcon className={classes.icon} />
-            <EditIcon className={classes.icon} />
-          </div>
-        </div>
-      </Grid>
+      {data?.map((data) => {
+        return (
+          <Grid item xs={12} md={10} className={classes.editAccount}>
+            <div className={classes.card} key={data.id}>
+              <div className={classes.person}>
+                <div style={{ display: "flex" }}>
+                  <h1 style={{ marginRight: "1rem" }}>{data.firstName}</h1>
+
+                  <h1>{data.lastName}</h1>
+                </div>
+                <p>
+                  For a job seeker:{data.exactAmountRecived} of annual income{" "}
+                </p>
+              </div>
+              <div className={classes.icons}>
+                <DeleteIcon className={classes.icon} />
+                <EditIcon className={classes.icon} />
+              </div>
+            </div>
+          </Grid>
+        );
+      })}
       <div className={classes.Pagination}>
         <Pagination count={10} className={classes.colorPagination} />
       </div>

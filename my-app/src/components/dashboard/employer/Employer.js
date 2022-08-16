@@ -56,7 +56,7 @@ export default function Employer() {
         <Box
           sx={{ borderBottom: 3, borderColor: "divider" }}
           style={{
-            width: "100%",
+            width: "70%",
             margin: "auto",
           }}
           xs={10}

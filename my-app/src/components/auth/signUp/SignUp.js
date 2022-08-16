@@ -1,10 +1,4 @@
-import {
-  Button,
-  Grid,
-  IconButton,
-  Input,
-  InputAdornment,
-} from "@mui/material";
+import { Button, Grid, IconButton, Input, InputAdornment } from "@mui/material";
 import { useState } from "react";
 import { Person, Email, Lock, RemoveRedEye } from "@mui/icons-material";
 import apple from "../../../assets/img/icon/apple.svg";
@@ -27,7 +21,7 @@ const SignUp = ({ switcher }) => {
   };
   const navigate = useNavigate();
 
-  const sendOTPHandler = (e) => {
+  const RegisterHandler = (e) => {
     e.preventDefault();
     RegisterService(userName, email, password).then((res) => {
       if (res.status === 200) {
@@ -98,7 +92,7 @@ const SignUp = ({ switcher }) => {
           }
         />
 
-        <Button className="auth" type="submit" onClick={sendOTPHandler}>
+        <Button className="auth" type="submit" onClick={RegisterHandler}>
           Sign up
         </Button>
         <span className="and">
