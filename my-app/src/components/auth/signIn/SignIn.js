@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Button,
   Grid,
@@ -15,7 +15,7 @@ import facebook from "../../../assets/img/icon/facebook.svg";
 // import searchIcon from "../../../assets/img/icons8-google.svg";
 import "../inputStyles.css";
 import { useNavigate } from "react-router";
-import { LoginService } from "../../../services/authService";
+import { GetUserData, LoginService } from "../../../services/authService";
 
 const SignIn = ({ setIsForgotPass, switcher }, props) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -26,6 +26,8 @@ const SignIn = ({ setIsForgotPass, switcher }, props) => {
   };
 
   const navigate = useNavigate();
+  const [data, setData] = useState([]);
+
   const loginHandler = (e) => {
     e.preventDefault();
     console.log(userEmail);
@@ -35,12 +37,23 @@ const SignIn = ({ setIsForgotPass, switcher }, props) => {
         console.log(res);
         localStorage.setItem("isLogin", true);
         localStorage.setItem("token", res.data.data.access_token);
+        GetUserData().then((res) => {
+          console.log("GetUserData", res);
+          // setData(res.data);
+          localStorage.setItem("userId", res.userId);
+          localStorage.setItem("name", res.name);
+          localStorage.setItem("phoneNumber", res.phoneNumber);
+          localStorage.setItem("userName", res.userName);
+          localStorage.setItem("email", res.email);
+        });
         navigate("/", { replace: true });
         setUserEmail("");
         setPassword("");
       }
     });
   };
+
+  useEffect(() => {}, []);
   return (
     <Grid container className="signIn">
       <form className="form_signIn">

@@ -74,7 +74,7 @@ export default function JobSeeker() {
         <Box
           sx={{ borderBottom: 3, borderColor: "divider" }}
           xs={12}
-          style={{ width: "90%", margin: "auto" }}
+          style={{ width: "70%", margin: "auto" }}
         >
           <Tabs
             value={value}

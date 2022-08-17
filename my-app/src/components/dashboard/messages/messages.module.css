@@ -16,6 +16,7 @@
   justify-content: space-between !important;
   align-items: center !important ;
   margin: 1rem !important;
+  width: 70% !important;
 }
 .MessageBox {
   display: flex !important;
@@ -28,7 +29,7 @@
   margin-top: 2rem;
 }
 
-.colorPagination  button:focus{
-background-color: #ffd369 !important;
-box-shadow: none !important;
+.colorPagination button:focus {
+  background-color: #ffd369 !important;
+  box-shadow: none !important;
 }

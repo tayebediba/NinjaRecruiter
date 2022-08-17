@@ -1,5 +1,5 @@
 .Accordin {
-  width: 100% !important;
+  width: 70% !important;
   margin: 1rem auto !important;
   padding: 0 !important;
 }
@@ -9,7 +9,7 @@
   margin: 0;
 }
 .calenderBox {
-  padding: 0 2rem !important;
+  /* padding: 0 2rem !important; */
   border-radius: 1rem !important;
   background-color: #ffd369 !important;
   display: flex !important;
@@ -38,7 +38,7 @@
   height: 100% !important;
 }
 .meetingBox {
-  padding: 2rem !important;
+  padding: 3rem 1rem !important;
   background-color: #393e46;
   border-radius: 1rem !important;
   text-align: center !important;
@@ -56,6 +56,9 @@
 }
 
 @media screen and (max-width: 768px) {
+  .Accordin {
+    width: 100% !important;
+  }
   .calenderBox {
     border-radius: 1rem !important;
     background-color: #ffd369 !important;
@@ -64,10 +67,13 @@
     width: 100% !important;
     flex-direction: column !important;
     gap: 10px !important;
+    margin: auto 1rem !important;
   }
   .meetingBox {
     height: 55% !important;
     width: 67%;
+    padding: 2rem !important;
+
   }
   .meetingBox h2,
   h3,
@@ -81,6 +87,6 @@
   .accordionDetails {
     width: 100% !important;
     margin: 0;
+    padding: 0 !important;
   }
-
 }

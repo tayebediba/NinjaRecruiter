@@ -49,7 +49,7 @@ const Messages = () => {
       </Grid>
       <Accordin />
       <Grid item xs={12} className={classes.MessageBox}>
-        <Grid item xs={12} md={12}>
+        <Grid item xs={12} md={12} jus>
           {[1, 2, 3, 4].map((i) => {
             return (
               <div key={i} className={classes.cardMessage}>

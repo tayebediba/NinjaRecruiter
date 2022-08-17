@@ -19,3 +19,14 @@ export const LoginService = async (userEmail, password) => {
   });
   return data;
 };
+
+// ==========getUserData==============
+export const GetUserData = async () => {
+  const data = await httpService
+    .get("/Account/GetUserData")
+    .then((res) => {
+      return res.data.data;
+    })
+    .catch((err) => console.log(err));
+  return data;
+};

@@ -1,48 +1,38 @@
 import classes from "./form.module.css";
-import { Autocomplete, Button, Grid, Stack, TextField } from "@mui/material";
-import { useState } from "react";
-import { CreateEmployer } from "../../../../services/employerApi";
+import {
+  Autocomplete,
+  Button,
+  Grid,
+  MenuItem,
+  Select,
+  Stack,
+  TextField,
+} from "@mui/material";
+import { useEffect, useState } from "react";
+import {
+  CreateEmployer,
+  GetEmployerAcivityFields,
+} from "../../../../services/employerApi";
+import { useForm } from "react-hook-form";
 const FormInputs = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [address, setAddress] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
-  const [websiteLink, setWebsiteLink] = useState("");
-  const [necessaryExplanation, setNecessaryExplanation] = useState("");
-  const [isFixed, setIsFixed] = useState(true);
-  const [exactAmountRecived, setExactAmountRecived] = useState("");
-  const [fieldOfActivityId, setFieldOfActivityId] = useState("");
+  const [data, setData] = useState([]);
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+      definerId: localStorage.getItem("userId"),
+    },
+  });
 
-  const options = [{ title: "Fixed" }, { title: "Percent" }];
+  useEffect(() => {
+    GetEmployerAcivityFields().then((res) => {
+      console.log("GetEmployerAcivityFields", res);
+      setData(res.data);
+    });
+  }, []);
 
-  const sendDataHandler = (e) => {
-    e.preventDefault();
-    const employerInformation = {
-      firstName,
-      lastName,
-      address,
-      phoneNumber,
-      email,
-      websiteLink,
-      necessaryExplanation,
-      isFixed,
-      exactAmountRecived,
-      fieldOfActivityId,
-    };
-    console.log(employerInformation);
-    CreateEmployer(employerInformation).then((res) => {
+  const onSubmit = (data) => {
+    console.log(data);
+    CreateEmployer(data).then((res) => {
       if (res.status === 200) {
-        setFirstName("");
-        setLastName("");
-        setAddress("");
-        setPhoneNumber("");
-        setEmail("");
-        setWebsiteLink("");
-        setNecessaryExplanation("");
-        setIsFixed("");
-        setExactAmountRecived("");
-        setFieldOfActivityId("");
         console.log(res, "data");
       }
     });
@@ -52,22 +42,21 @@ const FormInputs = () => {
     <Grid container className={classes.container}>
       <Grid item sx={12} md={6} className={classes.formInputs}>
         <h1 className={classes.title}>Employer Information</h1>
-        <Grid item className={classes.form}>
+
+        <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
           <div className={classes.leftSide}>
             <div className={classes.firstNAme}>
               <label>First name</label>
               <input
+                {...register("firstName")}
                 className={classes.input}
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
                 type="text"
               />
               <div className={classes.Address}>
                 <label>Address</label>
                 <input
                   className={classes.input}
-                  value={address}
-                  onChange={(e) => setAddress(e.target.value)}
+                  {...register("address")}
                   type="text"
                 />
               </div>
@@ -75,8 +64,7 @@ const FormInputs = () => {
                 <label>Email </label>
                 <input
                   className={classes.input}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  {...register("email")}
                   type="email"
                 />
               </div>
@@ -84,8 +72,7 @@ const FormInputs = () => {
                 <label>Web site</label>
                 <input
                   className={classes.input}
-                  value={websiteLink}
-                  onChange={(e) => setWebsiteLink(e.target.value)}
+                  {...register("websiteLink")}
                   type="text"
                 />
               </div>
@@ -93,18 +80,17 @@ const FormInputs = () => {
                 <label style={{ fontSize: "1rem" }}>
                   Employment commission (Percent/Fixed)
                 </label>
-                <Autocomplete
+
+                <Select
                   className={classes.TextField}
-                  disablePortal
-                  id="combo-box-demo"
-                  options={options}
-                  getOptionLabel={(option) => option.title}
-                  filterSelectedOptions
-                  defaultValue={options[0]}
-                  renderInput={(params) => (
-                    <TextField style={{ position: "revert" }} {...params} />
-                  )}
-                />
+                  labelId="demo-select-small"
+                  id="demo-select-small"
+                  // defaultValue={true}
+                  {...register("isFixed")}
+                >
+                  <MenuItem value={true}>Fixed</MenuItem>
+                  <MenuItem value={false}>Percent</MenuItem>
+                </Select>
               </div>
             </div>
           </div>
@@ -113,8 +99,7 @@ const FormInputs = () => {
               <label>Last name</label>
               <input
                 className={classes.input}
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
+                {...register("lastName")}
                 type="text"
               />
             </div>
@@ -122,8 +107,7 @@ const FormInputs = () => {
               <label>phone number</label>
               <input
                 className={classes.input}
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
+                {...register("phoneNumber")}
                 type="text"
               />
             </div>
@@ -133,11 +117,15 @@ const FormInputs = () => {
                 className={classes.TextField}
                 disablePortal
                 id="combo-box-demo"
-                options={top100Films}
+                options={data}
                 getOptionLabel={(option) => option.title}
                 filterSelectedOptions
                 renderInput={(params) => (
-                  <TextField style={{ position: "revert" }} {...params} />
+                  <TextField
+                    {...register("fieldOfActivityId")}
+                    style={{ position: "revert" }}
+                    {...params}
+                  />
                 )}
               />
             </div>
@@ -146,8 +134,7 @@ const FormInputs = () => {
               <label>Necessary explanation</label>
               <input
                 className={classes.input}
-                value={necessaryExplanation}
-                onChange={(e) => setNecessaryExplanation(e.target.value)}
+                {...register("necessaryExplanation")}
                 type="text"
               />
             </div>
@@ -155,28 +142,28 @@ const FormInputs = () => {
               <label>Exact amount received </label>
               <input
                 className={classes.input}
-                value={exactAmountRecived}
-                onChange={(e) => setExactAmountRecived(e.target.value)}
-                type="number"
+                {...register("exactAmountRecived")}
+                type="text"
               />
             </div>
-          </div>
-        </Grid>
-        <div className={classes.buttons}>
-          <Stack spacing={2} direction="row">
-            <Button className={classes.styleBack} variant="outlined">
-              Back
-            </Button>
 
-            <Button
-              className={classes.styleNext}
-              onClick={sendDataHandler}
-              variant="contained"
-            >
-              Next
-            </Button>
-          </Stack>
-        </div>
+            <div className={classes.buttons}>
+              <Stack spacing={2} direction="row">
+                <Button className={classes.styleBack} variant="outlined">
+                  Back
+                </Button>
+
+                <Button
+                  className={classes.styleNext}
+                  type="submit"
+                  variant="contained"
+                >
+                  Next
+                </Button>
+              </Stack>
+            </div>
+          </div>
+        </form>
       </Grid>
     </Grid>
   );

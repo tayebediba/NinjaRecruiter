@@ -11,8 +11,7 @@
 }
 .container {
   margin: 3rem auto !important;
-  align-items: center !important;
-  width: 90% !important;
+  width: 70% !important;
   justify-content: center !important;
 }
 .editAccount {

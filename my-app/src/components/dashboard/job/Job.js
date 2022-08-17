@@ -56,7 +56,7 @@ export default function Job() {
           sx={{ borderBottom: 3, borderColor: "divider" }}
           xs={10}
           style={{
-            width: "90%",
+            width: "70%",
             margin: "auto",
           }}
         >
