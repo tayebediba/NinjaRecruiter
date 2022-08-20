@@ -1,18 +1,29 @@
 import httpService from "./httpService";
 
 // ==========createJob==============
-export const CreateJob = async (JobDefinition) => {
+export const CreateJob = async (jobDefinition) => {
   const data = await httpService.post("/Job/CreateJob", {
-    title: JobDefinition,
-    hoursOfWork: 0,
-    salaryMin: 0,
-    salaryMax: 0,
-    annualLeave: 0,
-    exactAmountRecived: 0,
-    description: JobDefinition,
-    essentialSkills: JobDefinition,
-    unnecessarySkills: JobDefinition,
-    employerId: 0,
+    jobDefinition,
   });
   return data;
 };
+// // ==========getJobEssentialSkills==============
+// export const GetJobEssentialSkills = async () => {
+//   const data = await httpService
+//     .get("/JobEssentialSkills/GetJobEssentialSkills")
+//     .then((res) => {
+//       return res.data.data;
+//     })
+//     .catch((err) => console.log(err));
+//   return data;
+// };
+// ==========createJobEssentialSkills==============
+// export const CreateJobEssentialSkills = async (jobDefinition) => {
+//   const data = await httpService.post(
+//     "JobEssentialSkills/CreateJobEssentialSkills",
+//     {
+//       jobDefinition,
+//     }
+//   ); bbb   
+//   return data;
+// };

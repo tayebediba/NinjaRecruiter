@@ -16,9 +16,10 @@ import {
 import { useForm } from "react-hook-form";
 const FormInputs = () => {
   const [data, setData] = useState([]);
-  const { register, handleSubmit } = useForm({
+  const { register, setValue, handleSubmit } = useForm({
     defaultValues: {
       definerId: localStorage.getItem("userId"),
+      isFixed: true,
     },
   });
 
@@ -85,7 +86,8 @@ const FormInputs = () => {
                   className={classes.TextField}
                   labelId="demo-select-small"
                   id="demo-select-small"
-                  // defaultValue={true}
+                  defaultValue={true}
+                  type="boolean"
                   {...register("isFixed")}
                 >
                   <MenuItem value={true}>Fixed</MenuItem>
@@ -118,14 +120,13 @@ const FormInputs = () => {
                 disablePortal
                 id="combo-box-demo"
                 options={data}
+                onChange={(e, value) =>
+                  setValue("fieldOfActivityId", value.employerAcivityFieldId)
+                }
                 getOptionLabel={(option) => option.title}
                 filterSelectedOptions
                 renderInput={(params) => (
-                  <TextField
-                    {...register("fieldOfActivityId")}
-                    style={{ position: "revert" }}
-                    {...params}
-                  />
+                  <TextField style={{ position: "revert" }} {...params} />
                 )}
               />
             </div>

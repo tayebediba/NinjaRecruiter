@@ -3,41 +3,72 @@ import {
   Button,
   Grid,
   MenuItem,
+  Select,
   Stack,
   TextField,
 } from "@mui/material";
+import { useForm } from "react-hook-form";
+import { CreateJob } from "../../../../services/jobApi";
 import classes from "../job.module.css";
 const JobDefinition = () => {
+  const { register, handleSubmit } = useForm({
+    isFixed: true,
+    defaultValues: {
+      employerId: localStorage.getItem("userId"),
+    },
+  });
+  const onSubmit = (data) => {
+    console.log(data);
+    CreateJob(data).then((res) => {
+      if (res.status === 200) {
+        console.log(res, "data");
+      }
+    });
+  };
   return (
     <Grid container>
       <h1 className={classes.titleHeader}>Job definition</h1>
-      <form className={classes.form}>
+      <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
         <Grid container className={classes.containerInput}>
           <Grid item xs={12} md={6}>
             <Grid item xs={12} className={classes.inputBox}>
               <label>Title</label>
-              <input className={classes.input} type="text" />
+              <input
+                {...register("title")}
+                className={classes.input}
+                type="text"
+              />
             </Grid>
             <Grid item xs={12} className={classes.inputBox}>
               <label>Salary paid(min)</label>
-              <input className={classes.input} type="text" />
+              <input
+                {...register("salaryMin")}
+                className={classes.input}
+                type="text"
+              />
             </Grid>
             <Grid item xs={12} className={classes.inputBox}>
               <label>Annual leave</label>
-              <input className={classes.input} type="text" />
+              <input
+                {...register("annualLeave")}
+                className={classes.input}
+                type="text"
+              />
             </Grid>
             <Grid item xs={12} className={classes.inputBox}>
               <label>job seeker Salary</label>
-              <TextField
+
+              <Select
                 className={classes.TextField}
-                id="outlined-select-currency"
-                select
-                // value={currency}
-                // onChange={handleChange}
-                placeholder="Percent"
+                labelId="demo-select-small"
+                id="demo-select-small"
+                defaultValue={true}
+                type="boolean"
+                {...register("isFixed")}
               >
-                <MenuItem>{/* {option.label} */}</MenuItem>
-              </TextField>
+                <MenuItem value={true}>Fixed</MenuItem>
+                <MenuItem value={false}>Percent</MenuItem>
+              </Select>
             </Grid>
             <Grid item xs={12} className={classes.inputBox}>
               <label>Essential skills</label>
@@ -49,7 +80,11 @@ const JobDefinition = () => {
                 getOptionLabel={(option) => option.title}
                 filterSelectedOptions
                 renderInput={(params) => (
-                  <TextField style={{ position: "revert" }} {...params} />
+                  <TextField
+                    {...register("essentialSkills")}
+                    style={{ position: "revert" }}
+                    {...params}
+                  />
                 )}
               />
             </Grid>
@@ -61,11 +96,19 @@ const JobDefinition = () => {
           <Grid item xs={12} md={6}>
             <Grid item xs={12} className={classes.inputBox}>
               <label>Hours of work</label>
-              <input className={classes.input} type="text" />
+              <input
+                {...register("hoursOfWork")}
+                className={classes.input}
+                type="text"
+              />
             </Grid>
             <Grid item xs={12} className={classes.inputBox}>
               <label>Salary paid(max)</label>
-              <input className={classes.input} type="text" />
+              <input
+                {...register("salaryMax")}
+                className={classes.input}
+                type="text"
+              />
             </Grid>
             <Grid item xs={12} className={classes.inputBox}>
               <label>Hire companies</label>
@@ -82,7 +125,11 @@ const JobDefinition = () => {
             </Grid>
             <Grid item xs={12} className={classes.inputBox}>
               <label>Exact amount received</label>
-              <input className={classes.input} type="text" />
+              <input
+                {...register("exactAmountRecived")}
+                className={classes.input}
+                type="text"
+              />
             </Grid>
             <Grid item xs={12} className={classes.inputBox}>
               <label>Unnecessary skills</label>
@@ -94,13 +141,21 @@ const JobDefinition = () => {
                 getOptionLabel={(option) => option.title}
                 filterSelectedOptions
                 renderInput={(params) => (
-                  <TextField style={{ position: "revert" }} {...params} />
+                  <TextField
+                    {...register("unnecessarySkills")}
+                    style={{ position: "revert" }}
+                    {...params}
+                  />
                 )}
               />
             </Grid>
             <Grid item xs={12} className={classes.inputBox}>
               <label>Description</label>
-              <input className={classes.input} type="text" />
+              <input
+                {...register("description")}
+                className={classes.input}
+                type="text"
+              />
             </Grid>
             <Grid item xs={12} className={classes.btn}>
               <Stack
@@ -111,7 +166,11 @@ const JobDefinition = () => {
                 <Button className={classes.styleBack} variant="outlined">
                   Back
                 </Button>
-                <Button className={classes.styleNext} variant="contained">
+                <Button
+                  className={classes.styleNext}
+                  type="submit"
+                  variant="contained"
+                >
                   Next
                 </Button>
               </Stack>
