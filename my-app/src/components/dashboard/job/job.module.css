@@ -49,7 +49,14 @@
 .TextField {
   width: 100%;
 }
+.container {
+  width: 80% !important;
+  margin: 1rem auto !important;
+}
 @media screen and (max-width: 768px) {
+  .container {
+    width: 100% !important;
+  }
   .input,
   .TextField {
     width: 100%;

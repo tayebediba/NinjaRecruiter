@@ -56,10 +56,10 @@ export default function Employer() {
         <Box
           sx={{ borderBottom: 3, borderColor: "divider" }}
           style={{
-            width: "70%",
+            width: "80%",
             margin: "auto",
           }}
-          xs={10}
+          xs={11}
         >
           <Tabs
             value={value}

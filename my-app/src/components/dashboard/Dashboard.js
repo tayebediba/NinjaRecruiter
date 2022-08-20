@@ -148,6 +148,7 @@ export default function Dashboard(props) {
       </Box>
       <Grid
         item
+        md={10}
         xs={12}
         style={{ justifyContent: "center", margin: "3rem auto" }}
       >

@@ -15,9 +15,10 @@
 }
 .editAccount {
   border: 2px solid #737373;
-  width: 100% !important;
+  width: 80% !important;
   border-radius: 5px;
   margin-top: 2rem;
+  margin: 1rem auto !important;
 }
 .editAccount .card {
   display: flex;

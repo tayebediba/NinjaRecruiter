@@ -26,7 +26,7 @@ const JobDefinition = () => {
     });
   };
   return (
-    <Grid container>
+    <Grid container className={classes.container}>
       <h1 className={classes.titleHeader}>Job definition</h1>
       <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
         <Grid container className={classes.containerInput}>

@@ -184,7 +184,7 @@ const EmployerList = () => {
       <SearchBox />
       {data?.map((data) => {
         return (
-          <Grid item xs={12} md={10} className={classes.editAccount}>
+          <Grid item xs={12} md={12} className={classes.editAccount}>
             <div className={classes.card} key={data.id}>
               <div className={classes.person}>
                 <div style={{ display: "flex" }}>

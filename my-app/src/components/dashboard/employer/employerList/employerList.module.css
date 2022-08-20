@@ -10,9 +10,10 @@
   font-family: Inter-Reqular;
 }
 .container {
-  margin: 3rem auto !important;
-  width: 70% !important;
+  margin: 2rem auto !important;
+  width: 100% !important;
   justify-content: center !important;
+  flex-direction: column !important;
 }
 .editAccount {
   border: 2px solid #737373;
@@ -25,7 +26,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 2rem;
-  font-family: Inter-Regular;
+  font-family: Inter-Regular !important;
 }
 .card .person h1 {
   color: #393e46;
@@ -55,11 +56,15 @@
 }
 
 @media screen and (max-width: 768px) {
+  .container {
+    width: 100% !important;
+    margin: 1rem !important;
+  }
   .buttonsGroup {
     width: 31%;
   }
   .editAccount {
-    width: 74% !important;
+    /* width: 74% !important; */
     margin-left: 0.5rem;
   }
   .Pagination {
