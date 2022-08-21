@@ -8,7 +8,7 @@ import Pagination from "@mui/material/Pagination";
 import { Badge, Grid, Stack, Switch } from "@mui/material";
 import SearchBox from "../../../searchBox/SearchBox";
 import { useEffect, useState } from "react";
-import { GetSkills } from "../../../../services/jobApi";
+import { GetJobs } from "../../../../services/jobApi";
 
 function Tag(props) {
   const { label, onDelete, ...other } = props;
@@ -74,7 +74,7 @@ const JobList = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    GetSkills().then((res) => {
+    GetJobs().then((res) => {
       console.log("GetJobs", res);
       setData(res.data);
     });
