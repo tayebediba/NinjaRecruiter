@@ -79,6 +79,11 @@
 }
 
 @media screen and (max-width: 768px) {
+  .container {
+    margin: 1rem auto !important;
+    align-items: center !important;
+    width: 90% !important;
+  }
   .Pagination {
     width: 80%;
   }

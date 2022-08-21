@@ -10,6 +10,7 @@ import EducationalBackground from "./EducationalBackground/EducationalBackground
 import WorkExperience from "./workExperience/WorkExperience";
 import PersonalInformation from "./personalInformation/PersonalInformation";
 import JobSeekerList from "./jobSeekerList/JobSeekerList";
+import classes from "./jobSeeker.module.css";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -74,7 +75,7 @@ export default function JobSeeker() {
         <Box
           sx={{ borderBottom: 3, borderColor: "divider" }}
           xs={12}
-          style={{ width: "70%", margin: "auto" }}
+          className={classes.boxTab}
         >
           <Tabs
             value={value}

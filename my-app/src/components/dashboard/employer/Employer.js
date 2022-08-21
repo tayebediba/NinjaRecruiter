@@ -8,7 +8,7 @@ import FormInputs from "./formInputs/FormInputs";
 import EmployerList from "./employerList/EmployerList";
 import { Grid } from "@mui/material";
 import Accordin from "../acoordin/Accordin";
-
+import classes from "./employer.module.css";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -55,10 +55,8 @@ export default function Employer() {
       <Box>
         <Box
           sx={{ borderBottom: 3, borderColor: "divider" }}
-          style={{
-            width: "80%",
-            margin: "auto",
-          }}
+          className={classes.boxTab}
+        
           xs={11}
         >
           <Tabs

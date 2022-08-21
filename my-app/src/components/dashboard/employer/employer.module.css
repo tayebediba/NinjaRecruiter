@@ -1,0 +1,10 @@
+.boxTab {
+  width: 70% !important;
+  margin: 2rem auto !important;
+}
+
+@media screen and (max-width: 768px) {
+  .boxTab {
+    width: 100% !important;
+  }
+}

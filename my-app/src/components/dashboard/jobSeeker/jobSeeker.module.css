@@ -12,9 +12,9 @@
 
   max-width: 100% !important;
 }
-.formInputs .h1{
+.formInputs .h1 {
   text-align: center;
-   margin:  1rem auto ;
+  margin: 1rem auto;
 }
 .formInputs .form {
   display: flex;
@@ -122,43 +122,46 @@
 .TextField {
   background-color: #d9d9d9 !important;
 }
-
-
+.boxTab {
+  width: 70% !important;
+  margin: 2rem auto !important;
+}
 
 @media screen and (max-width: 768px) {
-.formInputs .h1{
-  text-align:start !important;
-  margin-left: 0.5rem;
-  width: 100% !important;
-  font-size: 1.5rem;
-}
-.formInputs{
-  width: 98% !important;
-}
-.formInputs .form {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
-  font-family: Inter-Medium;
-}
-.form .leftSide{
-  width: 100%;
+  .boxTab {
+    width: 100% !important;
+  }
+  .formInputs .h1 {
+    text-align: start !important;
     margin-left: 0.5rem;
-}
-.form .rightSide{
-  width: 100%;
+    width: 100% !important;
+    font-size: 1.5rem;
+  }
+  .formInputs {
+    width: 98% !important;
+  }
+  .formInputs .form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    font-family: Inter-Medium;
+  }
+  .form .leftSide {
+    width: 100%;
     margin-left: 0.5rem;
-}
-.Grid{
-  width: 98%;
-}
-.buttons {
-  display: flex;
-  justify-content: center;
-  margin-top: 3rem;
-}
-
-
+  }
+  .form .rightSide {
+    width: 100%;
+    margin-left: 0.5rem;
+  }
+  .Grid {
+    width: 98%;
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
 }

@@ -9,6 +9,7 @@ import Accordin from "../acoordin/Accordin";
 import JobDefinition from "./jobDefinition/JobDefinition";
 import HiredPeople from "./hiredPeople/HiredPeople";
 import JobList from "./jobList/JobList";
+import classes from "./job.module.css";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -55,10 +56,7 @@ export default function Job() {
         <Box
           sx={{ borderBottom: 3, borderColor: "divider" }}
           xs={10}
-          style={{
-            width: "70%",
-            margin: "auto",
-          }}
+          className={classes.boxTab}
         >
           <Tabs
             value={value}
