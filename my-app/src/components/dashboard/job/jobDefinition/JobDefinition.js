@@ -7,14 +7,23 @@ import {
   Stack,
   TextField,
 } from "@mui/material";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { CreateJob } from "../../../../services/jobApi";
+import {
+  CreateJob,
+  GetJobEssentialSkills,
+  GetSkills,
+} from "../../../../services/jobApi";
+import { CommonFilter } from "../../../../services/searcheApi";
 import classes from "../job.module.css";
 const JobDefinition = () => {
+  const [data, setData] = useState([]);
+  const [skill, setSkill] = useState([]);
+  const [terms, setTerms] = useState("");
   const { register, handleSubmit } = useForm({
-    isFixed: true,
     defaultValues: {
       employerId: localStorage.getItem("userId"),
+      isFixed: true,
     },
   });
   const onSubmit = (data) => {
@@ -25,6 +34,18 @@ const JobDefinition = () => {
       }
     });
   };
+  const id = 2;
+  useEffect(() => {
+    CommonFilter(id, terms).then((res) => {
+      console.log("CommonFilter", res);
+      setData(res.data.data);
+    });
+    GetSkills().then((res) => {
+      console.log("GetSkills", res);
+      setSkill(res.data);
+    });
+  }, [terms]);
+
   return (
     <Grid container className={classes.container}>
       <h1 className={classes.titleHeader}>Job definition</h1>
@@ -76,7 +97,7 @@ const JobDefinition = () => {
                 className={classes.TextField}
                 multiple
                 id="tags-outlined"
-                options={top100Films}
+                options={skill}
                 getOptionLabel={(option) => option.title}
                 filterSelectedOptions
                 renderInput={(params) => (
@@ -90,7 +111,11 @@ const JobDefinition = () => {
             </Grid>
             <Grid item xs={12} className={classes.inputBox}>
               <label>Email</label>
-              <input className={classes.input} type="text" />
+              <input
+                {...register("email")}
+                className={classes.input}
+                type="text"
+              />
             </Grid>
           </Grid>
           <Grid item xs={12} md={6}>
@@ -112,16 +137,23 @@ const JobDefinition = () => {
             </Grid>
             <Grid item xs={12} className={classes.inputBox}>
               <label>Hire companies</label>
-              <TextField
+              <Autocomplete
                 className={classes.TextField}
-                id="outlined-select-currency"
-                select
-                // value={currency}
-                // onChange={handleChange}
-                placeholder="Percent"
-              >
-                <MenuItem>{/* {option.label} */}</MenuItem>
-              </TextField>
+                freeSolo
+                id="free-solo-2-demo"
+                disableClearable
+                options={data.map((option) => option.title)}
+                renderInput={(params) => (
+                  <TextField
+                    onChange={(e) => setTerms(e.target.value)}
+                    {...params}
+                    InputProps={{
+                      ...params.InputProps,
+                      type: "search",
+                    }}
+                  />
+                )}
+              />
             </Grid>
             <Grid item xs={12} className={classes.inputBox}>
               <label>Exact amount received</label>
@@ -137,7 +169,7 @@ const JobDefinition = () => {
                 className={classes.TextField}
                 multiple
                 id="tags-outlined"
-                options={top100Films}
+                options={skill}
                 getOptionLabel={(option) => option.title}
                 filterSelectedOptions
                 renderInput={(params) => (

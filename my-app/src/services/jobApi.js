@@ -7,23 +7,13 @@ export const CreateJob = async (jobDefinition) => {
   });
   return data;
 };
-// // ==========getJobEssentialSkills==============
-// export const GetJobEssentialSkills = async () => {
-//   const data = await httpService
-//     .get("/JobEssentialSkills/GetJobEssentialSkills")
-//     .then((res) => {
-//       return res.data.data;
-//     })
-//     .catch((err) => console.log(err));
-//   return data;
-// };
-// ==========createJobEssentialSkills==============
-// export const CreateJobEssentialSkills = async (jobDefinition) => {
-//   const data = await httpService.post(
-//     "JobEssentialSkills/CreateJobEssentialSkills",
-//     {
-//       jobDefinition,
-//     }
-//   ); bbb   
-//   return data;
-// };
+// // ==========GetSkills==============
+export const GetSkills = async () => {
+  const data = await httpService
+    .get("/Skill/GetSkills")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => console.log(err));
+  return data;
+};
