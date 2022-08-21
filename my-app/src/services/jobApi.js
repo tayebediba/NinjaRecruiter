@@ -7,6 +7,16 @@ export const CreateJob = async (jobDefinition) => {
   });
   return data;
 };
+// // ==========getJobs==============
+export const GetJobs = async () => {
+  const data = await httpService
+    .get("/Job/GetJobs")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => console.log(err));
+  return data;
+};
 // // ==========GetSkills==============
 export const GetSkills = async () => {
   const data = await httpService
