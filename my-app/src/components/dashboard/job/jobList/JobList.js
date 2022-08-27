@@ -1,14 +1,13 @@
 import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
-import { autocompleteClasses } from "@mui/material/Autocomplete";
 import SearchIcon from "@mui/icons-material/Search";
 import classes from "./jobList.module.css";
 import EditIcon from "@mui/icons-material/Edit";
 import Pagination from "@mui/material/Pagination";
 import { Badge, Grid, Stack, Switch } from "@mui/material";
-import SearchBox from "../../../searchBox/SearchBox";
 import { useEffect, useState } from "react";
 import { GetJobs } from "../../../../services/jobApi";
+import SearchJob from "../../../searchBox/SearchJob";
 
 function Tag(props) {
   const { label, onDelete, ...other } = props;
@@ -72,7 +71,10 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
 
 const JobList = () => {
   const [data, setData] = useState([]);
-
+  const [page, setPage] = useState(1);
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
   useEffect(() => {
     GetJobs().then((res) => {
       console.log("GetJobs", res);
@@ -81,39 +83,48 @@ const JobList = () => {
   }, []);
   return (
     <Grid container className={classes.container}>
-      <SearchBox />
-      <Grid item xs={12} className={classes.editAccount}>
-        <div className={classes.card}>
-          <div className={classes.person}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <h1>HSBC</h1>
+      <SearchJob />
+      {data.slice(page - 1, page + 3).map((data) => {
+        return (
+          <Grid item md={9} xs={12} className={classes.editAccount}>
+            <div className={classes.card}>
+              <div className={classes.person}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <h1>{data.title}</h1>
 
-              <Badge
-                badgeContent={4}
-                color="warning"
-                style={{ marginLeft: "1rem" }}
-              ></Badge>
+                  <Badge
+                    badgeContent={4}
+                    color="warning"
+                    style={{ marginLeft: "1rem" }}
+                  ></Badge>
+                </div>
+                <p>Job income rate:{data.exactAmountRecived}$</p>
+                <p>For a job seeker:20% of annual income</p>
+              </div>
+              <div className={classes.icons}>
+                <EditIcon className={classes.icon} />
+
+                <Stack direction="row" spacing={1} alignItems="center">
+                  <AntSwitch inputProps={{ "aria-label": "ant design" }} />
+                </Stack>
+              </div>
             </div>
-            <p>Job income rate:2500$</p>
-            <p>For a job seeker:20% of annual income</p>
-          </div>
-          <div className={classes.icons}>
-            <EditIcon className={classes.icon} />
-
-            <Stack direction="row" spacing={1} alignItems="center">
-              <AntSwitch inputProps={{ "aria-label": "ant design" }} />
-            </Stack>
-          </div>
-        </div>
-      </Grid>
+          </Grid>
+        );
+      })}
 
       <div className={classes.Pagination}>
-        <Pagination count={10} className={classes.colorPagination} />
+        <Pagination
+          count={Math.ceil(data.length / 4)}
+          className={classes.colorPagination}
+          page={page}
+          onChange={handleChange}
+        />
       </div>
     </Grid>
   );
@@ -134,7 +145,7 @@ const top100Films = [
     year: 2003,
   },
   { title: "The Good, the Bad and the Ugly", year: 1966 },
-  { title: "Fight Club", year: 1999 },
+  // { title: "Fight Club", year: 1999 },
   {
     title: "The Lord of the Rings: The Fellowship of the Ring",
     year: 2001,

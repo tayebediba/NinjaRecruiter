@@ -5,12 +5,24 @@ import SearchIcon from "@mui/icons-material/Search";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Pagination from "@mui/material/Pagination";
-import SearchBox from "../../../searchBox/SearchBox";
+import SearchBox from "../../../searchBox/SearchJob";
 
 import classes from "./employerList.module.css";
-import { Grid } from "@mui/material";
+import {
+  Box,
+  Fab,
+  FormControl,
+  Grid,
+  IconButton,
+  OutlinedInput,
+} from "@mui/material";
 import { useEffect, useState } from "react";
-import { GetEmployerList } from "../../../../services/employerApi";
+import {
+  GetEmployerById,
+  GetEmployerList,
+} from "../../../../services/employerApi";
+import { Search } from "@mui/icons-material";
+import SearchEmployers from "../../../searchBox/SearchEmployers";
 
 const Root = styled("div")(
   ({ theme }) => `
@@ -181,7 +193,7 @@ const EmployerList = () => {
 
   return (
     <Grid container className={classes.container}>
-      <SearchBox />
+      <SearchEmployers />
       {data?.map((data) => {
         return (
           <div className={classes.editAccount}>
@@ -197,8 +209,22 @@ const EmployerList = () => {
                 </p>
               </div>
               <div className={classes.icons}>
-                <DeleteIcon className={classes.icon} />
-                <EditIcon className={classes.icon} />
+                <IconButton
+                  color="primary"
+                  aria-label="upload picture"
+                  component="label"
+                >
+                  <input hidden accept="image/*" type="file" />
+                  <DeleteIcon className={classes.icon} />
+                </IconButton>
+                <IconButton
+                  color="primary"
+                  aria-label="upload picture"
+                  component="label"
+                >
+                  <input hidden accept="image/*" type="file" />
+                  <EditIcon className={classes.icon} />
+                </IconButton>
               </div>
             </div>
           </div>

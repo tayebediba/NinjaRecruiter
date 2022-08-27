@@ -8,7 +8,8 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Pagination from "@mui/material/Pagination";
 import { Box, Fab, FormControl, Grid, OutlinedInput } from "@mui/material";
-import SearchBox from "../../../searchBox/SearchBox";
+import SearchJobSeekerList from "../../../searchBox/SearchJobSeekerList";
+// import SearchBox from "../../../searchBox/SearchBox";
 
 const Root = styled("div")(
   ({ theme }) => `
@@ -170,7 +171,7 @@ const Listbox = styled("ul")(
 const JobSeekerList = () => {
   return (
     <Grid container className={classes.container}>
-      <SearchBox />
+      <SearchJobSeekerList />
 
       <div className={classes.editAccount}>
         <div className={classes.card}>
