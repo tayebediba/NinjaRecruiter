@@ -86,7 +86,7 @@ const JobList = () => {
       <SearchJob />
       {data.slice(page - 1, page + 3).map((data) => {
         return (
-          <Grid item md={9} xs={12} className={classes.editAccount}>
+          <Grid item md={9} xs={12} key={data.id} className={classes.editAccount}>
             <div className={classes.card}>
               <div className={classes.person}>
                 <div

@@ -18,6 +18,7 @@ const SearchJob = () => {
     CommonFilter(id, terms).then((res) => {
       console.log("CommonFilter", res);
       setSearch(res.data.data);
+      console.log(id, terms);
     });
   }, [terms]);
   return (
@@ -44,13 +45,13 @@ const SearchJob = () => {
             />
           )}
         />
-        <Stack direction="row" spacing={1} className={classes.buttonsGroup}>
-          {cheaps && cheaps.map((item) => <Chip label={item} />)}
-          {/* <Chip label="Clickable" />
+        {/* <Stack direction="row" spacing={1} className={classes.buttonsGroup}> */}
+        {/* {cheaps && cheaps.map((item) => <Chip label={item} />)} */}
+        {/* <Chip label="Clickable" />
           <Chip label="Clickable" />
           <Chip label="Clickable" />
           <Chip label="Clickable" /> */}
-        </Stack>
+        {/* </Stack> */}
       </FormControl>
     </>
   );

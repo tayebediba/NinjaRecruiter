@@ -40,12 +40,12 @@ const SearchHiredPeople = () => {
             />
           )}
         />
-        <Stack direction="row" spacing={1} className={classes.buttonsGroup}>
+        {/* <Stack direction="row" spacing={1} className={classes.buttonsGroup}>
           <Chip label="Clickable" />
           <Chip label="Clickable" />
           <Chip label="Clickable" />
           <Chip label="Clickable" />
-        </Stack>
+        </Stack> */}
       </FormControl>
     </>
   );

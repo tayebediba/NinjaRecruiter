@@ -1,20 +1,43 @@
 import { Button, Grid, MenuItem, TextField } from "@mui/material";
 import CloudUploadOutlinedIcon from "@mui/icons-material/CloudUploadOutlined";
+import { useForm } from "react-hook-form";
+
 import classes from "../jobSeeker.module.css";
 
 const PersonalInformation = ({ setPage }) => {
+  const { register, handleSubmit, getValues } = useForm({
+    defaultValues: {
+      employerId: localStorage.getItem("userId"),
+      isFixed: true,
+    },
+  });
+  const onSubmit = (data) => {
+    console.log(data);
+    // CreateJob(data).then((res) => {
+    //   if (res.status === 200) {
+    //     console.log(res, "data");
+    //   }
+    // });
+  };
   return (
     <Grid container style={{ width: "100%", margin: "rem auto" }}>
       <Grid className={classes.Grid} sx={6} md={12}>
-        <Grid sx={12} md={6} className={classes.formInputs}>
-          <h1 className={classes.h1} >
-            Personal Information
-          </h1>
+        <Grid
+          onSubmit={handleSubmit(onSubmit)}
+          sx={12}
+          md={6}
+          className={classes.formInputs}
+        >
+          <h1 className={classes.h1}>Personal Information</h1>
           <Grid className={classes.form}>
             <div className={classes.leftSide}>
               <div className={classes.firstNAme}>
                 <label>First name</label>
-                <input className={classes.input} type="text" />
+                <input
+                  className={classes.input}
+                  type="text"
+                  {...register("FirstName")}
+                />
 
                 <div className={classes.Country}>
                   <label>Country</label>
@@ -57,6 +80,7 @@ const PersonalInformation = ({ setPage }) => {
               onClick={() => setPage(1)}
               className={classes.styleNext}
               variant="contained"
+              type="submit"
             >
               Next
             </Button>

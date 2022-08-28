@@ -11,6 +11,7 @@ import classes from "./searchBox.module.css";
 const SearchJobSeekerList = () => {
   const [search, setSearch] = useState([]);
   const [terms, setTerms] = useState("");
+  const [cheaps, setCheaps] = useState([]);
 
   const id = 3;
   useEffect(() => {
@@ -32,7 +33,10 @@ const SearchJobSeekerList = () => {
           renderInput={(params) => (
             <TextField
               placeholder="Search Job Seeker..."
-              onChange={(e) => setTerms(e.target.value)}
+              onChange={(e) => {
+                setTerms(e.target.value);
+                setCheaps(e.target.value);
+              }}
               {...params}
               InputProps={{
                 ...params.InputProps,
@@ -41,13 +45,10 @@ const SearchJobSeekerList = () => {
             />
           )}
         />
-        <Stack direction="row" spacing={1} className={classes.buttonsGroup}>
-          <Chip label="Clickable" />
-          <Chip label="Clickable" />
-          <Chip label="Clickable" />
-          <Chip label="Clickable" />
-        </Stack>
       </FormControl>
+      <Stack direction="row" spacing={1} className={classes.buttonsGroup}>
+        {cheaps && cheaps.map((item) => <Chip label={item} />)}
+      </Stack>
     </>
   );
 };
