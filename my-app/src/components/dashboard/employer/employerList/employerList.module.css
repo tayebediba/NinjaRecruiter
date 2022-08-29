@@ -39,11 +39,39 @@
   justify-content: center;
   margin-top: 2rem;
 }
+
 .textFild {
   color: #737373 !important;
   background-color: #d9d9d9 !important;
+  width: 90% !important;
+  margin: 0.5rem auto !important;
 }
-
+.boxFeb {
+  margin-left: 7rem !important;
+  align-self: flex-start !important;
+}
+.buttonsGroup {
+  display: flex;
+  width: 100%;
+  justify-content: left !important;
+  flex-wrap: wrap !important;
+}
+.buttonsGroup .fab {
+  margin: 0.5rem !important;
+  border: #595959 1px solid !important;
+  flex-wrap: wrap !important;
+  box-shadow: none;
+  color: #595959;
+  font-family: Inter-Regular;
+  background-color: #d9d9d9;
+}
+.fab:hover {
+  background-color: #ffba1a !important;
+  color: #595959;
+}
+.active {
+  background-color: #ffba1a;
+}
 
 @media screen and (max-width: 768px) {
   .container {
@@ -61,5 +89,17 @@
   .Pagination {
     width: 77%;
     margin: 1rem 0;
+  }
+  .textFild {
+    width: 60% !important;
+    margin: 0 !important;
+  }
+  .boxFeb {
+    margin-left: 0 !important;
+    flex-wrap: wrap !important;
+  }
+  .buttonsGroup {
+    flex-wrap: wrap !important;
+    width: 70% !important;
   }
 }

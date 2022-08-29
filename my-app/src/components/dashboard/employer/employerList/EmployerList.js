@@ -5,12 +5,28 @@ import SearchIcon from "@mui/icons-material/Search";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Pagination from "@mui/material/Pagination";
-import SearchBox from "../../../searchBox/SearchBox";
+import SearchBox from "../../../searchBox/SearchJob";
 
 import classes from "./employerList.module.css";
-import { Grid } from "@mui/material";
+import {
+  Box,
+  Fab,
+  FormControl,
+  Grid,
+  IconButton,
+  Modal,
+  OutlinedInput,
+  Typography,
+} from "@mui/material";
 import { useEffect, useState } from "react";
-import { GetEmployerList } from "../../../../services/employerApi";
+import {
+  GetEmployerById,
+  GetEmployerList,
+} from "../../../../services/employerApi";
+import { Search } from "@mui/icons-material";
+import SearchEmployers from "../../../searchBox/SearchEmployers";
+import FormInputs from "../formInputs/FormInputs";
+import EditEmployer from "./editEmployer/EditEmployer";
 
 const Root = styled("div")(
   ({ theme }) => `
@@ -169,8 +185,28 @@ const Listbox = styled("ul")(
 `
 );
 
+const styles = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 700,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
+
 const EmployerList = () => {
   const [data, setData] = useState();
+  const [page, setPage] = useState(1);
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
 
   useEffect(() => {
     GetEmployerList().then((res) => {
@@ -181,8 +217,8 @@ const EmployerList = () => {
 
   return (
     <Grid container className={classes.container}>
-      <SearchBox />
-      {data?.map((data) => {
+      <SearchEmployers />
+      {top100Films.slice(page - 1, page + 3).map((data) => {
         return (
           <div className={classes.editAccount}>
             <div className={classes.card} key={data.id}>
@@ -197,8 +233,33 @@ const EmployerList = () => {
                 </p>
               </div>
               <div className={classes.icons}>
-                <DeleteIcon className={classes.icon} />
-                <EditIcon className={classes.icon} />
+                <IconButton
+                  color="primary"
+                  aria-label="upload picture"
+                  component="label"
+                >
+                  <DeleteIcon className={classes.icon} />
+                </IconButton>
+                <IconButton
+                  color="primary"
+                  aria-label="upload picture"
+                  component="label"
+                  onClick={handleOpen}
+                >
+                  <EditIcon className={classes.icon} />
+                </IconButton>
+                <Modal
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                >
+                  <Box sx={styles}>
+                    <EditEmployer
+                    //  id={data.employerId}
+                    />
+                  </Box>
+                </Modal>
               </div>
             </div>
           </div>
@@ -206,9 +267,86 @@ const EmployerList = () => {
       })}
 
       <div className={classes.Pagination}>
-        <Pagination count={10} className={classes.colorPagination} />
+        <Pagination
+          count={Math.ceil(top100Films.length / 4)}
+          className={classes.colorPagination}
+          page={page}
+          onChange={handleChange}
+        />
       </div>
     </Grid>
   );
 };
 export default EmployerList;
+
+const top100Films = [
+  { employerId: 1, title: "The Shawshank Redemption", year: 1994 },
+  { employerId: 3, title: "The Godfather", year: 1972 },
+  { employerId: 5, title: "The Godfather: Part II", year: 1974 },
+  { employerId: 6, title: "The Dark Knight", year: 2008 },
+  { employerId: 7, title: "12 Angry Men", year: 1957 },
+  { employerId: 9, title: "Schindler's List", year: 1993 },
+  { employerId: 77, title: "Pulp Fiction", year: 1994 },
+  {
+    employerId: 4,
+    title: "The Lord of the Rings: The Return of the King",
+    year: 2003,
+  },
+  { employerId: 23, title: "The Good, the Bad and the Ugly", year: 1966 },
+  { employerId: 33, title: "Fight Club", year: 1999 },
+  {
+    employerId: 67,
+    title: "The Lord of the Rings: The Fellowship of the Ring",
+    year: 2001,
+  },
+  // {
+  //  employerId:2, title: "Star Wars: Episode V - The Empire Strikes Back",
+  //   year: 1980,
+  // },
+  // {employerId:2, title: "Forrest Gump", year: 1994 },
+  // {employerId:2, title: "Inception", year: 2010 },
+  // {
+  //  employerId:2, title: "The Lord of the Rings: The Two Towers",
+  //   year: 2002,
+  // },
+  // {employerId:2, title: "One Flew Over the Cuckoo's Nest", year: 1975 },
+  // {employerId:2, title: "Goodfellas", year: 1990 },
+  // {employerId:2, title: "The Matrix", year: 1999 },
+  // {employerId:2, title: "Seven Samurai", year: 1954 },
+  // {
+  //  employerId:2, title: "Star Wars: Episode IV - A New Hope",
+  //   year: 1977,
+  // },
+  // {employerId:2, title: "City of God", year: 2002 },
+  // {employerId:2, title: "Se7en", year: 1995 },
+  // {employerId:2, title: "The Silence of the Lambs", year: 1991 },
+  // {employerId:2, title: "It's a Wonderful Life", year: 1946 },
+  // {employerId:2, title: "Life Is Beautiful", year: 1997 },
+  // {employerId:2, title: "The Usual Suspects", year: 1995 },
+  // {employerId:2, title: "Léon: The Professional", year: 1994 },
+  // {employerId:2, title: "Spirited Away", year: 2001 },
+  // {employerId:2, title: "Saving Private Ryan", year: 1998 },
+  // {employerId:2, title: "Once Upon a Time in the West", year: 1968 },
+  // {employerId:2, title: "American History X", year: 1998 },
+  // {employerId:2, title: "Interstellar", year: 2014 },
+  // {employerId:2, title: "Casablanca", year: 1942 },
+  // {employerId:2, title: "City Lights", year: 1931 },
+  // {employerId:2, title: "Psycho", year: 1960 },
+  // {employerId:2, title: "The Green Mile", year: 1999 },
+  // {employerId:2, title: "The Intouchables", year: 2011 },
+  // {employerId:2, title: "Modern Times", year: 1936 },
+  // {employerId:2, title: "Raiders of the Lost Ark", year: 1981 },
+  // {employerId:2, title: "Rear Window", year: 1954 },
+  // {employerId:2, title: "The Pianist", year: 2002 },
+  // {employerId:2, title: "The Departed", year: 2006 },
+  // {employerId:2, title: "Terminator 2: Judgment Day", year: 1991 },
+  // {employerId:2, title: "Back to the Future", year: 1985 },
+  // {employerId:2, title: "Whiplash", year: 2014 },
+  // {employerId:2, title: "Gladiator", year: 2000 },
+  // {employerId:2, title: "Memento", year: 2000 },
+  // {employerId:2, title: "The Prestige", year: 2006 },
+  // {employerId:2, title: "The Lion King", year: 1994 },
+  // {employerId:2, title: "Apocalypse Now", year: 1979 },
+  // {employerId:2, title: "Alien", year: 1979 },
+  // {employerId:2, title: "Sunset Boulevard", year: 1950 },
+];

@@ -1,7 +1,7 @@
-.textFild {
+.TextFieldSearch {
   color: #737373 !important;
   background-color: #d9d9d9 !important;
-  width: 80% !important;
+  width: 90% !important;
   margin: 0.5rem auto !important;
 }
 .boxFeb {
@@ -10,9 +10,10 @@
 }
 .buttonsGroup {
   display: flex;
-  width: 100%;
+  width: 90%;
   justify-content: left !important;
   flex-wrap: wrap !important;
+  margin: 1rem auto !important;
 }
 .buttonsGroup .fab {
   margin: 0.5rem !important;
@@ -32,7 +33,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .textFild {
+  .TextFieldSearch {
     width: 60% !important;
     margin: 0 !important;
   }

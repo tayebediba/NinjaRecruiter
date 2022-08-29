@@ -1,0 +1,168 @@
+.container {
+   display: flex;
+   flex-direction: column;
+   width: 80% !important;
+   margin: 1rem auto;
+ }
+ .title {
+   text-align: center;
+   margin: 1rem auto;
+ }
+ .formInputs {
+   width: 100% !important;
+   /* margin: auto; */
+   font-family: Inter-Medium;
+   flex-basis: 100% !important;
+ 
+   max-width: 100% !important;
+ }
+ .formInputs .form {
+   display: flex;
+   align-items: flex-start;
+   flex-direction: row;
+   justify-content: space-between;
+   gap: 10px;
+   font-family: Inter-Medium;
+ }
+ .form .leftSide {
+   display: flex;
+   flex-direction: column;
+   align-items: initial;
+   width: 45%;
+ }
+ .form .leftSide .firstNAme,
+ .Address,
+ .email,
+ .website,
+ .EmploymentCommission,
+ .FeildOfActivity {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+ }
+ .form .leftSide label {
+   font-size: 1.2rem;
+   font-weight: 500;
+ }
+ 
+ .form .leftSide .input {
+   padding: 0.5rem;
+   border-radius: 5px;
+   background: #d9d9d9;
+   border: none;
+ }
+ 
+ .form .rightSide {
+   display: flex;
+   flex-direction: column;
+   width: 45%;
+   align-items: baseline;
+   gap: 10px;
+ }
+ 
+ .form .rightSide .lastName,
+ .phoneNumber,
+ .SubjectOfActivity,
+ .necessaryExplanation,
+ .ExactAmountReceived {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   width: 100%;
+ }
+ .form .rightSide .input {
+   padding: 0.5rem;
+   border-radius: 5px;
+   background: #d9d9d9;
+   border: none;
+ }
+ .form .rightSide label {
+   font-size: 1.2rem;
+   font-weight: 500;
+ }
+ .buttons {
+   display: flex;
+   justify-content: end;
+   margin-top: 2rem !important;
+ }
+ .TextField {
+   background-color: #d9d9d9 !important;
+ }
+ .styleNext {
+   padding: 8px 2.2rem !important;
+   background: #ffd369 !important;
+   border-color: #ffd369;
+   color: #595959 !important;
+   font-weight: 700 !important;
+ }
+ .styleBack {
+   padding: 8px 2.2rem !important;
+   border-color: #ffd369 !important;
+   color: #595959 !important;
+   font-weight: 700 !important;
+   border: 3px solid #ffd369 !important;
+ }
+ .inputBox {
+   display: flex !important;
+   flex-direction: column !important;
+   margin: 1rem !important;
+ }
+ .inputBox label {
+   font-size: 1.2rem;
+   font-weight: 500;
+ }
+ .TextField {
+   background-color: #d9d9d9 !important;
+ }
+ @media screen and (max-width: 768px) {
+   .form {
+     display: flex;
+     align-items: flex-start;
+     flex-direction: column !important;
+     width: 100%;
+     justify-content: space-between;
+     gap: 10px;
+     font-family: Inter-Medium;
+   }
+   .buttons {
+     justify-content: start;
+ 
+     margin-top: 30px;
+     width: 100%;
+     display: flex;
+     justify-content: space-around;
+   }
+ 
+   .form .leftSide label {
+     font-size: 0.8rem;
+   }
+ 
+   .form .leftSide {
+     display: flex;
+     flex-direction: column;
+     align-items: initial;
+     width: 97%;
+ 
+     margin-left: 0.5rem;
+   }
+   .form .leftSide label {
+     font-size: 0.8rem;
+   }
+   .form .rightSide {
+     display: flex;
+     flex-direction: column;
+     align-items: initial;
+     width: 97%;
+ 
+     margin-left: 0.5rem;
+   }
+   .form .rightSide label {
+     font-size: 0.8rem;
+   }
+   .title {
+     text-align: left;
+     font-size: 1.5rem;
+     margin-left: 0.5rem;
+   }
+ }
+ 

@@ -24,7 +24,18 @@ export const CreateEmployerAcivityField = async (title) => {
 
 export const GetEmployerList = async () => {
   const data = await httpService
-    .get("/Employer/GetEmployer")
+    .get("/Employer/GetEmployers")
+    .then((res) => {
+      return res.data.data;
+    })
+    .catch((err) => console.log(err));
+  return data;
+};
+// ===============getEmployerById=================
+
+export const GetEmployerById = async (id) => {
+  const data = await httpService
+    .get(`/Employer/GetEmployerById?Id=${id}`)
     .then((res) => {
       return res.data.data;
     })

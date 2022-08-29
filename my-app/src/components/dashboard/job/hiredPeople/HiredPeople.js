@@ -8,14 +8,14 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Pagination from "@mui/material/Pagination";
 import { Box, Fab, FormControl, Grid, OutlinedInput } from "@mui/material";
-import SearchBox from "../../../searchBox/SearchBox";
-
-
+import SearchBox from "../../../searchBox/SearchJob";
+import { Search } from "@mui/icons-material";
+import SearchHiredPeople from "../../../searchBox/SearchHiredPeople";
 
 const HiredPeople = () => {
   return (
     <Grid container className={classes.container}>
-      <SearchBox />
+      <SearchHiredPeople />
 
       <div className={classes.editAccount}>
         <div className={classes.card}>

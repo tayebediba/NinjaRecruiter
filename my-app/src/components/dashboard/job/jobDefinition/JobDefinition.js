@@ -19,8 +19,9 @@ import classes from "../job.module.css";
 const JobDefinition = () => {
   const [data, setData] = useState([]);
   const [skill, setSkill] = useState([]);
+  const [selectedSkill, setSelectedSkill] = useState([]);
   const [terms, setTerms] = useState("");
-  const { register, handleSubmit } = useForm({
+  const { register, handleSubmit, getValues } = useForm({
     defaultValues: {
       employerId: localStorage.getItem("userId"),
       isFixed: true,
@@ -45,7 +46,15 @@ const JobDefinition = () => {
       setSkill(res.data);
     });
   }, [terms]);
+  // useEffect(() => {
+  //   const filtredSkill = skill.filter(
+  //     (c) => c.id !== selectedSkill.map((item) => item)
+  //   );
 
+  //   console.log(filtredSkill);
+  // }, [selectedSkill]);
+  console.log("setSelectedSkill ", selectedSkill);
+  console.log("skills ", skill);
   return (
     <Grid container className={classes.container}>
       <h1 className={classes.titleHeader}>Job definition</h1>
@@ -100,6 +109,10 @@ const JobDefinition = () => {
                 options={skill}
                 getOptionLabel={(option) => option.title}
                 filterSelectedOptions
+                onChange={(e, value) => {
+                  console.log(value);
+                  setSkill(skill.filter((c) => c !== value[0]));
+                }}
                 renderInput={(params) => (
                   <TextField
                     {...register("essentialSkills")}
@@ -151,6 +164,7 @@ const JobDefinition = () => {
                       ...params.InputProps,
                       type: "search",
                     }}
+                    {...register("hireCompanies")}
                   />
                 )}
               />

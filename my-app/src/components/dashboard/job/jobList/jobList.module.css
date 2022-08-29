@@ -12,13 +12,13 @@
 .container {
   margin: 3rem auto !important;
   align-items: center !important;
-  width: 70% !important;
+  width: 100% !important;
 }
 .editAccount {
   border: 2px solid #737373;
   width: 100% !important;
   border-radius: 5px;
-  margin-top: 2rem;
+  margin: 2rem auto !important;
 }
 .editAccount .card {
   display: flex;
@@ -53,18 +53,27 @@
 .icons {
   align-items: center !important;
 }
-.textFild {
+
+.TextFieldSearch {
   color: #737373 !important;
   background-color: #d9d9d9 !important;
+  width: 100% !important;
+  margin: 0.5rem auto !important;
+}
+.boxFeb {
+  margin-left: 7rem !important;
+  align-self: flex-start !important;
 }
 .buttonsGroup {
   display: flex;
   width: 100%;
   justify-content: left !important;
+  flex-wrap: wrap !important;
 }
 .buttonsGroup .fab {
   margin: 0.5rem !important;
   border: #595959 1px solid !important;
+  flex-wrap: wrap !important;
   box-shadow: none;
   color: #595959;
   font-family: Inter-Regular;
@@ -90,5 +99,17 @@
   .editAccount {
     width: 100% !important;
     margin-left: 0.5rem;
+  }
+  .textFild {
+    width: 60% !important;
+    margin: 0 !important;
+  }
+  .boxFeb {
+    margin-left: 0 !important;
+    flex-wrap: wrap !important;
+  }
+  .buttonsGroup {
+    flex-wrap: wrap !important;
+    width: 70% !important;
   }
 }
