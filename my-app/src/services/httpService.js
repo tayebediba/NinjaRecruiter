@@ -2,7 +2,7 @@ import axios from "axios";
 // import Cookies from "js-cookie";
 
 const mainAxios = axios.create({
-  baseURL: "http://192.168.1.151:443/api/v1",
+  baseURL: "http://192.168.125.104:443",
 });
 
 // Request Config ---------------------------------
